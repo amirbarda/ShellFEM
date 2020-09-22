@@ -1,0 +1,15 @@
+﻿  Using triplet "x64-windows" from "C:\dev\vcpkg\installed\x64-windows\"
+  FEM.cpp
+  main.cpp
+  utils.cpp
+c:\users\barda\documents\shellfem\shellfem\shellfem\utils.cpp(35): warning C4244: 'argument': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Generating code
+  0 of 153 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  ShellFEM.vcxproj -> C:\Users\barda\Documents\ShellFEM\ShellFEM\x64\Release\ShellFEM.exe
