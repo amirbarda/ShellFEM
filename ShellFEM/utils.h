@@ -16,8 +16,8 @@ typedef Eigen::VectorXd VectorXd;
 typedef Eigen::Vector3d Vector3d;
 typedef Eigen::VectorXi VectorXi;
 typedef Eigen::SparseMatrix<double> SparseMat;
-typedef Eigen::Triplet<double> Triplet;
-typedef std::vector<Triplet> TriList;
+typedef Eigen::Triplet<double> Triplet_double;
+typedef std::vector<Triplet_double> TriList;
 
 struct Mesh {
 	Eigen::MatrixXd V;

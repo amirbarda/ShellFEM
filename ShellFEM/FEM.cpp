@@ -43,7 +43,7 @@ void addKeToK(TriList &K_triplets, Element &currElement, IntList const &vertexTo
 			int KColVertexIdx = verticesIndices[(int)(col / 3)];
 			if (KColVertexIdx == ABSENT_VERTEX || vertexToDOFTranslationMap[KColVertexIdx] == FIXED_NODE) continue;
 			int KColDOFIdx = vertexToDOFTranslationMap[KColVertexIdx] * 3 + col % 3;
-			K_triplets.push_back(Triplet(KRowDOFIdx, KColDOFIdx, currElement.Ke(row, col))); // TODO can sum only half of Ke since it is symmetric.
+			K_triplets.push_back(Triplet_double(KRowDOFIdx, KColDOFIdx, currElement.Ke(row, col))); // TODO can sum only half of Ke since it is symmetric.
 		}
 	}
 }

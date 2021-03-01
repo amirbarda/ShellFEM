@@ -47,11 +47,11 @@ namespace ShellFEMUnitTests
 			Eigen::MatrixXi F;
 			Eigen::MatrixXi FTC;
 			Eigen::MatrixXi FN;
-			std::string objPath = "..\\..\\tests\\test1\\shelve.obj";
-			std::string outputObjPath = "..\\..\\tests\\test1\\shelve_output.obj";
-			std::string stdoutPath = "..\\..\\tests\\test1\\test1.log";
+			std::string objPath = "..\\tests\\test1\\shelve.obj";
+			std::string outputObjPath = "..\\tests\\test1\\shelve_output.obj";
+			std::string stdoutPath = "..\\tests\\test1\\test1.log";
 			std::string nodalForcesPath = "..\\..\\tests\\test1\\load_nodes.txt";
-			std::string fixedNodesPath = "..\\..\\tests\\test1\\fixed_nodes.txt";
+			std::string fixedNodesPath = "..\\tests\\test1\\fixed_nodes.txt";
 			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
 
 			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);

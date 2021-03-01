@@ -133,6 +133,7 @@
     <ClInclude Include="S3Element.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="vector_utils.h" />
+    <ClInclude Include="Viewer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
