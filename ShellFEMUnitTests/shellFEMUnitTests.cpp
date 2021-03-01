@@ -1,47 +1,303 @@
 #include "stdafx.h"
-#include <Eigen/core>
-#include "utils.cpp"
-#include "FEM.cpp"
+
+#include <utility>
+#include <Eigen/Core>
+#include <Eigen/Eigenvalues>
+#include <igl\readSTL.h>
+#include <igl\readOBJ.h>
+#include <igl\writeOBJ.h>
+#include <iostream>
+#include <fstream>
+
 #include "CppUnitTest.h"
 
-#define EpsVal 1e-6
+#include "utils.cpp"
+#include "vector_utils.cpp"
+#define NOMINMAX
+#include "glad.c"
+#include "Viewer.cpp" 
+#include "FEM.cpp"
+#include "S3Element.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace ShellFEMUnitTests
-{		
+{
 	TEST_CLASS(FEM)
 	{
 	public:
-		TEST_METHOD(Perform_FEM_test1)
-		{
-			Eigen::MatrixXd meshedV, meshedN;
-			Eigen::MatrixXi meshedF;
-			std::string meshPath =				"..\\..\\tests\\test1\\input\\remeshed_surface.stl";
-			std::string nodalForcesPath =		"..\\..\\tests\\test1\\input\\load_nodes.txt";
-			std::string fixedNodesPath =		"..\\..\\tests\\test1\\input\\fixed_nodes.txt";
-			std::string testDisplacmentsPath =	"..\\..\\tests\\test1\\output\\displacements.txt";
-			std::string testVonMisesPath =		"..\\..\\tests\\test1\\output\\stresses.txt";
-			igl::readSTL(meshPath, meshedV, meshedF, meshedN);
-			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
-			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
-			auto testDisplacements = displacements_from_txt(testDisplacmentsPath, meshedV.rows());
-			auto testVonMisesStresses = vonmises_from_txt(testDisplacmentsPath, meshedV.rows());
-			FEMData data; //gets default data (for now)
-			auto FEMResults = Perform_FEM(meshedV, meshedF, nodalForces, fixedNodes, data);
-			//get calculated FEM results
-			auto resDisplacements = FEMResults.displacement;
-			auto resVonMises = FEMResults.vonMisesStress;
-			//check result dimensions
-			Assert::AreEqual((size_t)testDisplacements.rows()	,	(size_t)resDisplacements.rows());
-			Assert::AreEqual((size_t)testVonMisesStresses.rows(),	(size_t)resVonMises.rows());
-			Assert::AreEqual((size_t)testDisplacements.cols()	,	(size_t)resDisplacements.cols());
-			Assert::AreEqual((size_t)testVonMisesStresses.cols(),	(size_t)resVonMises.cols());
-			//check displacements
-			Assert::IsTrue((testDisplacements - resDisplacements).norm() < EpsVal);
-			//check stresses
-			Assert::IsTrue((testVonMisesStresses - resVonMises).norm() < EpsVal);
+		void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath) {
+			std::ofstream file;
+			file.open(filepath);
+			for (int i = 0; i < V.rows(); i++) {
+				file << std::fixed << "v " << V(i, 0) << " " << V(i, 1) << " " << V(i, 2) << std::endl;
+			}
+			file << std::endl;
+			for (int i = 0; i < F.rows(); i++) {
+				file << "f " << F(i, 0) + 1 << " " << F(i, 1) + 1 << " " << F(i, 2) + 1 << std::endl;
+			}
+			file.close();
 		}
 
+		TEST_METHOD(Perform_FEM_test1)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test1\\shelve.obj";
+			std::string outputObjPath = "..\\..\\tests\\test1\\shelve_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test1\\test1.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test1\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test1\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test2)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test2\\pyramid.obj";
+			std::string outputObjPath = "..\\..\\tests\\test2\\pyramid_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test2\\test2.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test2\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test2\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test3)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test3\\plate.obj";
+			std::string outputObjPath = "..\\..\\tests\\test3\\plate_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test3\\test3.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test3\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test3\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test5)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test5\\rod.obj";
+			std::string outputObjPath = "..\\..\\tests\\test5\\rod_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test5\\test5.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test5\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test5\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test6)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test6\\box.obj";
+			std::string outputObjPath = "..\\..\\tests\\test6\\box_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test6\\test6.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test6\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test6\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test7)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test7\\sphere.obj";
+			std::string outputObjPath = "..\\..\\tests\\test7\\sphere_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test7\\test7.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test7\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test7\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test8)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test8\\rod.obj";
+			std::string outputObjPath = "..\\..\\tests\\test8\\rod_twist_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test8\\test8.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test8\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test8\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test9)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test9\\plate_fold.obj";
+			std::string outputObjPath = "..\\..\\tests\\test9\\plate_fold_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test9\\test9.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test9\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test9\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test10)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test10\\Shelf_ElementSizing_30.obj";
+			std::string outputObjPath = "..\\..\\tests\\test10\\shelf_30_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test10\\test10.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test10\\load_nodes_30.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test10\\fixed_nodes_30.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
 	};
 }
