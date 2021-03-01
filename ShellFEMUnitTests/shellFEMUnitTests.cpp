@@ -33,9 +33,9 @@ namespace ShellFEMUnitTests
 			auto resDisplacements = FEMResults.displacement;
 			auto resVonMises = FEMResults.vonMisesStress;
 			//check result dimensions
-			Assert::AreEqual((size_t)testDisplacements.rows(),		(size_t)resDisplacements.rows());
+			Assert::AreEqual((size_t)testDisplacements.rows()	,	(size_t)resDisplacements.rows());
 			Assert::AreEqual((size_t)testVonMisesStresses.rows(),	(size_t)resVonMises.rows());
-			Assert::AreEqual((size_t)testDisplacements.cols(),		(size_t)resDisplacements.cols());
+			Assert::AreEqual((size_t)testDisplacements.cols()	,	(size_t)resDisplacements.cols());
 			Assert::AreEqual((size_t)testVonMisesStresses.cols(),	(size_t)resVonMises.cols());
 			//check displacements
 			Assert::IsTrue((testDisplacements - resDisplacements).norm() < EpsVal);

@@ -27,19 +27,19 @@ struct FEMData {
 };
 
 struct FEMResults {
-	Eigen::MatrixXd displacement;
-	Eigen::VectorXd vonMisesStress;
+	MatrixXd displacements;
+	VectorXd vonMisesStress;
+	MatrixXd displacedVertices;
 };
-
 
 /**
 	Performs FEM analysis with shell elements.
-	@param meshedV nodes of the meshed part. each row is a node in (x,y,z) format
-	@param meshedF faces of meshed part. each row is a triangular face in (v1,v2,v3)
+	@param mesh:
+		V: nodes of the meshed part. each row is a node in (x,y,z) format
+		F: faces of meshed part. each row is a triangular face in (v1,v2,v3)
+		fixedNodes: list of fixed node indices
 	@param nodalForces
-	@param fixedNodes
 	@param data material, shell and simulation data
 	@return generalized displacements (rotational + axial).
 */
-FEMResults Perform_FEM(Eigen::MatrixXd const &MeshV, Eigen::MatrixXi const &MeshF,
-	std::vector<Force> const &nodalForces, std::vector<int> const  &fixedNode, FEMData data);
+void Perform_FEM(Mesh const &mesh, ForcesList const &nodalForces, FEMData const &data, FEMResults &results);

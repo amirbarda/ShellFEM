@@ -108,22 +108,31 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\dep\eigen-3.3.7;..\dep\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include\eigen-3.3.9;..\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions); _CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\barda\Documents\ShellFEM\ShellFEM\lib\lib-vc2017</AdditionalLibraryDirectories>
+      <AdditionalOptions>"C:\Users\barda\Documents\ShellFEM\ShellFEM\lib\lib-vc2017\*.lib" %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FEM.cpp" />
+    <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="S3Element.cpp" />
     <ClCompile Include="utils.cpp" />
+    <ClCompile Include="vector_utils.cpp" />
+    <ClCompile Include="Viewer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FEM.h" />
+    <ClInclude Include="S3Element.h" />
     <ClInclude Include="utils.h" />
+    <ClInclude Include="vector_utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
