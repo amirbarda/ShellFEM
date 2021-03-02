@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="FEM.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="S3Element.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -130,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FEM.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="S3Element.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="vector_utils.h" />

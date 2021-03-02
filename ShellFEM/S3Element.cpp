@@ -1,5 +1,5 @@
 #include "S3Element.h"
-
+#define DEBUG
 #define DASH "--------------------------------------------------------------------------"
 #define X 0
 #define Y 1

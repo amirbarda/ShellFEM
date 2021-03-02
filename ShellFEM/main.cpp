@@ -5,7 +5,6 @@
 #include <igl/writeOBJ.h>
 #include <iostream>
 
-
 void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath) {
 	std::ofstream file;
 	file.open(filepath);
@@ -27,20 +26,23 @@ int main() {
 	Eigen::MatrixXi F;
 	Eigen::MatrixXi FTC;
 	Eigen::MatrixXi FN;
-	std::string objPath = "..\\..\\tests\\test2\\pyramid.obj";
-	std::string outputObjPath = "..\\..\\tests\\test2\\pyramid_output.obj";
-	std::string stdoutPath = "..\\..\\tests\\test2\\test2.log";
-	std::string nodalForcesPath = "..\\..\\tests\\test2\\load_nodes.txt";
-	std::string fixedNodesPath = "..\\..\\tests\\test2\\fixed_nodes.txt";
+	std::string objPath = "..\\..\\tests\\test4\\plate_A11.obj";
+	std::string outputObjPath = "..\\..\\tests\\test4\\plate_A11_output.obj";
+	std::string stdoutPath = "..\\..\\tests\\test4\\test4.log";
+	std::string nodalForcesPath = "..\\..\\tests\\test4\\load_nodes_A11.txt";
+	std::string fixedNodesPath = "..\\..\\tests\\test4\\fixed_nodes_A11.txt";
 	FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
 
 	igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+	//V = V;
 	auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
 	auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
 	FEMData data; //gets default data (for now)
+	data.shellProps.thickness = 1e-3;
 
 	FEMResults result;
 	Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+	std::cout << "Uzc: "<<(result.displacedVertices.row(2) - V.row(2)).norm() << std::endl;
 	saveOBJ(result.displacedVertices, F, outputObjPath);
 
 	Viewer viewer;
