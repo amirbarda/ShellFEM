@@ -32,8 +32,8 @@ struct Element {
 	}
 
 	void setFixedNode(int i) {
-		isEdgeFixed[NXT(i)] = true;
-		isEdgeFixed[PRV(i)] = true;
+		isEdgeFixed[NXT(i)] = false;//true;
+		isEdgeFixed[PRV(i)] = false;// true;
 	}
 };
 

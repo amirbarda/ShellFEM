@@ -39,6 +39,7 @@ int main() {
 	auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
 	FEMData data; //gets default data (for now)
 	data.shellProps.thickness = 1e-3;
+	data.matProps.E = 200e9;
 
 	FEMResults result;
 	Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);

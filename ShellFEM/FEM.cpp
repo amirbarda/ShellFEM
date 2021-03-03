@@ -92,10 +92,12 @@ void calculateGlobalStiffnessMatrix(TriList &K_triplets, ElementBuilder &element
 void calculateElasticPlasticMatrix(Eigen::Matrix<double, 3, 3> &De, FEMData const &data) {
 	double ni = data.matProps.ni;
 	double E = data.matProps.E;
+	double t = data.shellProps.thickness;
 	De <<  1,   ni,  0,
 		   ni,  1,   0,
 		   0,   0,   (1 - ni) / 2;
-	De *= E / (1 - ni * ni);
+	De *= E / (1 - ni*ni);
+	De *= t*t*t / 12;
 }
 
 void calculateHillPlasticStrainMatrix(Eigen::Matrix<double, 3, 3> &M, FEMData const &data) {

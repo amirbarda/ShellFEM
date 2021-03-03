@@ -11,9 +11,9 @@ std::ostream& operator<<(std::ostream& os, const Element& elem) {
 	std::stringstream repr;
 
 	for (int i = 0; i < 3; i++) repr << "vertices[" << i << "]: " << elem.vertices[i] << std::endl;
+	repr << "centroid: " << (elem.vertices[0] + elem.vertices[1] + elem.vertices[2]) / 3 << std::endl;
 	for (int i = 0; i < 3; i++) repr << "neighborExists[" << i << "]: " << elem.neighborExists[i] << std::endl;
 	for (int i = 0; i < 3; i++) repr << "neighborVertices[" << i << "]: " << elem.neighborVertices[i] << std::endl;
-
 	return os << repr.str();
 }
 
@@ -65,7 +65,7 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 	double length;
 	std::pair<double, Eigen::Vector3d> areaVector;
 	Eigen::Vector3d centroid;
-	Eigen::Vector2d planeVertices[3];
+	Eigen::Vector2d planeVertices[3]; //needs to be 3d?
 	
 	getUnitVectors(element, elemParam);
 	
@@ -74,11 +74,14 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 	}
 	
 	for (int i=0; i<3; i++) {
-		length = (element.vertices[NXT(i)] - element.vertices[PRV(i)]).norm();
+		//length = (element.vertices[NXT(i)] - element.vertices[PRV(i)]).norm();
+		length = (element.vertices[NXT(NXT(i))] - element.vertices[NXT(i)]).norm();
 		
 		// Element Fields
-		elemParam.c[i] = + (planeVertices[PRV(i)][Y] - planeVertices[NXT(i)][Y]) / length;
-		elemParam.s[i] = - (planeVertices[PRV(i)][X] - planeVertices[NXT(i)][X]) / length;
+		//elemParam.c[i] = + (planeVertices[PRV(i)][Y] - planeVertices[NXT(i)][Y]) / length;
+		elemParam.c[i] = +(planeVertices[NXT(NXT(i))][Y] - planeVertices[NXT(i)][Y]) / length;
+		//elemParam.s[i] = - (planeVertices[PRV(i)][X] - planeVertices[NXT(i)][X]) / length;
+		elemParam.s[i] = -(planeVertices[NXT(NXT(i))][X] - planeVertices[NXT(i)][X]) / length;
 		elemParam.cosine[i] = getCosOfAngle(element.vertices[i], element.vertices[NXT(i)], element.vertices[PRV(i)]);
 		elemParam.heights[i] = 2 * elemParam.area / length;
 
@@ -241,6 +244,7 @@ void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 #ifdef DEBUG
 	std::cout << element << std::endl;
 	std::cout << elemParam << std::endl;
+	std::cout << "De: " << std::endl << De << std::endl;
 	std::cout << "Bm: " << std::endl << Bm << std::endl;
 	std::cout << "Kem: " << std::endl << Kem << std::endl;
 	std::cout << "Ke: " << std::endl << element.Ke << std::endl;
