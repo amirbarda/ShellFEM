@@ -173,6 +173,8 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\glfw\viewer.cpp(1088): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(130): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\tclap\stdoutput.h(443): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\tclap\stdoutput.h(458): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\ortho.cpp(21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\viewercore.cpp(151): note: see reference to function template instantiation 'void igl::ortho<Eigen::Matrix<float,4,4,0,4,4>>(const float,const float,const float,const float,const float,const float,Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>> &)' being compiled
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\ortho.cpp(22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -663,8 +665,6 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      Creating library C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.lib and object C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.exp
   Generating code
-  0 of 19271 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  All 19772 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ShellFEMUnitTests.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.dll

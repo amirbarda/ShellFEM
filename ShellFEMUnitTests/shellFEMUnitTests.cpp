@@ -15,9 +15,11 @@
 #include "vector_utils.cpp"
 #define NOMINMAX
 #include "glad.c"
-#include "Viewer.cpp" 
-#include "FEM.cpp"
-#include "S3Element.cpp"
+#include "gui.cpp" 
+#include "fem.cpp"
+#include "s3element.cpp"
+#include "logger.cpp"
+#include "options.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

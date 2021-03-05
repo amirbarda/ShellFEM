@@ -120,22 +120,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FEM.cpp" />
+    <ClCompile Include="fem.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="gui.cpp" />
+    <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="S3Element.cpp" />
+    <ClCompile Include="options.cpp" />
+    <ClCompile Include="s3element.cpp" />
     <ClCompile Include="utils.cpp" />
     <ClCompile Include="vector_utils.cpp" />
-    <ClCompile Include="Viewer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FEM.h" />
-    <ClInclude Include="Logger.h" />
-    <ClInclude Include="S3Element.h" />
+    <ClInclude Include="fem.h" />
+    <ClInclude Include="gui.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="options.h" />
+    <ClInclude Include="s3element.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="vector_utils.h" />
-    <ClInclude Include="Viewer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

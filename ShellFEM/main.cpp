@@ -1,9 +1,6 @@
-#pragma once
-#include "FEM.h"
-#include "Viewer.h"
-#include <igl/readOBJ.h>
-#include <igl/writeOBJ.h>
-#include <iostream>
+#include "fem.h"
+#include "options.h"
+#include "gui.h"
 
 void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath) {
 	std::ofstream file;
@@ -18,36 +15,28 @@ void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath) {
 	file.close();
 }
 
-int main() {
-
+int main(int argc, char** argv) {
 	Eigen::MatrixXd V;
 	Eigen::MatrixXd TC;
 	Eigen::MatrixXd N;
 	Eigen::MatrixXi F;
 	Eigen::MatrixXi FTC;
 	Eigen::MatrixXi FN;
-	std::string objPath = "..\\..\\tests\\test4\\plate_A11.obj";
-	std::string outputObjPath = "..\\..\\tests\\test4\\plate_A11_output.obj";
-	std::string stdoutPath = "..\\..\\tests\\test4\\test4.log";
-	std::string nodalForcesPath = "..\\..\\tests\\test4\\load_nodes_A11.txt";
-	std::string fixedNodesPath = "..\\..\\tests\\test4\\fixed_nodes_A11.txt";
-	FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
-
-	igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
-	//V = V;
-	auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
-	auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
-	FEMData data; //gets default data (for now)
-	data.shellProps.thickness = 1e-3;
-	data.matProps.E = 200e9;
 
 	FEMResults result;
-	Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
-	std::cout << "Uzc: "<<(result.displacedVertices.row(2) - V.row(2)).norm() << std::endl;
-	saveOBJ(result.displacedVertices, F, outputObjPath);
-
+	SimulationProperties simProps = parse_arguments(argc, argv); 
+	std::string saveObjPath = simProps.outDir + "/" + simProps.name + ".obj";
+	FEMData data(simProps.E, simProps.ni, simProps.thickness);
 	Viewer viewer;
-	viewer.startView(result.displacedVertices, F, result.vonMisesStress);
-	fclose(file);
 
+	igl::readOBJ(simProps.objPath, V, TC, N, F, FTC, FN);
+	auto nodalForces = nodal_forces_from_txt(simProps.forcesPath);
+	auto fixedNodes = fixed_nodes_from_txt(simProps.fixedPath);
+
+	Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+	saveOBJ(result.displacedVertices, F, saveObjPath);
+
+	if (simProps.startViewer) {
+		viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+	}
 }

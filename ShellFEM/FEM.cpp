@@ -3,8 +3,8 @@
 #include<Eigen/IterativeLinearSolvers>
 #include<Eigen/SparseLU>
 
-#include "FEM.h"
-#include "S3Element.h"
+#include "fem.h"
+#include "s3element.h"
 
 #define ABSENT_VERTEX -1
 #define FIXED_NODE	  -1

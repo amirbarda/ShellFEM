@@ -14,16 +14,11 @@ struct ShellProperty {
 	ShellProperty(double thickenss_) :thickness(thickenss_) {};
 };
 
-struct SimulationProperties{
-	std::string name, output_dir;
-	SimulationProperties() { name = "dummy"; output_dir = ""; };
-	SimulationProperties(std::string name_, std::string output_dir_) :name(name_),output_dir(output_dir_) {};
-};
-
 struct FEMData {
 	MaterialProperty matProps;
 	ShellProperty shellProps;
-	SimulationProperties simuProps;
+	FEMData() { matProps = MaterialProperty(); shellProps = ShellProperty(); };
+	FEMData(double E_, double ni_, double thickenss_) : matProps(E_, ni_), shellProps(thickenss_) {};
 };
 
 struct FEMResults {
