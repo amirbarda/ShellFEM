@@ -35,4 +35,6 @@ void startProgramGUI() {
 
 	Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
 	saveOBJ(result.displacedVertices, F, saveObjPath);
+
+	// TODO : add imgui and call startView
 }
