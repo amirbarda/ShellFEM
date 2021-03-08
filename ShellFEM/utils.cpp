@@ -74,3 +74,16 @@ Eigen::MatrixXd displacements_from_txt(std::string path, int nodeNum) {
 	results_disp.close();
 	return displacements;
 }
+
+void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath) {
+	std::ofstream file;
+	file.open(filepath);
+	for (int i = 0; i < V.rows(); i++) {
+		file << std::fixed << "v " << V(i, 0) << " " << V(i, 1) << " " << V(i, 2) << std::endl;
+	}
+	file << std::endl;
+	for (int i = 0; i < F.rows(); i++) {
+		file << "f " << F(i, 0) + 1 << " " << F(i, 1) + 1 << " " << F(i, 2) + 1 << std::endl;
+	}
+	file.close();
+}

@@ -43,7 +43,7 @@ void addKeToK(TriList &K_triplets, Element &currElement, IntList const &vertexTo
 			int KColVertexIdx = verticesIndices[(int)(col / 3)];
 			if (KColVertexIdx == ABSENT_VERTEX || vertexToDOFTranslationMap[KColVertexIdx] == FIXED_NODE) continue;
 			int KColDOFIdx = vertexToDOFTranslationMap[KColVertexIdx] * 3 + col % 3;
-			K_triplets.push_back(Triplet_double(KRowDOFIdx, KColDOFIdx, currElement.Ke(row, col))); // TODO can sum only half of Ke since it is symmetric.
+			K_triplets.push_back(TripletXd(KRowDOFIdx, KColDOFIdx, currElement.Ke(row, col))); // TODO can sum only half of Ke since it is symmetric.
 		}
 	}
 }
@@ -52,7 +52,7 @@ void setFixedEdges(Element &currElement, VectorXi const &face, IntList const &ve
 	for (int vertexIdx = 0; vertexIdx < 3; vertexIdx++) {
 		int vertex = face(vertexIdx);
 		if (vertexToDOFTranslationMap[vertex] == FIXED_NODE) {
-			currElement.setFixedNode(vertexIdx);
+			currElement.setFixedNode(vertexIdx); 
 		}
 	}
 }
@@ -97,7 +97,7 @@ void calculateElasticPlasticMatrix(Eigen::Matrix<double, 3, 3> &De, FEMData cons
 		   ni,  1,   0,
 		   0,   0,   (1 - ni) / 2;
 	De *= E / (1 - ni*ni);
-	De *= t*t*t / 12;
+	De *= t*t*t / 12; 
 }
 
 void calculateHillPlasticStrainMatrix(Eigen::Matrix<double, 3, 3> &M, FEMData const &data) {

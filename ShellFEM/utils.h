@@ -16,8 +16,8 @@ typedef Eigen::VectorXd VectorXd;
 typedef Eigen::Vector3d Vector3d;
 typedef Eigen::VectorXi VectorXi;
 typedef Eigen::SparseMatrix<double> SparseMat;
-typedef Eigen::Triplet<double> Triplet_double;
-typedef std::vector<Triplet_double> TriList;
+typedef Eigen::Triplet<double> TripletXd;
+typedef std::vector<TripletXd> TriList;
 
 struct Mesh {
 	Eigen::MatrixXd V;
@@ -31,3 +31,4 @@ std::vector<Force> nodal_forces_from_txt(std::string path);
 std::vector<int> fixed_nodes_from_txt(std::string path);
 Eigen::MatrixXd displacements_from_txt(std::string path, int nodeNum);
 Eigen::VectorXd vonmises_from_txt(std::string path, int nodeNum);
+void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath);

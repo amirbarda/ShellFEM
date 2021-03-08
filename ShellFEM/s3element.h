@@ -13,7 +13,8 @@
 struct Element {
 	Vector3d vertices[3];					// List of vertices (x,y,z)
 	bool neighborExists[3];					// Sometimes there is no neighbor
-	bool isEdgeFixed[3];					// Some vertices are fixed and cannot move.
+	bool isEdgeFixed[3];					// Some edges need to be set as clamped.
+	bool isVertexFixed[3];					// Some vertices are fixed and cannot move.
 	Vector3d neighborVertices[3];			// List of neighbor vertices (x,y,z). Neighbor at the opposite side of vertex i or vector3d
 	Eigen::Matrix<double, 18, 18> Ke;		// Element Stiffness Matrix
 	double vonMisesStress;					// Von Mises yield criterion calculated from dispositions
@@ -23,6 +24,7 @@ struct Element {
 			vertices[i] = _vertices[i];
 			neighborExists[i] = false;
 			isEdgeFixed[i] = false;
+			isVertexFixed[i] = false;
 		}
 	}
 
@@ -31,9 +33,10 @@ struct Element {
 		neighborVertices[i] = v;
 	}
 
-	void setFixedNode(int i) {
-		isEdgeFixed[NXT(i)] = false;//true;
-		isEdgeFixed[PRV(i)] = false;// true;
+	void setFixedNode(int i) { // set edge as fixed if both vertices are
+		isVertexFixed[i] = true;
+		if (isVertexFixed[NXT(i)]) isEdgeFixed[PRV(i)] = true;
+		if (isVertexFixed[PRV(i)]) isEdgeFixed[NXT(i)] = true;	
 	}
 };
 

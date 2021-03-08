@@ -42,13 +42,13 @@ SimulationProperties parse_arguments(int argc, char** argv) {
 		TCLAP::ValueArg<std::string> fixedPathArg("x", "fixed_path", "Path of fixed nodes file", true, " ", "string");
 		cmd.add(fixedPathArg);
 
-		TCLAP::ValueArg<double> youngModulusArg("e", "young_modulus", "Value of Young's Modulus", false, 70e9, "double"); 
+		TCLAP::ValueArg<double> youngModulusArg("e", "young_modulus", "Value of Young's Modulus", false, DEFAULT_YOUNG_CNST, "double");
 		cmd.add(youngModulusArg);
 
-		TCLAP::ValueArg<double> possionRatioArg("p", "possion_ratio", "Value of Possion's ratio", false, 0.3, "double");
+		TCLAP::ValueArg<double> possionRatioArg("p", "possion_ratio", "Value of Possion's ratio", false, DEFAULT_POSSION_CNST, "double");
 		cmd.add(possionRatioArg);
 
-		TCLAP::ValueArg<double> thicknessArg("t", "thickness", "Value of sheet thickness", false, 1.6e-3, "double");
+		TCLAP::ValueArg<double> thicknessArg("t", "thickness", "Value of sheet thickness", false, DEFAULT_THICKNESS_CNST, "double");
 		cmd.add(thicknessArg);
 
 		TCLAP::SwitchArg viewerSwitch("g", "gui", "start viewer", cmd, false);

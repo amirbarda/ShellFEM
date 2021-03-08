@@ -10,3 +10,5 @@ public:
 	Viewer() {};
 	void startView(Eigen::MatrixXd const &V, Eigen::MatrixXi const &F, VectorXd &vonMisesStress);
 };
+
+void startProgramGUI();

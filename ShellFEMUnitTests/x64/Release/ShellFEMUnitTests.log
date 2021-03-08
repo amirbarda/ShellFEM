@@ -1,5 +1,4 @@
-﻿  stdafx.cpp
-  shellFEMUnitTests.cpp
+﻿  shellFEMUnitTests.cpp
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\utils.cpp(35): warning C4244: 'argument': conversion from 'double' to '_Ty', possible loss of data
           with
           [
@@ -171,6 +170,7 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\glfw\viewer.cpp(1076): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\glfw\viewer.cpp(1086): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\glfw\viewer.cpp(1088): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\gui.cpp(10): warning C4305: '=': truncation from 'double' to 'float'
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(130): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\tclap\stdoutput.h(443): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
@@ -665,6 +665,8 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      Creating library C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.lib and object C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.exp
   Generating code
-  All 19772 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  14 of 19772 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    151 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   ShellFEMUnitTests.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.dll
