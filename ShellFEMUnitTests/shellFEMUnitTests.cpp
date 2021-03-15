@@ -62,7 +62,7 @@ namespace ShellFEMUnitTests
 			auto nodalForces = vector3d_from_txt(nodalForcesPath);
 			auto fixedNodes = vector3d_from_txt(fixedNodesPath);
 			auto clampedEdges = clamped_from_txt(clamedEdgesPath);
-			FEMData data; //gets default data (for now)
+			//FEMData data; //gets default data (for now)
 
 			//for (auto e : fixedNodes) std::cout << "fixed: " << e.first << ", " << e.second << std::endl;
 			//for (auto e : nodalForces) std::cout << "force: " << e.first << ", " << e.second << std::endl;
@@ -73,12 +73,14 @@ namespace ShellFEMUnitTests
 			//std::cout << "FE" << std::endl << FE << std::endl;
 			//std::cout << "EF" << std::endl << EF << std::endl;
 
-			FEMResults result;
-			Perform_FEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, data, result);
-			saveOBJ(result.displacedVertices, F, outputObjPath);
+			//FEMResults result;
+			//Perform_FEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, data, result);
+			FEMSimulation sim(Mesh(V, F, fixedNodes, clampedEdges), nodalForces);
+			sim.performFEM();
+			saveOBJ(sim.results.displacedVertices, F, outputObjPath);
 
 			Viewer viewer;
-			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			viewer.startView(sim.results.displacedVertices, F, sim.results.vonMisesStress);
 			fclose(file);
 		}
 

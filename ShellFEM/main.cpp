@@ -14,7 +14,7 @@ void runInBatchMode(int argc, char** argv) {
 	FEMResults result;
 	SimulationProperties simProps = parse_arguments(argc, argv);
 	std::string saveObjPath = simProps.outDir + "/" + simProps.name + ".obj";
-	FEMData data(simProps.E, simProps.ni, simProps.thickness);
+	//FEMData data(simProps.E, simProps.ni, simProps.thickness);
 
 	igl::readOBJ(simProps.objPath, V, TC, N, F, FTC, FN);
 	//auto nodalForces = nodal_forces_from_txt(simProps.forcesPath);
