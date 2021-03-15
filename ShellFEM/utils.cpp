@@ -9,34 +9,31 @@ std::vector<std::string> split_string_by_space(std::string s) {
 	return result;
 }
 
-std::vector<Force> nodal_forces_from_txt(std::string path) {
-	std::vector<Force> nodalForces;
-	std::ifstream nodalForcesFile(path);
-	if (nodalForcesFile.is_open()) {
-		std::string line;
-		while (std::getline(nodalForcesFile, line)) {
-			Force f;
-			auto tokens = split_string_by_space(line);
-			f.first = std::stoi(tokens[0]);
-			f.second = Eigen::Vector3d(std::stod(tokens[1]), std::stod(tokens[2]), std::stod(tokens[3]));
-			nodalForces.push_back(f);
-		}
+vector3dList vector3d_from_txt(std::string path) {
+	vector3dList iVecList;
+	std::ifstream inFile(path);
+	std::string line;
+	while (std::getline(inFile, line)) {
+		indexedVector3d iVec;
+		auto tokens = split_string_by_space(line);
+		iVec.first = std::stod(tokens[0]);
+		iVec.second = Eigen::Vector3d(std::stod(tokens[1]), std::stod(tokens[2]), std::stod(tokens[3]));
+		iVecList.push_back(iVec);
 	}
-	nodalForcesFile.close();
-	return nodalForces;
+	inFile.close();
+	return iVecList;
 }
 
-std::vector<int> fixed_nodes_from_txt(std::string path) {
-	std::vector<int> fixedNodes;
-	std::ifstream fixedNodesFile(path);
-	if (fixedNodesFile.is_open()) {
-		std::string line;
-		while (std::getline(fixedNodesFile, line)) {
-			fixedNodes.push_back(std::stod(line));
-		}
+IntList clamped_from_txt(std::string path) {
+	IntList clampedEdges;
+	std::ifstream inFile(path);
+	std::string line;
+	while (std::getline(inFile, line)) {
+		auto tokens = split_string_by_space(line);
+		clampedEdges.push_back(std::stod(tokens[0]));
 	}
-	fixedNodesFile.close();
-	return fixedNodes;
+	inFile.close();
+	return clampedEdges;
 }
 
 Eigen::VectorXd vonmises_from_txt(std::string path, int nodeNum) {

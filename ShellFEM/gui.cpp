@@ -30,10 +30,10 @@ void startProgramGUI() {
 	FEMData data(simProps.E, simProps.ni, simProps.thickness);
 
 	igl::readOBJ(simProps.objPath, V, TC, N, F, FTC, FN);
-	auto nodalForces = nodal_forces_from_txt(simProps.forcesPath);
-	auto fixedNodes = fixed_nodes_from_txt(simProps.fixedPath);
+	//auto nodalForces = nodal_forces_from_txt(simProps.forcesPath);
+	//auto fixedNodes = fixed_nodes_from_txt(simProps.fixedPath);
 
-	Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+	//Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
 	saveOBJ(result.displacedVertices, F, saveObjPath);
 
 	// TODO : add imgui and call startView

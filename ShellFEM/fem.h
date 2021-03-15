@@ -54,4 +54,4 @@ struct FEMResults {
 	@param data material, shell and simulation data
 	@return generalized displacements (rotational + axial).
 */
-void Perform_FEM(Mesh const &mesh, ForcesList const &nodalForces, FEMData const &data, FEMResults &results);
+void Perform_FEM(Mesh const &mesh, vector3dList const &nodalForces, FEMData const &data, FEMResults &results);

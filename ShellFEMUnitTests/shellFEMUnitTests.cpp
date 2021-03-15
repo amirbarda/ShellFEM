@@ -6,6 +6,7 @@
 #include <igl\readSTL.h>
 #include <igl\readOBJ.h>
 #include <igl\writeOBJ.h>
+#include <igl\edge_topology.h>
 #include <iostream>
 #include <fstream>
 
@@ -41,6 +42,47 @@ namespace ShellFEMUnitTests
 			file.close();
 		}
 
+		TEST_METHOD(Perform_FEM_test3)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test3\\plate.obj";
+			std::string outputObjPath = "..\\..\\tests\\test3\\plate_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test3\\test3.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test3\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test3\\fixed_nodes.txt";
+			std::string clamedEdgesPath = "..\\..\\tests\\test3\\clamped_edges.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = vector3d_from_txt(nodalForcesPath);
+			auto fixedNodes = vector3d_from_txt(fixedNodesPath);
+			auto clampedEdges = clamped_from_txt(clamedEdgesPath);
+			FEMData data; //gets default data (for now)
+
+			//for (auto e : fixedNodes) std::cout << "fixed: " << e.first << ", " << e.second << std::endl;
+			//for (auto e : nodalForces) std::cout << "force: " << e.first << ", " << e.second << std::endl;
+			//for (auto e : clampedEdges) std::cout << "clamped: " << e << std::endl;
+			Eigen::MatrixXi EV, FE, EF;
+			igl::edge_topology(V, F, EV, FE, EF);
+			//std::cout << "EV" << std::endl << EV << std::endl;
+			//std::cout << "FE" << std::endl << FE << std::endl;
+			//std::cout << "EF" << std::endl << EF << std::endl;
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+
+		/*
 		TEST_METHOD(Perform_FEM_test1)
 		{
 			Eigen::MatrixXd V;
@@ -301,5 +343,35 @@ namespace ShellFEMUnitTests
 			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
 			fclose(file);
 		}
+
+		TEST_METHOD(Perform_FEM_test12)
+		{
+			Eigen::MatrixXd V;
+			Eigen::MatrixXd TC;
+			Eigen::MatrixXd N;
+			Eigen::MatrixXi F;
+			Eigen::MatrixXi FTC;
+			Eigen::MatrixXi FN;
+			std::string objPath = "..\\..\\tests\\test12\\shell.obj";
+			std::string outputObjPath = "..\\..\\tests\\test120\\shell_output.obj";
+			std::string stdoutPath = "..\\..\\tests\\test12\\test12.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test12\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test12\\fixed_nodes.txt";
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
+			auto nodalForces = nodal_forces_from_txt(nodalForcesPath);
+			auto fixedNodes = fixed_nodes_from_txt(fixedNodesPath);
+			FEMData data; //gets default data (for now)
+
+			FEMResults result;
+			Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
+			saveOBJ(result.displacedVertices, F, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+			fclose(file);
+		}
+		*/
 	};
 }
