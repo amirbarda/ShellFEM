@@ -17,7 +17,7 @@ bool elementHasDOF(IntList &verticesIndices, MatrixXd const &DOFTranslationMap) 
 }
 */
 
-int calcNbrOppositeVrtxIndx(Mesh const &mesh, int currNbrFace, int faceIdx, int vertex) {
+int FEMSimulation::calcNbrOppositeVrtxIndx(Mesh const &mesh, int currNbrFace, int faceIdx, int vertex) {
 	int sumOfVertices = mesh.F.row(currNbrFace).sum();
 	int sumOfSharedVertices = mesh.F(faceIdx, vertex) + mesh.F(faceIdx, (vertex + 1) % 3);
 	return sumOfVertices - sumOfSharedVertices;
