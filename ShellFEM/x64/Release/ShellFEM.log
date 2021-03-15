@@ -2,10 +2,10 @@
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(28): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(41): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(47): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(147): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(160): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(211): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(228): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(129): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(142): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(193): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(210): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\triangle_triangle_adjacency.cpp(129): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(83): note: see reference to function template instantiation 'void igl::triangle_triangle_adjacency<Derived,Eigen::Matrix<double,-1,-1,0,-1,-1>,Eigen::Matrix<double,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &)' being compiled
           with
@@ -1149,6 +1149,6 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellf
   vector_utils.cpp
   glad.c
   Generating code
-  All 15767 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 15769 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ShellFEM.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEM.exe

@@ -44,9 +44,9 @@ neighborVertices[0]:   0
 neighborVertices[1]:   1
 0.5
   0
-neighborVertices[2]:            0
-1.01778e-321
-1.24611e-306
+neighborVertices[2]: 5.13523e-312
+1.82492e-312
+1.68372e-316
 
 --------------------------------------------------------------------------
 Element: 
@@ -78,10 +78,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -92,10 +92,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.5
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -104,17 +104,17 @@ normal:
  1
 
 neighbor[2]
-heightArr[0]: 7.28144e-310
-heightArr[1]: 2.71409e-312
-heightArr[2]: 2.71371e-312
-cosineArr[0]: 2.71409e-312
-cosineArr[1]: 2.69493e-312
-cosineArr[2]: 1.1562e-311
-height: 2.71409e-312
+heightArr[0]: 0
+heightArr[1]: 4.67964e-312
+heightArr[2]: 0
+cosineArr[0]: 1.4822e-323
+cosineArr[1]: 1.09621e-311
+cosineArr[2]: 4.67964e-312
+height: 4.67964e-312
 normal: 
 6.32404e-322
-9.88131e-324
-1.97626e-322
+6.32404e-322
+8.20547e-310
 
 --------------------------------------------------------------------------
 
@@ -235,10 +235,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -249,10 +249,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.5
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -263,10 +263,10 @@ normal:
 neighbor[2]
 heightArr[0]: 0.5
 heightArr[1]: 0.5
-heightArr[2]: 2.71371e-312
+heightArr[2]: 0
 cosineArr[0]: 0.707107
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.1562e-311
+cosineArr[2]: 4.67964e-312
 height: 0.353553
 normal: 
 -0
@@ -392,10 +392,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -406,10 +406,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.5
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -420,10 +420,10 @@ normal:
 neighbor[2]
 heightArr[0]: 0.5
 heightArr[1]: 0.5
-heightArr[2]: 2.71371e-312
+heightArr[2]: 0
 cosineArr[0]: 0.707107
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.1562e-311
+cosineArr[2]: 4.67964e-312
 height: 0.353553
 normal: 
 -0
@@ -549,10 +549,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -563,10 +563,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.353553
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 
@@ -577,10 +577,10 @@ normal:
 neighbor[2]
 heightArr[0]: 0.5
 heightArr[1]: 0.5
-heightArr[2]: 2.71371e-312
+heightArr[2]: 0
 cosineArr[0]: 0.707107
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.1562e-311
+cosineArr[2]: 4.67964e-312
 height: 0.353553
 normal: 
 -0
@@ -706,10 +706,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -720,10 +720,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.5
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -734,10 +734,10 @@ normal:
 neighbor[2]
 heightArr[0]: 0.353553
 heightArr[1]: 0.5
-heightArr[2]: 2.71371e-312
+heightArr[2]: 0
 cosineArr[0]: 0
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.1562e-311
+cosineArr[2]: 4.67964e-312
 height: 0.5
 normal: 
 0
@@ -863,10 +863,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -877,10 +877,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.5
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -891,10 +891,10 @@ normal:
 neighbor[2]
 heightArr[0]: 0.5
 heightArr[1]: 0.5
-heightArr[2]: 2.71371e-312
+heightArr[2]: 0
 cosineArr[0]: 0.707107
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.1562e-311
+cosineArr[2]: 4.67964e-312
 height: 0.353553
 normal: 
 -0
@@ -1020,10 +1020,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1034,10 +1034,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.5
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -1048,10 +1048,10 @@ normal:
 neighbor[2]
 heightArr[0]: 0.353553
 heightArr[1]: 0.5
-heightArr[2]: 2.71371e-312
+heightArr[2]: 0
 cosineArr[0]: 0
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.1562e-311
+cosineArr[2]: 4.67964e-312
 height: 0.5
 normal: 
 0
@@ -1177,10 +1177,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: -nan
+heightArr[0]: 6.95321e-310
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 0
+cosineArr[0]: 6.32404e-322
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1191,10 +1191,10 @@ normal:
 
 neighbor[1]
 heightArr[0]: 0.353553
-heightArr[1]: 6.95321e-310
+heightArr[1]: 1.09621e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 6.95321e-310
+cosineArr[1]: 5.94855e-321
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 
@@ -1205,10 +1205,10 @@ normal:
 neighbor[2]
 heightArr[0]: 0.5
 heightArr[1]: 0.5
-heightArr[2]: 2.71371e-312
+heightArr[2]: 0
 cosineArr[0]: 0.707107
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.1562e-311
+cosineArr[2]: 4.67964e-312
 height: 0.353553
 normal: 
 -0
@@ -1353,10 +1353,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1370,7 +1370,7 @@ heightArr[0]: 0.5
 heightArr[1]: 0
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.15642e-311
+cosineArr[1]: 1.09621e-311
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -1379,17 +1379,17 @@ normal:
  1
 
 neighbor[2]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0
 heightArr[2]: 0
 cosineArr[0]: 1.58101e-322
 cosineArr[1]: 1.18576e-322
 cosineArr[2]: 9.88131e-324
-height: 1.1562e-311
+height: 1.09621e-311
 normal: 
 6.95321e-310
 1.58101e-322
- 1.1562e-311
+1.09621e-311
 
 --------------------------------------------------------------------------
 
@@ -1482,10 +1482,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -1498,13 +1498,13 @@ neighbor[1]
 heightArr[0]: 0.5
 heightArr[1]: 0
 heightArr[2]: 0.5
-cosineArr[0]: 1.1562e-311
-cosineArr[1]: 1.15642e-311
-cosineArr[2]: 1.1562e-311
-height: 4.85707e-318
+cosineArr[0]: 1.09621e-311
+cosineArr[1]: 1.09621e-311
+cosineArr[2]: 1.09621e-311
+height: 1.94277e-318
 normal: 
-5.68175e-322
-1.15642e-311
+1.10671e-321
+1.09643e-311
            1
 
 neighbor[2]
@@ -1611,10 +1611,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0
 cosineArr[2]: 6.95321e-310
 height: 0.5
@@ -1628,7 +1628,7 @@ heightArr[0]: 0.5
 heightArr[1]: 0
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.15642e-311
+cosineArr[1]: 1.09621e-311
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -1643,11 +1643,11 @@ heightArr[2]: 0
 cosineArr[0]: 1.58101e-322
 cosineArr[1]: 1.18576e-322
 cosineArr[2]: 9.88131e-324
-height: 1.1562e-311
+height: 1.09621e-311
 normal: 
           -0
 1.58101e-322
- 1.1562e-311
+1.09621e-311
 
 --------------------------------------------------------------------------
 
@@ -1740,10 +1740,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -1757,7 +1757,7 @@ heightArr[0]: 0.353553
 heightArr[1]: 0
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 1.15642e-311
+cosineArr[1]: 1.09621e-311
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 
@@ -1869,10 +1869,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1886,7 +1886,7 @@ heightArr[0]: 0.5
 heightArr[1]: 0
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.15642e-311
+cosineArr[1]: 1.09621e-311
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -1998,10 +1998,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0.707107
 cosineArr[2]: 6.95321e-310
 height: 0.5
@@ -2014,13 +2014,13 @@ neighbor[1]
 heightArr[0]: 0.5
 heightArr[1]: 0
 heightArr[2]: 0.5
-cosineArr[0]: 1.1562e-311
-cosineArr[1]: 1.15642e-311
-cosineArr[2]: 1.1562e-311
-height: 7.44739e-318
+cosineArr[0]: 1.09621e-311
+cosineArr[1]: 1.09621e-311
+cosineArr[2]: 1.09621e-311
+height: 3.56172e-318
 normal: 
-9.58487e-322
-1.15642e-311
+9.88131e-323
+1.09643e-311
            1
 
 neighbor[2]
@@ -2127,10 +2127,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0.707107
 cosineArr[2]: 6.95321e-310
 height: 0.5
@@ -2144,7 +2144,7 @@ heightArr[0]: 0.5
 heightArr[1]: 0
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.15642e-311
+cosineArr[1]: 1.09621e-311
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
@@ -2256,10 +2256,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.15642e-311
+heightArr[0]: 1.09621e-311
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.1562e-311
+cosineArr[0]: 1.09621e-311
 cosineArr[1]: 0.707107
 cosineArr[2]: 6.95321e-310
 height: 0.5
@@ -2273,7 +2273,7 @@ heightArr[0]: 0.353553
 heightArr[1]: 0
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 1.15642e-311
+cosineArr[1]: 1.09621e-311
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 

@@ -45,6 +45,32 @@ std::ostream& operator<<(std::ostream& os, const ElementParameters& param) {
 	return os << repr.str();
 }
 
+//################################################################# Element Builder Initialization ############################################################################
+
+void ElementBuilder::calculateElasticPlasticMatrix() {
+	double ni = simProps.ni;
+	double E = simProps.E;
+	double t = simProps.thickness;
+	De << 1, ni, 0,
+		ni, 1, 0,
+		0, 0, (1 - ni) / 2;
+	De *= E / (1 - ni * ni);
+	De *= t * t*t / 12;
+}
+
+void ElementBuilder::calculateHillPlasticStrainMatrix() {
+	double f = 0.5, g = 0.5, h = 0.5, n = 1.5; // set to values which calculate von mises yield criterion.
+	M << g + h, -h, 0,
+		-h, f + h, 0,
+		0, 0, 2 * n;
+}
+
+ElementBuilder::ElementBuilder(SimulationProperties const &_simProps) {
+	simProps = _simProps;
+	calculateElasticPlasticMatrix();
+	calculateHillPlasticStrainMatrix();
+}; 
+
 //################################################################# Element parameters Calculation ############################################################################
 
 void ElementBuilder::getUnitVectors(Element const &element, ElementParameters &elemParam) {
@@ -237,8 +263,8 @@ void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 	calculateBMatrix(element, elemParam, B);
 	calculateBmMatrix(elemParam, Bm); 
 
-	Kem = thickness * elemParam.area * Bm.transpose() * De * Bm;
-	element.Ke = thickness * elemParam.area * B.transpose() * De * B;
+	Kem = simProps.thickness * elemParam.area * Bm.transpose() * De * Bm;
+	element.Ke = simProps.thickness * elemParam.area * B.transpose() * De * B;
 	element.Ke.block(0, 0, 9, 9) += Kem;	
 
 #ifdef DEBUG

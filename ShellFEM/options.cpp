@@ -21,7 +21,7 @@ std::string getDateAndTime() {
 }
 
 
-SimulationProperties parse_arguments(int argc, char** argv) {
+void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobProperties &jobProps) {
 	try {
 		// Init
 		TCLAP::CmdLine cmd("Command description message", ' ', "0.9");
@@ -67,10 +67,9 @@ SimulationProperties parse_arguments(int argc, char** argv) {
 		std::cout << "viewerSwitch: " << viewerSwitch.getValue() << std::endl;
 
 		// Get the value parsed by each arg. 
-		SimulationProperties simProps(nameArg.getValue(), outputDirArg.getValue(), objPathArg.getValue(), forcesPathArg.getValue(), fixedPathArg.getValue(),
-			viewerSwitch.getValue(), youngModulusArg.getValue(), possionRatioArg.getValue(), thicknessArg.getValue());
+		jobProps = JobProperties(nameArg.getValue(), outputDirArg.getValue(), objPathArg.getValue(), forcesPathArg.getValue(), fixedPathArg.getValue(),	viewerSwitch.getValue());
+		simProps = SimulationProperties(youngModulusArg.getValue(), possionRatioArg.getValue(), thicknessArg.getValue());
 		
-		return simProps;
 	} catch (TCLAP::ArgException &e) { // catch exceptions
 		std::cerr << "error: " << e.error() << " for arg " << e.argId() << std::endl;
 		exit(1);

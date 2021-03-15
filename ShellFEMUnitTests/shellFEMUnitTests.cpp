@@ -73,14 +73,16 @@ namespace ShellFEMUnitTests
 			//std::cout << "FE" << std::endl << FE << std::endl;
 			//std::cout << "EF" << std::endl << EF << std::endl;
 
-			//FEMResults result;
+			FEMResults results;
 			//Perform_FEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, data, result);
-			FEMSimulation sim(Mesh(V, F, fixedNodes, clampedEdges), nodalForces);
-			sim.performFEM();
-			saveOBJ(sim.results.displacedVertices, F, outputObjPath);
+			SimulationProperties simProps;
+			ElementBuilder elemBuilder(simProps);
+			FEMSimulation sim;
+			sim.performFEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, elemBuilder, results);
+			saveOBJ(results.displacedVertices, F, outputObjPath);
 
 			Viewer viewer;
-			viewer.startView(sim.results.displacedVertices, F, sim.results.vonMisesStress);
+			viewer.startView(results.displacedVertices, F, results.vonMisesStress);
 			fclose(file);
 		}
 

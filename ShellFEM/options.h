@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "utils.h"
+#include "s3element.h"
 #include "fem.h"
 
-SimulationProperties parse_arguments(int argc, char** argv);
+void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobProperties &jobProps);

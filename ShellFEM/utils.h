@@ -30,6 +30,14 @@ struct Mesh {
 		V(V_), F(F_), fixedDOF(fixedDOF_), clampedEdges(clampedEdges){};
 }; 
 
+struct JobProperties {
+	std::string name, outDir, objPath, forcesPath, fixedPath;
+	bool startViewer;
+	JobProperties() {};
+	JobProperties(std::string name, std::string outDir, std::string objPath, std::string forcesPath, std::string fixedPath, bool startViewer) :
+		name(name), outDir(outDir), objPath(objPath), forcesPath(forcesPath), fixedPath(fixedPath), startViewer(startViewer) {};
+};
+
 std::vector<std::string> split_string_by_space(std::string s);
 vector3dList vector3d_from_txt(std::string path);
 IntList clamped_from_txt(std::string path);

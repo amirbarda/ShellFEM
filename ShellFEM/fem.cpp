@@ -23,7 +23,7 @@ int calcNbrOppositeVrtxIndx(Mesh const &mesh, int currNbrFace, int faceIdx, int 
 	return sumOfVertices - sumOfSharedVertices;
 }
 
-void FEMSimulation::setNbrsEnvelope(Element &currElement, IntList &verticesIndices, int faceIdx, MatrixXd &TT) {
+void FEMSimulation::setNbrsEnvelope(Mesh &mesh, Element &currElement, IntList &verticesIndices, int faceIdx, MatrixXd &TT) {
 	for (int vertexIdx = 0; vertexIdx < 3; vertexIdx++) {        
 		int currNbrFace = TT(faceIdx, vertexIdx);
 		if (currNbrFace == ABSENT_VERTEX) continue; //case: no neighbour face sharing edge j of current face i .
@@ -34,7 +34,7 @@ void FEMSimulation::setNbrsEnvelope(Element &currElement, IntList &verticesIndic
 	}
 }
 
-void FEMSimulation::addKeToK(Element &currElement, IntList &verticesIndices) {
+void FEMSimulation::addKeToK(Element &currElement, IntList &verticesIndices, MatrixXd &DOFTranslationMap, TriList &K_triplets) {
 	for (int row = 0; row < currElement.Ke.rows(); row++) {
 		int KRowVertexIdx = verticesIndices[(int)(row / 3)];
 		int KRowVertexAxis = row % 3;
@@ -62,7 +62,7 @@ void setFixedEdges(Element &currElement, VectorXi const &face, MatrixXd const &D
 }
 */
 
-Element FEMSimulation::createFaceElement(IntList &verticesIndices, int faceIdx) {
+Element FEMSimulation::createFaceElement(Mesh &mesh, IntList &verticesIndices, int faceIdx) {
 	Vector3d vertices[3];
 
 	for (int vertexIdx = 0; vertexIdx < 3; vertexIdx++) {
@@ -76,7 +76,7 @@ Element FEMSimulation::createFaceElement(IntList &verticesIndices, int faceIdx) 
 /**	1. TT  : #F by #3 adjacent matrix. Description:
 	   TT(i,j) = id of the neighbour triangle, that shares the j edge of triangle i .
 	For a triangle, the 1st edge is [0,1] , the 2nd edge is [1,2] , the 3rd edge [2,3]. */
-void FEMSimulation::calculateGlobalStiffnessMatrix() {
+void FEMSimulation::calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_triplets, ElementBuilder &elementBuilder) {
 	MatrixXd TT; 
 	MatrixXd TTi; // we don't use it.
 
@@ -84,39 +84,21 @@ void FEMSimulation::calculateGlobalStiffnessMatrix() {
 
 	for (int faceIdx = 0; faceIdx < mesh.F.rows(); faceIdx++) {
 		IntList verticesIndices(6, ABSENT_VERTEX);
-		Element currElement = createFaceElement(verticesIndices, faceIdx);
+		Element currElement = createFaceElement(mesh, verticesIndices, faceIdx);
 		//setFixedEdges(currElement, mesh.F.row(faceIdx), DOFTranslationMap); // TODO: need to set according to new input file
-		setNbrsEnvelope(currElement, verticesIndices, faceIdx, TT);
+		setNbrsEnvelope(mesh, currElement, verticesIndices, faceIdx, TT);
 		//if (!elementHasDOF(verticesIndices, DOFTranslationMap)) continue; // skip // FIXME
 
 		elementBuilder.calculateStiffnessMatrix(currElement);
-		addKeToK(currElement, verticesIndices);
+		addKeToK(currElement, verticesIndices, DOFTranslationMap, K_triplets);
 	}
-}
-
-void calculateElasticPlasticMatrix(Eigen::Matrix<double, 3, 3> &De, SimulationProperties const &simProps) {
-	double ni = simProps.ni;
-	double E = simProps.E;
-	double t = simProps.thickness;
-	De <<  1,   ni,  0,
-		   ni,  1,   0,
-		   0,   0,   (1 - ni) / 2;
-	De *= E / (1 - ni*ni);
-	De *= t*t*t / 12; 
-}
-
-void calculateHillPlasticStrainMatrix(Eigen::Matrix<double, 3, 3> &M, SimulationProperties const &simProps) {
-	double f = 0.5, g = 0.5, h = 0.5, n = 1.5; // set to values which calculate von mises yield criterion.
-	M << g + h, -h, 0,
-		-h, f + h, 0,
-		0, 0, 2 * n;
 }
 
 /*
 * for each vertex keep the index of DOF for Ux,Uy,Uz.
 * Ux = Map[v][0], Uy = Map[v][1], Uz = Map[v][2]
 */
-void FEMSimulation::createDOFTranslationMap() {
+void FEMSimulation::createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap) {
 	DOFTranslationMap = MatrixXd::Constant(mesh.V.rows(), 3, FIXED_NODE);
 
 	int j = 0, offset = 0;
@@ -138,7 +120,7 @@ void FEMSimulation::createDOFTranslationMap() {
 	}
 }
 
-void FEMSimulation::preproccessForSolver(SparseMat &K, MatrixXd &forces) {
+void FEMSimulation::preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces) {
 	int numOfDOF = 0; // TODO
 
 	for (int i = 0; i < DOFTranslationMap.rows(); i++) { // need to save this as class parameter
@@ -168,12 +150,12 @@ void FEMSimulation::preproccessForSolver(SparseMat &K, MatrixXd &forces) {
 	std::cout << "Force Vector:" << std::endl << forces << std::endl;
 }
 
-bool FEMSimulation::solveSparseEquation() {
+bool FEMSimulation::solveSparseEquation(MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces, FEMResults &results) {
 	SparseMat K;								// Global Stiffness Matrix.
 	MatrixXd forces;							// Forces vector for solver
 	Eigen::ConjugateGradient<SparseMat> solver; // solve K*U = F. 
 	
-	preproccessForSolver(K, forces);
+	preproccessForSolver(K, forces, DOFTranslationMap, K_triplets, nodalForces);
 
 	solver.compute(K);
 	results.displacements = solver.solve(forces);
@@ -189,7 +171,7 @@ bool FEMSimulation::solveSparseEquation() {
 }
 
 // TODO: should keep vertices in element in a matrix of size |V|x6
-void FEMSimulation::calcStressFromDisplacements() { // FIXME : not the same result as before
+void FEMSimulation::calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, ElementBuilder &elementBuilder, FEMResults &results) { // FIXME : not the same result as before
 	Eigen::Matrix<double, 18, 1> elementDisplacements;
 	MatrixXd TT;
 	MatrixXd TTi; // we don't use it.
@@ -200,8 +182,8 @@ void FEMSimulation::calcStressFromDisplacements() { // FIXME : not the same resu
 
 	for (int faceIdx = 0; faceIdx < mesh.F.rows(); faceIdx++) {
 		IntList verticesIndices(6, ABSENT_VERTEX);
-		Element currElement = createFaceElement(verticesIndices, faceIdx);
-		setNbrsEnvelope(currElement, verticesIndices, faceIdx, TT);
+		Element currElement = createFaceElement(mesh, verticesIndices, faceIdx);
+		setNbrsEnvelope(mesh, currElement, verticesIndices, faceIdx, TT);
 		//if (!elementHasDOF(verticesIndices, DOFTranslationMap)) continue; // skip // FIXME
 		
 		elementDisplacements = Eigen::MatrixXd::Zero(18, 1);
@@ -220,7 +202,7 @@ void FEMSimulation::calcStressFromDisplacements() { // FIXME : not the same resu
 	}
 }
 
-void FEMSimulation::getDisplacedMesh() {
+void FEMSimulation::getDisplacedMesh(Mesh &mesh, MatrixXd &DOFTranslationMap, FEMResults &results) {
 	results.displacedVertices = mesh.V;
 
 	for (int vertexIdx = 0; vertexIdx < mesh.V.rows(); vertexIdx++) {
@@ -233,7 +215,7 @@ void FEMSimulation::getDisplacedMesh() {
 	}
 }
 
-void FEMSimulation::printSummary() {
+void FEMSimulation::printSummary(Mesh &mesh, FEMResults &results) {
 	//TODO print num of dof
 	std::cout << "Num of Vertices: " << mesh.V.rows() << std::endl;
 	std::cout << "Num of Triangles: " << mesh.F.rows() << std::endl;
@@ -242,31 +224,24 @@ void FEMSimulation::printSummary() {
 	std::cout << "Von-Mises Stress:" << std::endl << results.vonMisesStress << std::endl;
 }
 
-void FEMSimulation::init() {
-	Eigen::Matrix<double, 3, 3> De;				// Elastic Plastic Behavior Matrix
-	Eigen::Matrix<double, 3, 3> M;				// Hill's Plastic Strain Matrix
-
-	calculateElasticPlasticMatrix(De, simProps);
-	calculateHillPlasticStrainMatrix(M, simProps);
-	elementBuilder = ElementBuilder(De, M, simProps.thickness);
-	createDOFTranslationMap();
-}
-
 // TODO : sould run remove_duplicates before?
-void FEMSimulation::performFEM() {
-	init();
+bool FEMSimulation::performFEM(Mesh &mesh, vector3dList const &nodalForces, ElementBuilder &elementBuilder, FEMResults &results) {
+	MatrixXd DOFTranslationMap;					// [|V|x3] matrix of mapping of vertex Ux,Uy,Uz to dof #
+	TriList K_triplets;							// List used to init the sparse global stiffness matrix
+
+	createDOFTranslationMap(mesh, DOFTranslationMap);
 	std::cout << "Beginnig Assembly Of Stiffness Matrix." << std::endl;
-	calculateGlobalStiffnessMatrix();
+	calculateGlobalStiffnessMatrix(mesh, DOFTranslationMap, K_triplets, elementBuilder);
 
 	std::cout << "Beginnig Solve" << std::endl;
-	if (solveSparseEquation()) {
-		return; // fail
+	if (solveSparseEquation(DOFTranslationMap,K_triplets, nodalForces, results)) {
+		return true; // fail
 	}
 
-	calcStressFromDisplacements();
-	getDisplacedMesh();
-	printSummary();
+	calcStressFromDisplacements(mesh, DOFTranslationMap, elementBuilder, results);
+	getDisplacedMesh(mesh, DOFTranslationMap, results);
+	printSummary(mesh, results);
 
-	return;
+	return false;
 }
 

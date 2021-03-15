@@ -25,11 +25,12 @@ void startProgramGUI() {
 	Eigen::MatrixXi FN;
 
 	FEMResults result;
+	JobProperties jobProps;
 	SimulationProperties simProps;
-	std::string saveObjPath = simProps.outDir + "/" + simProps.name + ".obj";
+	std::string saveObjPath = jobProps.outDir + "/" + jobProps.name + ".obj";
 	//FEMData data(simProps.E, simProps.ni, simProps.thickness);
 
-	igl::readOBJ(simProps.objPath, V, TC, N, F, FTC, FN);
+	igl::readOBJ(jobProps.objPath, V, TC, N, F, FTC, FN);
 	//auto nodalForces = nodal_forces_from_txt(simProps.forcesPath);
 	//auto fixedNodes = fixed_nodes_from_txt(simProps.fixedPath);
 

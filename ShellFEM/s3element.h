@@ -6,6 +6,17 @@
 
 #define NXT(i) ((i + 1) % 3)	// next index in counter-clockwise direction with relation to normal
 #define PRV(i) ((i + 2) % 3)	// previous index in counter-clockwise direction with relation to normal
+#define DEFAULT_YOUNG_CNST		70e9
+#define DEFAULT_POSSION_CNST	0.3
+#define DEFAULT_THICKNESS_CNST	1.6e-3
+
+struct SimulationProperties {
+	double E; //Young's Modulus
+	double ni; //Possion's Ratio
+	double thickness;
+	SimulationProperties() : E(DEFAULT_YOUNG_CNST), ni(DEFAULT_POSSION_CNST), thickness(DEFAULT_THICKNESS_CNST) {};
+	SimulationProperties(double E, double ni, double thickness) : E(E), ni(ni), thickness(thickness) {};
+};
 
 /**
 	Data Structure For Representing S3 Triangle Element 
@@ -67,8 +78,10 @@ class ElementBuilder {
 private:					
 	Eigen::Matrix<double, 3, 3> De; // Elastic Plastic Behavior Matrix
 	Eigen::Matrix<double, 3, 3> M;  // Hill's plastic strain matrix
-	double thickness;				// Shell thickness
+	SimulationProperties simProps;
 	
+	void calculateElasticPlasticMatrix();
+	void calculateHillPlasticStrainMatrix();
 	void getUnitVectors(Element const &element, ElementParameters &elemParam);
 	void calculateParameters(Element const &element, ElementParameters &elemParam);
 	void buildRMatrix(ElementParameters const &elemParam, Eigen::Matrix<double, 3, 3> &R);		// TODO change these methods names
@@ -81,8 +94,7 @@ private:
 	void calculateBmMatrix(ElementParameters const &elemParam, Eigen::Matrix<double, 3, 9> &Bm);
 	void calculateBMatrix(Element &element, ElementParameters const &elemParam, Eigen::Matrix<double, 3, 18> &B);
 public:
-	ElementBuilder() {};
-	ElementBuilder(Eigen::Matrix<double, 3, 3> const &_De, Eigen::Matrix<double, 3, 3> const &_M, double _thickness) : De(_De), M(_M), thickness(_thickness) {};
+	ElementBuilder(SimulationProperties const &_simProps);
 	void calculateStiffnessMatrix(Element &element);
 	void calculateVonMisesStress(Element &element, Eigen::Matrix<double, 18, 1> const globalDisplacement);
 };
