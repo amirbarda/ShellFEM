@@ -8,7 +8,7 @@ struct FEMResults {
 	MatrixXd displacedVertices;
 };
 
-class FEMSimulation {
+class FEMSimulation { // TODO maybe change back to be not a class..
 private:
 	void createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap);
 	void calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_triplets, ElementBuilder &elementBuilder);
@@ -23,5 +23,5 @@ private:
 	void printSummary(Mesh &mesh, FEMResults &results);
 public:
 	FEMSimulation() {};
-	bool performFEM(Mesh &mesh, vector3dList const &nodalForces, ElementBuilder &elementBuilder, FEMResults &results);
+	bool performFEM(Mesh &mesh, vector3dList const &nodalForces, SimulationProperties &simProps, FEMResults &results);
 };

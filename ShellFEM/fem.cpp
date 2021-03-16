@@ -225,7 +225,8 @@ void FEMSimulation::printSummary(Mesh &mesh, FEMResults &results) {
 }
 
 // TODO : sould run remove_duplicates before?
-bool FEMSimulation::performFEM(Mesh &mesh, vector3dList const &nodalForces, ElementBuilder &elementBuilder, FEMResults &results) {
+bool FEMSimulation::performFEM(Mesh &mesh, vector3dList const &nodalForces, SimulationProperties &simProps, FEMResults &results) {
+	ElementBuilder elementBuilder(simProps);
 	MatrixXd DOFTranslationMap;					// [|V|x3] matrix of mapping of vertex Ux,Uy,Uz to dof #
 	TriList K_triplets;							// List used to init the sparse global stiffness matrix
 

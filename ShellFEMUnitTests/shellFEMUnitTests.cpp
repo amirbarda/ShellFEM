@@ -76,9 +76,8 @@ namespace ShellFEMUnitTests
 			FEMResults results;
 			//Perform_FEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, data, result);
 			SimulationProperties simProps;
-			ElementBuilder elemBuilder(simProps);
 			FEMSimulation sim;
-			sim.performFEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, elemBuilder, results);
+			sim.performFEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, simProps, results);
 			saveOBJ(results.displacedVertices, F, outputObjPath);
 
 			Viewer viewer;
