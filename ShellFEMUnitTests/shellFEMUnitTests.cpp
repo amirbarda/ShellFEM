@@ -69,15 +69,14 @@ namespace ShellFEMUnitTests
 			//for (auto e : clampedEdges) std::cout << "clamped: " << e << std::endl;
 			Eigen::MatrixXi EV, FE, EF;
 			igl::edge_topology(V, F, EV, FE, EF);
-			//std::cout << "EV" << std::endl << EV << std::endl;
-			//std::cout << "FE" << std::endl << FE << std::endl;
-			//std::cout << "EF" << std::endl << EF << std::endl;
+			std::cout << "EV" << std::endl << EV << std::endl;
+			std::cout << "FE" << std::endl << FE << std::endl;
+			std::cout << "EF" << std::endl << EF << std::endl;
 
 			FEMResults results;
 			//Perform_FEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, data, result);
 			SimulationProperties simProps;
-			FEMSimulation sim;
-			sim.performFEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, simProps, results);
+			performFEM(Mesh(V, F, fixedNodes, clampedEdges), nodalForces, simProps, results);
 			saveOBJ(results.displacedVertices, F, outputObjPath);
 
 			Viewer viewer;

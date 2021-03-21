@@ -676,6 +676,6 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      Creating library C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.lib and object C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.exp
   Generating code
-  All 19673 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 19679 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ShellFEMUnitTests.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.dll

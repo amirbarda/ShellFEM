@@ -17,13 +17,13 @@ bool elementHasDOF(IntList &verticesIndices, MatrixXd const &DOFTranslationMap) 
 }
 */
 
-int FEMSimulation::calcNbrOppositeVrtxIndx(Mesh const &mesh, int currNbrFace, int faceIdx, int vertex) {
+int calcNbrOppositeVrtxIndx(Mesh const &mesh, int currNbrFace, int faceIdx, int vertex) {
 	int sumOfVertices = mesh.F.row(currNbrFace).sum();
 	int sumOfSharedVertices = mesh.F(faceIdx, vertex) + mesh.F(faceIdx, (vertex + 1) % 3);
 	return sumOfVertices - sumOfSharedVertices;
 }
 
-void FEMSimulation::setNbrsEnvelope(Mesh &mesh, Element &currElement, IntList &verticesIndices, int faceIdx, MatrixXd &TT) {
+void setNbrsEnvelope(Mesh &mesh, Element &currElement, IntList &verticesIndices, int faceIdx, MatrixXd &TT) {
 	for (int vertexIdx = 0; vertexIdx < 3; vertexIdx++) {        
 		int currNbrFace = TT(faceIdx, vertexIdx);
 		if (currNbrFace == ABSENT_VERTEX) continue; //case: no neighbour face sharing edge j of current face i .
@@ -34,7 +34,7 @@ void FEMSimulation::setNbrsEnvelope(Mesh &mesh, Element &currElement, IntList &v
 	}
 }
 
-void FEMSimulation::addKeToK(Element &currElement, IntList &verticesIndices, MatrixXd &DOFTranslationMap, TriList &K_triplets) {
+void addKeToK(Element &currElement, IntList &verticesIndices, MatrixXd &DOFTranslationMap, TriList &K_triplets) {
 	for (int row = 0; row < currElement.Ke.rows(); row++) {
 		int KRowVertexIdx = verticesIndices[(int)(row / 3)];
 		int KRowVertexAxis = row % 3;
@@ -62,7 +62,7 @@ void setFixedEdges(Element &currElement, VectorXi const &face, MatrixXd const &D
 }
 */
 
-Element FEMSimulation::createFaceElement(Mesh &mesh, IntList &verticesIndices, int faceIdx) {
+Element createFaceElement(Mesh &mesh, IntList &verticesIndices, int faceIdx) {
 	Vector3d vertices[3];
 
 	for (int vertexIdx = 0; vertexIdx < 3; vertexIdx++) {
@@ -76,7 +76,7 @@ Element FEMSimulation::createFaceElement(Mesh &mesh, IntList &verticesIndices, i
 /**	1. TT  : #F by #3 adjacent matrix. Description:
 	   TT(i,j) = id of the neighbour triangle, that shares the j edge of triangle i .
 	For a triangle, the 1st edge is [0,1] , the 2nd edge is [1,2] , the 3rd edge [2,3]. */
-void FEMSimulation::calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_triplets, ElementBuilder &elementBuilder) {
+void calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_triplets, ElementBuilder &elementBuilder) {
 	MatrixXd TT; 
 	MatrixXd TTi; // we don't use it.
 
@@ -98,7 +98,7 @@ void FEMSimulation::calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTran
 * for each vertex keep the index of DOF for Ux,Uy,Uz.
 * Ux = Map[v][0], Uy = Map[v][1], Uz = Map[v][2]
 */
-void FEMSimulation::createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap) {
+void createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap) {
 	DOFTranslationMap = MatrixXd::Constant(mesh.V.rows(), 3, FIXED_NODE);
 
 	int j = 0, offset = 0;
@@ -120,7 +120,7 @@ void FEMSimulation::createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslation
 	}
 }
 
-void FEMSimulation::preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces) {
+void preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces) {
 	int numOfDOF = 0; // TODO
 
 	for (int i = 0; i < DOFTranslationMap.rows(); i++) { // need to save this as class parameter
@@ -150,7 +150,7 @@ void FEMSimulation::preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixX
 	std::cout << "Force Vector:" << std::endl << forces << std::endl;
 }
 
-bool FEMSimulation::solveSparseEquation(MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces, FEMResults &results) {
+bool solveSparseEquation(MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces, FEMResults &results) {
 	SparseMat K;								// Global Stiffness Matrix.
 	MatrixXd forces;							// Forces vector for solver
 	Eigen::ConjugateGradient<SparseMat> solver; // solve K*U = F. 
@@ -171,7 +171,7 @@ bool FEMSimulation::solveSparseEquation(MatrixXd &DOFTranslationMap, TriList &K_
 }
 
 // TODO: should keep vertices in element in a matrix of size |V|x6
-void FEMSimulation::calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, ElementBuilder &elementBuilder, FEMResults &results) { // FIXME : not the same result as before
+void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, ElementBuilder &elementBuilder, FEMResults &results) { // FIXME : not the same result as before
 	Eigen::Matrix<double, 18, 1> elementDisplacements;
 	MatrixXd TT;
 	MatrixXd TTi; // we don't use it.
@@ -202,7 +202,7 @@ void FEMSimulation::calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTransla
 	}
 }
 
-void FEMSimulation::getDisplacedMesh(Mesh &mesh, MatrixXd &DOFTranslationMap, FEMResults &results) {
+void getDisplacedMesh(Mesh &mesh, MatrixXd &DOFTranslationMap, FEMResults &results) {
 	results.displacedVertices = mesh.V;
 
 	for (int vertexIdx = 0; vertexIdx < mesh.V.rows(); vertexIdx++) {
@@ -215,7 +215,7 @@ void FEMSimulation::getDisplacedMesh(Mesh &mesh, MatrixXd &DOFTranslationMap, FE
 	}
 }
 
-void FEMSimulation::printSummary(Mesh &mesh, FEMResults &results) {
+void printSummary(Mesh &mesh, FEMResults &results) {
 	//TODO print num of dof
 	std::cout << "Num of Vertices: " << mesh.V.rows() << std::endl;
 	std::cout << "Num of Triangles: " << mesh.F.rows() << std::endl;
@@ -225,7 +225,7 @@ void FEMSimulation::printSummary(Mesh &mesh, FEMResults &results) {
 }
 
 // TODO : sould run remove_duplicates before?
-bool FEMSimulation::performFEM(Mesh &mesh, vector3dList const &nodalForces, SimulationProperties &simProps, FEMResults &results) {
+bool performFEM(Mesh &mesh, vector3dList const &nodalForces, SimulationProperties &simProps, FEMResults &results) {
 	ElementBuilder elementBuilder(simProps);
 	MatrixXd DOFTranslationMap;					// [|V|x3] matrix of mapping of vertex Ux,Uy,Uz to dof #
 	TriList K_triplets;							// List used to init the sparse global stiffness matrix
