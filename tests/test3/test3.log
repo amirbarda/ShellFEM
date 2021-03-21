@@ -41,7 +41,27 @@ EF
  6 -1
 -1  5
 -1  7
+clamped: 
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 Beginnig Assembly Of Stiffness Matrix.
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -78,18 +98,18 @@ vertices[2]: 0.5
 centroid: 0.666667
 0.833333
        0
-neighborExists[0]: 1
+neighborExists[0]: 0
 neighborExists[1]: 1
-neighborExists[2]: 0
-neighborVertices[0]:   0
+neighborExists[2]: 1
+neighborVertices[0]: 1.10671e-321
+1.43277e-311
+ 4.3722e-312
+neighborVertices[1]:   0
 0.5
   0
-neighborVertices[1]:   1
+neighborVertices[2]:   1
 0.5
   0
-neighborVertices[2]: 1.10671e-321
-1.77864e-322
-6.95334e-310
 
 --------------------------------------------------------------------------
 Element: 
@@ -121,10 +141,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 8.71331e-310
+heightArr[1]: 4.3722e-312
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 4.3722e-312
+cosineArr[1]: 4.37131e-312
+cosineArr[2]: 1.43277e-311
+height: 4.3722e-312
+normal: 
+6.32404e-322
+9.88131e-324
+1.97626e-322
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -133,31 +166,18 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
  1
-
-neighbor[2]
-heightArr[0]: 4.40999e-312
-heightArr[1]: 4.40999e-312
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 4.40999e-312
-cosineArr[1]: 4.40961e-312
-cosineArr[2]: 6.95334e-310
-height: 4.40999e-312
-normal: 
-6.95334e-310
-           0
-           0
 
 --------------------------------------------------------------------------
 
@@ -199,6 +219,9 @@ Ke:
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
            0            0    -0.226855            0            0     0.226855            0            0    -0.445309            0            0            0            0            0     0.109227            0            0     0.336082
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -236,16 +259,16 @@ centroid: 0.833333
 0.666667
        0
 neighborExists[0]: 1
-neighborExists[1]: 0
-neighborExists[2]: 1
+neighborExists[1]: 1
+neighborExists[2]: 0
 neighborVertices[0]: 0.5
-  0
-  0
-neighborVertices[1]:   1
-0.5
-  0
-neighborVertices[2]: 0.5
   1
+  0
+neighborVertices[1]: 0.5
+  0
+  0
+neighborVertices[2]:   1
+0.5
   0
 
 --------------------------------------------------------------------------
@@ -278,10 +301,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.353553
+normal: 
+-0
+ 0
+ 1
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -290,30 +326,17 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
- 1
-
-neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
-cosineArr[2]: 6.95334e-310
-height: 0.353553
-normal: 
--0
- 0
  1
 
 --------------------------------------------------------------------------
@@ -356,6 +379,9 @@ Ke:
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -393,16 +419,16 @@ centroid: 0.166667
 0.833333
        0
 neighborExists[0]: 0
-neighborExists[1]: 1
-neighborExists[2]: 0
+neighborExists[1]: 0
+neighborExists[2]: 1
 neighborVertices[0]: 0.5
-  0
+  1
   0
 neighborVertices[1]: 0.5
-0.5
+  0
   0
 neighborVertices[2]: 0.5
-  1
+0.5
   0
 
 --------------------------------------------------------------------------
@@ -435,10 +461,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.353553
+normal: 
+-0
+ 0
+ 1
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -447,30 +486,17 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
- 1
-
-neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
-cosineArr[2]: 6.95334e-310
-height: 0.353553
-normal: 
--0
- 0
  1
 
 --------------------------------------------------------------------------
@@ -513,6 +539,9 @@ Ke:
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
            0            0    -0.336082            0            0     0.336082            0            0    -0.336082            0            0            0            0            0            0            0            0     0.336082
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -553,12 +582,12 @@ neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
 neighborVertices[0]: 0
-0
-0
-neighborVertices[1]: 1
 1
 0
-neighborVertices[2]: 0
+neighborVertices[1]: 0
+0
+0
+neighborVertices[2]: 1
 1
 0
 
@@ -592,10 +621,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.353553
+normal: 
+-0
+ 0
+ 1
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -604,31 +646,18 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.353553
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 
 0
 0
 1
-
-neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
-cosineArr[2]: 6.95334e-310
-height: 0.353553
-normal: 
--0
- 0
- 1
 
 --------------------------------------------------------------------------
 
@@ -670,6 +699,9 @@ Ke:
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
            0            0    -0.168041            0            0   -0.0504123            0            0  4.51028e-17            0            0     0.109227            0            0    0.0252062            0            0    0.0840205
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -709,14 +741,14 @@ centroid: 0.666667
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 0
+neighborVertices[0]: 1
+1
 0
-0
-neighborVertices[1]: 1
+neighborVertices[1]: 0
 0
 0
 neighborVertices[2]: 1
-1
+0
 0
 
 --------------------------------------------------------------------------
@@ -749,10 +781,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 0.353553
+heightArr[1]: 0.5
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 0
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.5
+normal: 
+0
+0
+1
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -761,31 +806,18 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
  1
-
-neighbor[2]
-heightArr[0]: 0.353553
-heightArr[1]: 0.5
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 0
-cosineArr[1]: 0.707107
-cosineArr[2]: 6.95334e-310
-height: 0.5
-normal: 
-0
-0
-1
 
 --------------------------------------------------------------------------
 
@@ -827,6 +859,9 @@ Ke:
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
            0            0    -0.336082            0            0     0.117629            0            0    -0.336082            0            0     0.109227            0            0     0.109227            0            0     0.336082
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -863,18 +898,18 @@ vertices[2]: 1
 centroid: 0.833333
 0.166667
        0
-neighborExists[0]: 0
+neighborExists[0]: 1
 neighborExists[1]: 0
-neighborExists[2]: 1
-neighborVertices[0]: 0
-0
-0
-neighborVertices[1]: 1
-0
-0
-neighborVertices[2]: 0.5
+neighborExists[2]: 0
+neighborVertices[0]: 0.5
 0.5
   0
+neighborVertices[1]: 0
+0
+0
+neighborVertices[2]: 1
+0
+0
 
 --------------------------------------------------------------------------
 Element: 
@@ -906,10 +941,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.353553
+normal: 
+-0
+ 0
+ 1
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -918,30 +966,17 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
- 1
-
-neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
-cosineArr[2]: 6.95334e-310
-height: 0.353553
-normal: 
--0
- 0
  1
 
 --------------------------------------------------------------------------
@@ -984,6 +1019,9 @@ Ke:
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -1020,17 +1058,17 @@ vertices[2]: 0
 centroid: 0.166667
 0.333333
        0
-neighborExists[0]: 0
-neighborExists[1]: 1
+neighborExists[0]: 1
+neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 0
-0
-0
-neighborVertices[1]: 0.5
-  0
-  0
-neighborVertices[2]: 0.5
+neighborVertices[0]: 0.5
   1
+  0
+neighborVertices[1]: 0
+0
+0
+neighborVertices[2]: 0.5
+  0
   0
 
 --------------------------------------------------------------------------
@@ -1063,10 +1101,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 0.353553
+heightArr[1]: 0.5
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 0
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.5
+normal: 
+0
+0
+1
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1075,31 +1126,18 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
  1
-
-neighbor[2]
-heightArr[0]: 0.353553
-heightArr[1]: 0.5
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 0
-cosineArr[1]: 0.707107
-cosineArr[2]: 6.95334e-310
-height: 0.5
-normal: 
-0
-0
-1
 
 --------------------------------------------------------------------------
 
@@ -1141,6 +1179,9 @@ Ke:
            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0            0
            0            0    -0.445309            0            0     0.226855            0            0    -0.226855            0            0     0.109227            0            0            0            0            0     0.336082
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -1177,16 +1218,16 @@ vertices[2]: 0.5
 centroid: 0.333333
 0.166667
        0
-neighborExists[0]: 0
-neighborExists[1]: 1
+neighborExists[0]: 1
+neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 0
-0
-0
-neighborVertices[1]:   1
+neighborVertices[0]:   0
 0.5
   0
-neighborVertices[2]:   0
+neighborVertices[1]: 0
+0
+0
+neighborVertices[2]:   1
 0.5
   0
 
@@ -1220,10 +1261,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 4.39253e-312
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 4.37183e-312
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.353553
+normal: 
+-0
+ 0
+ 1
+
+neighbor[1]
+heightArr[0]: 4.3722e-312
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.05139e-313
+cosineArr[0]: 8.71331e-310
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1232,31 +1286,18 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.353553
-heightArr[1]: 4.40999e-312
+heightArr[1]: 6.95334e-310
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 1.06969e-311
+cosineArr[1]: 4.3722e-312
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 
 0
 0
 1
-
-neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 4.40999e-312
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
-cosineArr[2]: 6.95334e-310
-height: 0.353553
-normal: 
--0
- 0
- 1
 
 --------------------------------------------------------------------------
 
@@ -1340,6 +1381,9 @@ Force Vector:
 -1
 # Iterations: 7
 Estimated Error: 8.56911e-17
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -1396,10 +1440,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
+heightArr[0]: 1.43277e-311
+heightArr[1]: 6.95334e-310
+heightArr[2]: 0
+cosineArr[0]: 1.43277e-311
+cosineArr[1]: 0
+cosineArr[2]: 0
+height: 1.43299e-311
+normal: 
+3.95253e-323
+3.95253e-323
+3.95253e-323
+
+neighbor[1]
+heightArr[0]: 1.43299e-311
 heightArr[1]: 0.5
 heightArr[2]: 0.353553
-cosineArr[0]: 1.06969e-311
+cosineArr[0]: 0
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1408,31 +1465,18 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 0
+heightArr[1]: 1.43277e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06949e-311
+cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
  1
-
-neighbor[2]
-heightArr[0]: 1.58101e-322
-heightArr[1]: 1.06969e-311
-heightArr[2]: 1.06969e-311
-cosineArr[0]: 0
-cosineArr[1]: 0
-cosineArr[2]: 1.58101e-322
-height: 0
-normal: 
-1.06969e-311
-1.06969e-311
-6.95334e-310
 
 --------------------------------------------------------------------------
 
@@ -1469,6 +1513,9 @@ Stress:
 -25.5584
 vonMisesStress: 137817
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -1525,10 +1572,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 0
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 0
+height: 0.353553
+normal: 
+-0
+ 0
+ 1
+
+neighbor[1]
+heightArr[0]: 1.43299e-311
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.06969e-311
+cosineArr[0]: 0
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -1537,31 +1597,18 @@ normal:
 0
 1
 
-neighbor[1]
-heightArr[0]: 1.06991e-311
-heightArr[1]: 0
-heightArr[2]: 0.5
-cosineArr[0]: 0.707107
-cosineArr[1]: 1.06949e-311
-cosineArr[2]: 1.06969e-311
-height: 0.353553
-normal: 
-6.95334e-310
-3.43221e-317
-7.95446e-322
-
 neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 1.06969e-311
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
+heightArr[0]: 1.58101e-322
+heightArr[1]: 1.43277e-311
+heightArr[2]: 0.5
+cosineArr[0]: 0
+cosineArr[1]: 0
 cosineArr[2]: 1.58101e-322
 height: 0.353553
 normal: 
--0
- 0
- 1
+1.43277e-311
+1.43277e-311
+           1
 
 --------------------------------------------------------------------------
 
@@ -1598,6 +1645,9 @@ Stress:
  25.5584
 vonMisesStress: 137817
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -1654,43 +1704,43 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
-heightArr[1]: 0.353553
-heightArr[2]: 0.5
-cosineArr[0]: 1.06969e-311
-cosineArr[1]: 0
-cosineArr[2]: 0.707107
-height: 0.5
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 0
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 0
+height: 0.353553
 normal: 
-0
-0
-1
+-0
+ 0
+ 1
 
 neighbor[1]
+heightArr[0]: 1.43299e-311
+heightArr[1]: 0.353553
+heightArr[2]: 0.5
+cosineArr[0]: 0
+cosineArr[1]: 0
+cosineArr[2]: 1.43277e-311
+height: 0.5
+normal: 
+6.95334e-310
+1.94277e-317
+2.71736e-322
+
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 0
+heightArr[1]: 1.43277e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06949e-311
+cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
  1
-
-neighbor[2]
-heightArr[0]: 1.58101e-322
-heightArr[1]: 1.06969e-311
-heightArr[2]: 1.06969e-311
-cosineArr[0]: 0
-cosineArr[1]: 0
-cosineArr[2]: 1.58101e-322
-height: 0.353553
-normal: 
-1.06969e-311
-1.06969e-311
-           1
 
 --------------------------------------------------------------------------
 
@@ -1727,6 +1777,9 @@ Stress:
 -103.737
 vonMisesStress: 192778
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -1783,10 +1836,23 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
+heightArr[0]: 0.5
+heightArr[1]: 0.5
+heightArr[2]: 0
+cosineArr[0]: 0.707107
+cosineArr[1]: 0.707107
+cosineArr[2]: 0
+height: 0.353553
+normal: 
+-0
+ 0
+ 1
+
+neighbor[1]
+heightArr[0]: 1.43299e-311
 heightArr[1]: 0.353553
 heightArr[2]: 0.5
-cosineArr[0]: 1.06969e-311
+cosineArr[0]: 0
 cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
@@ -1795,31 +1861,18 @@ normal:
 0
 1
 
-neighbor[1]
+neighbor[2]
 heightArr[0]: 0.353553
-heightArr[1]: 0
+heightArr[1]: 1.43277e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 1.06949e-311
+cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 
 0
 0
 1
-
-neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 1.06969e-311
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
-cosineArr[2]: 1.58101e-322
-height: 0.353553
-normal: 
--0
- 0
- 1
 
 --------------------------------------------------------------------------
 
@@ -1856,6 +1909,9 @@ Stress:
  103.737
 vonMisesStress: 91432.3
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -1912,10 +1968,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
+heightArr[0]: 0.353553
 heightArr[1]: 0.5
-heightArr[2]: 0.353553
-cosineArr[0]: 1.06969e-311
+heightArr[2]: 0
+cosineArr[0]: 0
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -1925,30 +1981,30 @@ normal:
 1
 
 neighbor[1]
+heightArr[0]: 1.43299e-311
+heightArr[1]: 0.5
+heightArr[2]: 0.353553
+cosineArr[0]: 0
+cosineArr[1]: 0.707107
+cosineArr[2]: 0
+height: 0.5
+normal: 
+0
+0
+1
+
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 0
+heightArr[1]: 1.43277e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06949e-311
+cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
  1
-
-neighbor[2]
-heightArr[0]: 0.353553
-heightArr[1]: 0.5
-heightArr[2]: 1.06969e-311
-cosineArr[0]: 0
-cosineArr[1]: 0.707107
-cosineArr[2]: 1.58101e-322
-height: 0.5
-normal: 
-0
-0
-1
 
 --------------------------------------------------------------------------
 
@@ -1985,6 +2041,9 @@ Stress:
 -103.737
 vonMisesStress: 91432.3
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -2041,43 +2100,43 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
-heightArr[1]: 0.5
-heightArr[2]: 0.353553
-cosineArr[0]: 1.06969e-311
-cosineArr[1]: 0.707107
-cosineArr[2]: 0
-height: 0.5
-normal: 
-0
-0
-1
-
-neighbor[1]
-heightArr[0]: 1.06991e-311
-heightArr[1]: 0
-heightArr[2]: 0.5
-cosineArr[0]: 0.707107
-cosineArr[1]: 1.06949e-311
-cosineArr[2]: 1.06969e-311
-height: 0.353553
-normal: 
-6.95334e-310
-3.01128e-317
- 7.5098e-322
-
-neighbor[2]
 heightArr[0]: 0.5
 heightArr[1]: 0.5
-heightArr[2]: 1.06969e-311
+heightArr[2]: 0
 cosineArr[0]: 0.707107
 cosineArr[1]: 0.707107
-cosineArr[2]: 1.58101e-322
+cosineArr[2]: 0
 height: 0.353553
 normal: 
 -0
  0
  1
+
+neighbor[1]
+heightArr[0]: 1.43299e-311
+heightArr[1]: 0.5
+heightArr[2]: 0.353553
+cosineArr[0]: 0
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.5
+normal: 
+6.95334e-310
+9.06644e-318
+5.92879e-323
+
+neighbor[2]
+heightArr[0]: 1.58101e-322
+heightArr[1]: 1.43277e-311
+heightArr[2]: 0.5
+cosineArr[0]: 0
+cosineArr[1]: 0
+cosineArr[2]: 1.58101e-322
+height: 0.353553
+normal: 
+1.43277e-311
+1.43277e-311
+           1
 
 --------------------------------------------------------------------------
 
@@ -2114,6 +2173,9 @@ Stress:
  103.737
 vonMisesStress: 192778
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.9  0.8
  0.8  0.1  0.2
@@ -2170,10 +2232,10 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
+heightArr[0]: 0.353553
 heightArr[1]: 0.5
-heightArr[2]: 0.353553
-cosineArr[0]: 1.06969e-311
+heightArr[2]: 0
+cosineArr[0]: 0
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
 height: 0.5
@@ -2183,30 +2245,30 @@ normal:
 1
 
 neighbor[1]
+heightArr[0]: 1.43299e-311
+heightArr[1]: 0.5
+heightArr[2]: 0.353553
+cosineArr[0]: 0
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.5
+normal: 
+6.95334e-310
+8.09506e-318
+1.14129e-321
+
+neighbor[2]
 heightArr[0]: 0.5
-heightArr[1]: 0
+heightArr[1]: 1.43277e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0.707107
-cosineArr[1]: 1.06949e-311
+cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.353553
 normal: 
  0
 -0
  1
-
-neighbor[2]
-heightArr[0]: 0.353553
-heightArr[1]: 0.5
-heightArr[2]: 1.06969e-311
-cosineArr[0]: 0
-cosineArr[1]: 0.707107
-cosineArr[2]: 1.58101e-322
-height: 0.5
-normal: 
-0
-0
-1
 
 --------------------------------------------------------------------------
 
@@ -2243,6 +2305,9 @@ Stress:
 -181.916
 vonMisesStress: 137817
 --------------------------------------------------------------------------
+clamped 0: 0
+clamped 1: 0
+clamped 2: 0
 R: 
  0.2  0.8  0.9
  0.8  0.2  0.1
@@ -2299,43 +2364,43 @@ area: 0.125
 --------------------------------------------------------------------------
 Neighbors: 
 neighbor[0]
-heightArr[0]: 1.06969e-311
+heightArr[0]: 0.5
 heightArr[1]: 0.5
-heightArr[2]: 0.353553
-cosineArr[0]: 1.06969e-311
+heightArr[2]: 0
+cosineArr[0]: 0.707107
 cosineArr[1]: 0.707107
 cosineArr[2]: 0
-height: 0.5
+height: 0.353553
 normal: 
-0
-0
-1
+-0
+ 0
+ 1
 
 neighbor[1]
+heightArr[0]: 1.43299e-311
+heightArr[1]: 0.5
+heightArr[2]: 0.353553
+cosineArr[0]: 0
+cosineArr[1]: 0.707107
+cosineArr[2]: 1.43277e-311
+height: 0.5
+normal: 
+6.95334e-310
+1.61925e-318
+7.80624e-322
+
+neighbor[2]
 heightArr[0]: 0.353553
-heightArr[1]: 0
+heightArr[1]: 1.43277e-311
 heightArr[2]: 0.5
 cosineArr[0]: 0
-cosineArr[1]: 1.06949e-311
+cosineArr[1]: 0
 cosineArr[2]: 0.707107
 height: 0.5
 normal: 
 0
 0
 1
-
-neighbor[2]
-heightArr[0]: 0.5
-heightArr[1]: 0.5
-heightArr[2]: 1.06969e-311
-cosineArr[0]: 0.707107
-cosineArr[1]: 0.707107
-cosineArr[2]: 1.58101e-322
-height: 0.353553
-normal: 
--0
- 0
- 1
 
 --------------------------------------------------------------------------
 

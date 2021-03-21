@@ -4,31 +4,29 @@
 #include "utils.h"
 
 void runInBatchMode(int argc, char** argv) {
-	Eigen::MatrixXd V;
-	Eigen::MatrixXd TC;
-	Eigen::MatrixXd N;
-	Eigen::MatrixXi F;
-	Eigen::MatrixXi FTC;
-	Eigen::MatrixXi FN;
+	Eigen::MatrixXd V, TC, N;
+	Eigen::MatrixXi F, FTC, FN, EV, FE, EF;
 
-	FEMResults result;
+	FEMResults results;
 	JobProperties jobProps;
 	SimulationProperties simProps;
 	
 	parse_arguments(argc, argv, simProps, jobProps);
 	std::string saveObjPath = jobProps.outDir + "/" + jobProps.name + ".obj";
-	//FEMData data(simProps.E, simProps.ni, simProps.thickness);
 
 	igl::readOBJ(jobProps.objPath, V, TC, N, F, FTC, FN);
-	//auto nodalForces = nodal_forces_from_txt(simProps.forcesPath);
-	//auto fixedNodes = fixed_nodes_from_txt(simProps.fixedPath);
+	igl::edge_topology(V, F, EV, FE, EF);
+	auto nodalForces = vector3d_from_txt(jobProps.forcesPath);
+	auto fixedNodes = vector3d_from_txt(jobProps.fixedPath);
+	auto isEdgeClamped = clamped_from_txt(jobProps.clampedPath, EV.rows());
 
-	//Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
-	saveOBJ(result.displacedVertices, F, saveObjPath);
+	Mesh mesh(V, F, EV, FE, fixedNodes, isEdgeClamped);
+	performFEM(mesh, nodalForces, simProps, results);
+	saveOBJ(results.displacedVertices, F, saveObjPath);
 
 	if (jobProps.startViewer) {
 		Viewer viewer;
-		viewer.startView(result.displacedVertices, F, result.vonMisesStress);
+		viewer.startView(results.displacedVertices, F, results.vonMisesStress);
 	}
 }
 

@@ -36,11 +36,14 @@ void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobP
 		TCLAP::ValueArg<std::string> objPathArg("f", "obj_path", "Path of input obj", true, " ", "string");
 		cmd.add(objPathArg);
 
-		TCLAP::ValueArg<std::string> forcesPathArg("c", "forces_path", "Path of forces file", true, " ", "string");
+		TCLAP::ValueArg<std::string> forcesPathArg("q", "forces_path", "Path of forces file", true, " ", "string");
 		cmd.add(forcesPathArg);
 
 		TCLAP::ValueArg<std::string> fixedPathArg("x", "fixed_path", "Path of fixed nodes file", true, " ", "string");
 		cmd.add(fixedPathArg);
+
+		TCLAP::ValueArg<std::string> clampedPathArg("c", "clamped_path", "Path of clamped edges file", true, " ", "string");
+		cmd.add(clampedPathArg);
 
 		TCLAP::ValueArg<double> youngModulusArg("e", "young_modulus", "Value of Young's Modulus", false, DEFAULT_YOUNG_CNST, "double");
 		cmd.add(youngModulusArg);
@@ -61,13 +64,14 @@ void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobP
 		std::cout << "objPathArg: " << objPathArg.getValue() << std::endl;
 		std::cout << "forcesPathArg: " << forcesPathArg.getValue() << std::endl;
 		std::cout << "fixedPathArg: " << fixedPathArg.getValue() << std::endl;
+		std::cout << "clampedPathArg: " << fixedPathArg.getValue() << std::endl;
 		std::cout << "youngModulusArg: " << youngModulusArg.getValue() << std::endl;
 		std::cout << "possionRatioArg: " << possionRatioArg.getValue() << std::endl;
 		std::cout << "thicknessArg: " << thicknessArg.getValue() << std::endl;
 		std::cout << "viewerSwitch: " << viewerSwitch.getValue() << std::endl;
 
 		// Get the value parsed by each arg. 
-		jobProps = JobProperties(nameArg.getValue(), outputDirArg.getValue(), objPathArg.getValue(), forcesPathArg.getValue(), fixedPathArg.getValue(),	viewerSwitch.getValue());
+		jobProps = JobProperties(nameArg.getValue(), outputDirArg.getValue(), objPathArg.getValue(), forcesPathArg.getValue(), fixedPathArg.getValue(), clampedPathArg.getValue(), viewerSwitch.getValue());
 		simProps = SimulationProperties(youngModulusArg.getValue(), possionRatioArg.getValue(), thicknessArg.getValue());
 		
 	} catch (TCLAP::ArgException &e) { // catch exceptions

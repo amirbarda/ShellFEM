@@ -7,6 +7,7 @@
 
 #define ABSENT_VERTEX -1
 #define FIXED_NODE	  -1
+#define NO_NIGHBOR    -1
 
 /*
 bool elementHasDOF(IntList &verticesIndices, MatrixXd const &DOFTranslationMap) {
@@ -17,20 +18,20 @@ bool elementHasDOF(IntList &verticesIndices, MatrixXd const &DOFTranslationMap) 
 }
 */
 
-int calcNbrOppositeVrtxIndx(Mesh const &mesh, int currNbrFace, int faceIdx, int vertex) {
-	int sumOfVertices = mesh.F.row(currNbrFace).sum();
-	int sumOfSharedVertices = mesh.F(faceIdx, vertex) + mesh.F(faceIdx, (vertex + 1) % 3);
+int calcNbrOppositeVrtxIndx(Mesh const &mesh, int nbrFaceIdx, int faceIdx, int edgeIdx) {
+	int sumOfVertices = mesh.F.row(nbrFaceIdx).sum();
+	int sumOfSharedVertices = mesh.F(faceIdx, edgeIdx) + mesh.F(faceIdx, (edgeIdx + 1) % 3);
 	return sumOfVertices - sumOfSharedVertices;
 }
 
 void setNbrsEnvelope(Mesh &mesh, Element &currElement, IntList &verticesIndices, int faceIdx, MatrixXd &TT) {
-	for (int vertexIdx = 0; vertexIdx < 3; vertexIdx++) {        
-		int currNbrFace = TT(faceIdx, vertexIdx);
-		if (currNbrFace == ABSENT_VERTEX) continue; //case: no neighbour face sharing edge j of current face i .
+	for (int edgeIdx = 0; edgeIdx < 3; edgeIdx++) {
+		int nbrFaceIdx = TT(faceIdx, edgeIdx);
+		if (nbrFaceIdx == NO_NIGHBOR) continue; //case: no neighbour face sharing edge at index edgeIdx.
 
-		int currNbrOppositeVrtxIndx = calcNbrOppositeVrtxIndx(mesh, currNbrFace, faceIdx, vertexIdx);
-		currElement.setNeighbour(mesh.V.row(currNbrOppositeVrtxIndx), (vertexIdx + 2) % 3);
-		verticesIndices[3 + vertexIdx] = currNbrOppositeVrtxIndx;
+		int currNbrOppositeVrtxIndx = calcNbrOppositeVrtxIndx(mesh, nbrFaceIdx, faceIdx, edgeIdx);
+		currElement.setNeighbour(mesh.V.row(currNbrOppositeVrtxIndx), edgeIdx);
+		verticesIndices[3 + edgeIdx] = currNbrOppositeVrtxIndx;
 	}
 }
 
@@ -51,16 +52,12 @@ void addKeToK(Element &currElement, IntList &verticesIndices, MatrixXd &DOFTrans
 	}
 }
 
-/*
-void setFixedEdges(Element &currElement, VectorXi const &face, MatrixXd const &DOFTranslationMap) {
-	for (int vertexIdx = 0; vertexIdx < 3; vertexIdx++) {
-		int vertex = face(vertexIdx);
-		if (DOFTranslationMap[vertex] == FIXED_NODE) {
-			currElement.setFixedNode(vertexIdx); 
-		}
+void setClampedEdges(Mesh &mesh, Element &currElement, int faceIdx) {
+	for (int i = 0; i < 3; i++) {
+		int edge = mesh.FE(faceIdx, i);
+		currElement.isEdgeClamped[i] = mesh.isEdgeClamped[edge];
 	}
 }
-*/
 
 Element createFaceElement(Mesh &mesh, IntList &verticesIndices, int faceIdx) {
 	Vector3d vertices[3];
@@ -85,7 +82,7 @@ void calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTranslationMap, Tri
 	for (int faceIdx = 0; faceIdx < mesh.F.rows(); faceIdx++) {
 		IntList verticesIndices(6, ABSENT_VERTEX);
 		Element currElement = createFaceElement(mesh, verticesIndices, faceIdx);
-		//setFixedEdges(currElement, mesh.F.row(faceIdx), DOFTranslationMap); // TODO: need to set according to new input file
+		setClampedEdges(mesh, currElement, faceIdx); 
 		setNbrsEnvelope(mesh, currElement, verticesIndices, faceIdx, TT);
 		//if (!elementHasDOF(verticesIndices, DOFTranslationMap)) continue; // skip // FIXME
 
@@ -96,7 +93,7 @@ void calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTranslationMap, Tri
 
 /*
 * for each vertex keep the index of DOF for Ux,Uy,Uz.
-* Ux = Map[v][0], Uy = Map[v][1], Uz = Map[v][2]
+* Ux(v) = Map[v][0], Uy(v) = Map[v][1], Uz(v) = Map[v][2]
 */
 void createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap) {
 	DOFTranslationMap = MatrixXd::Constant(mesh.V.rows(), 3, FIXED_NODE);
@@ -183,6 +180,7 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 	for (int faceIdx = 0; faceIdx < mesh.F.rows(); faceIdx++) {
 		IntList verticesIndices(6, ABSENT_VERTEX);
 		Element currElement = createFaceElement(mesh, verticesIndices, faceIdx);
+		setClampedEdges(mesh, currElement, faceIdx);
 		setNbrsEnvelope(mesh, currElement, verticesIndices, faceIdx, TT);
 		//if (!elementHasDOF(verticesIndices, DOFTranslationMap)) continue; // skip // FIXME
 		

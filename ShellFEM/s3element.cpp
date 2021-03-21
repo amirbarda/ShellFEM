@@ -88,7 +88,6 @@ void ElementBuilder::getUnitVectors(Element const &element, ElementParameters &e
 
 void ElementBuilder::calculateParameters(Element const &element, ElementParameters &elemParam) {	
 	
-	double length;
 	std::pair<double, Eigen::Vector3d> areaVector;
 	Eigen::Vector3d centroid;
 	Eigen::Vector2d planeVertices[3]; //needs to be 3d?
@@ -100,27 +99,23 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 	}
 	
 	for (int i=0; i<3; i++) {
-		//length = (element.vertices[NXT(i)] - element.vertices[PRV(i)]).norm();
-		length = (element.vertices[NXT(NXT(i))] - element.vertices[NXT(i)]).norm();
-		
 		// Element Fields
-		//elemParam.c[i] = + (planeVertices[PRV(i)][Y] - planeVertices[NXT(i)][Y]) / length;
-		elemParam.c[i] = +(planeVertices[NXT(NXT(i))][Y] - planeVertices[NXT(i)][Y]) / length;
-		//elemParam.s[i] = - (planeVertices[PRV(i)][X] - planeVertices[NXT(i)][X]) / length;
-		elemParam.s[i] = -(planeVertices[NXT(NXT(i))][X] - planeVertices[NXT(i)][X]) / length;
+		double length = (element.vertices[NXT(i)] - element.vertices[PRV(i)]).norm();
+		elemParam.c[i] = + (planeVertices[PRV(i)][Y] - planeVertices[NXT(i)][Y]) / length;
+		elemParam.s[i] = - (planeVertices[PRV(i)][X] - planeVertices[NXT(i)][X]) / length;
 		elemParam.cosine[i] = getCosOfAngle(element.vertices[i], element.vertices[NXT(i)], element.vertices[PRV(i)]);
 		elemParam.heights[i] = 2 * elemParam.area / length;
 
 		// Neighbor Fields
 		if (element.neighborExists[i]) {
-			areaVector = getAreaVector(element.neighborVertices[i], element.vertices[PRV(i)], element.vertices[NXT(i)]);
+			areaVector = getAreaVector(element.neighborVertices[i], element.vertices[NXT(i)], element.vertices[i]);
 			double neighborArea = areaVector.first;
 			elemParam.neighborParam[i].normal = areaVector.second;
-			elemParam.neighborParam[i].cosineArr[PRV(i)] = getCosOfAngle(element.vertices[PRV(i)], element.vertices[NXT(i)], element.neighborVertices[i]);
-			elemParam.neighborParam[i].cosineArr[NXT(i)] = getCosOfAngle(element.vertices[NXT(i)], element.vertices[PRV(i)], element.neighborVertices[i]);
-			elemParam.neighborParam[i].height = 2 * neighborArea / length;
-			elemParam.neighborParam[i].heightArr[PRV(i)] = 2 * neighborArea / (element.vertices[NXT(i)] - element.neighborVertices[i]).norm();
-			elemParam.neighborParam[i].heightArr[NXT(i)] = 2 * neighborArea / (element.vertices[PRV(i)] - element.neighborVertices[i]).norm();
+			elemParam.neighborParam[i].cosineArr[i] = getCosOfAngle(element.vertices[i], element.neighborVertices[i], element.vertices[NXT(i)]);
+			elemParam.neighborParam[i].cosineArr[NXT(i)] = getCosOfAngle(element.vertices[NXT(i)], element.vertices[i], element.neighborVertices[i]);
+			elemParam.neighborParam[i].height = 2 * neighborArea / (element.vertices[NXT(i)] - element.vertices[i]).norm();
+			elemParam.neighborParam[i].heightArr[i] = 2 * neighborArea / (element.vertices[NXT(i)] - element.neighborVertices[i]).norm();
+			elemParam.neighborParam[i].heightArr[NXT(i)] = 2 * neighborArea / (element.vertices[i] - element.neighborVertices[i]).norm();
 		}
 	}
 }
@@ -137,8 +132,8 @@ void ElementBuilder::buildHMatrix(Element const &element, ElementParameters cons
 	double tmp[3];			// Temps
 
 	for (int i = 0; i < 3; i++) {
-		if (element.neighborExists[i])
-			tmp[i] = -2 / (elemParam.heights[i] + elemParam.neighborParam[i].height);
+		if (element.neighborExists[NXT(i)])
+			tmp[i] = -2 / (elemParam.heights[i] + elemParam.neighborParam[NXT(i)].height);
 		else tmp[i] = -1 / (elemParam.heights[i]);
 	}
 	
@@ -194,19 +189,23 @@ void ElementBuilder::buildCMatrix(Element const &element, ElementParameters cons
 	buildCMatrixElementRow(row[1], elemParam, 2, 0, 1, 0, 2, 1);
 	buildCMatrixElementRow(row[2], elemParam, 1, 0, 2, 0, 1, 2);
 
-	if (element.neighborExists[2])
-		buildCMatrixNeighborRow(row[3], elemParam.neighborParam[2], 1, 0, 0, 1, 3);
-	else if (element.isEdgeFixed[2]) row[3] = row[2];
-	else row[3] = -row[2];
+	std::cout << "clamped 0: " << element.isEdgeClamped[0] << std::endl;
+	std::cout << "clamped 1: " << element.isEdgeClamped[1] << std::endl;
+	std::cout << "clamped 2: " << element.isEdgeClamped[2] << std::endl;
 
 	if (element.neighborExists[0])
-		buildCMatrixNeighborRow(row[4], elemParam.neighborParam[0], 2, 1, 1, 2, 4);
-	else if (element.isEdgeFixed[0]) row[4] = row[0];
-	else row[4] = -row[0];
+		buildCMatrixNeighborRow(row[3], elemParam.neighborParam[0], 1, 0, 0, 1, 3);
+	else if (element.isEdgeClamped[0]) row[3] = row[2];
+	else row[3] = -row[2];
 
 	if (element.neighborExists[1])
-		buildCMatrixNeighborRow(row[5], elemParam.neighborParam[1], 2, 0, 0, 2, 5);
-	else if (element.isEdgeFixed[1]) row[5] = row[1];
+		buildCMatrixNeighborRow(row[4], elemParam.neighborParam[1], 2, 1, 1, 2, 4);
+	else if (element.isEdgeClamped[1]) row[4] = row[0];
+	else row[4] = -row[0];
+
+	if (element.neighborExists[2])
+		buildCMatrixNeighborRow(row[5], elemParam.neighborParam[2], 2, 0, 0, 2, 5);
+	else if (element.isEdgeClamped[2]) row[5] = row[1];
 	else row[5] = -row[1];
 
 	for (int i = 0; i < 6; i++) {

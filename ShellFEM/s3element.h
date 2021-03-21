@@ -19,23 +19,23 @@ struct SimulationProperties {
 };
 
 /**
-	Data Structure For Representing S3 Triangle Element 
+	Data Structure For Representing S3 Triangle Element.
+	For Face with vertices [0,1,2] we order edges/neighbors according to [(0,1), (1,2), (2,0)].
+	i.e. neighbor 0 is sharing the edge (0,1) with the element.
 */
 struct Element {
-	Vector3d vertices[3];					// List of vertices (x,y,z)
-	bool neighborExists[3];					// Sometimes there is no neighbor
-	bool isEdgeFixed[3];					// Some edges need to be set as clamped.
-	bool isVertexFixed[3];					// Some vertices are fixed and cannot move.
-	Vector3d neighborVertices[3];			// List of neighbor vertices (x,y,z). Neighbor at the opposite side of vertex i or vector3d
-	Eigen::Matrix<double, 18, 18> Ke;		// Element Stiffness Matrix
-	double vonMisesStress;					// Von Mises yield criterion calculated from dispositions
+	Vector3d vertices[3];					// List of vertices (x,y,z).
+	bool neighborExists[3];					// Sometimes there is no neighbor.
+	bool isEdgeClamped[3];					// Some edges need to be set as clamped.
+	Vector3d neighborVertices[3];			// List of neighbor vertices (x,y,z).
+	Eigen::Matrix<double, 18, 18> Ke;		// Element Stiffness Matrix.
+	double vonMisesStress;					// Von Mises yield criterion calculated from displacements.
 
 	Element(Vector3d _vertices[]) {
 		for (int i = 0; i < 3; i++) {
 			vertices[i] = _vertices[i];
 			neighborExists[i] = false;
-			isEdgeFixed[i] = false;
-			isVertexFixed[i] = false;
+			isEdgeClamped[i] = false;
 		}
 	}
 
@@ -44,11 +44,6 @@ struct Element {
 		neighborVertices[i] = v;
 	}
 
-	void setFixedNode(int i) { // set edge as fixed if both vertices are
-		isVertexFixed[i] = true;
-		if (isVertexFixed[NXT(i)]) isEdgeFixed[PRV(i)] = true;
-		if (isVertexFixed[PRV(i)]) isEdgeFixed[NXT(i)] = true;	
-	}
 };
 
 /**

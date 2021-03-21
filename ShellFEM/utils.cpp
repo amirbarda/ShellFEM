@@ -17,28 +17,28 @@ vector3dList vector3d_from_txt(std::string path) {
 		indexedVector3d iVec;
 		auto tokens = split_string_by_space(line);
 		iVec.first = std::stod(tokens[0]);
-		iVec.second = Eigen::Vector3d(std::stod(tokens[1]), std::stod(tokens[2]), std::stod(tokens[3]));
+		iVec.second = Vector3d(std::stod(tokens[1]), std::stod(tokens[2]), std::stod(tokens[3]));
 		iVecList.push_back(iVec);
 	}
 	inFile.close();
 	return iVecList;
 }
 
-IntList clamped_from_txt(std::string path) {
-	IntList clampedEdges;
+BoolList clamped_from_txt(std::string path, int edgeCount) {
+	BoolList isEdgeClamped(edgeCount, false);
 	std::ifstream inFile(path);
 	std::string line;
 	while (std::getline(inFile, line)) {
 		auto tokens = split_string_by_space(line);
-		clampedEdges.push_back(std::stod(tokens[0]));
+		isEdgeClamped[std::stoi(tokens[0])] = true;
 	}
 	inFile.close();
-	return clampedEdges;
+	return isEdgeClamped;
 }
 
-Eigen::VectorXd vonmises_from_txt(std::string path, int nodeNum) {
+VectorXd vonmises_from_txt(std::string path, int nodeNum) {
 	//get results
-	Eigen::VectorXd stresses(nodeNum);
+	VectorXd stresses(nodeNum);
 	std::ifstream results(path);
 	std::string line;
 	std::string delimiter = " ";
@@ -52,11 +52,11 @@ Eigen::VectorXd vonmises_from_txt(std::string path, int nodeNum) {
 	return stresses;
 }
 
-Eigen::MatrixXd displacements_from_txt(std::string path, int nodeNum) {
+MatrixXd displacements_from_txt(std::string path, int nodeNum) {
 	std::string line;
 	std::ifstream results_disp;
 	std::string delimiter = " ";
-	Eigen::MatrixXd displacements(nodeNum,3);
+	MatrixXd displacements(nodeNum,3);
 	results_disp.open(path);
 	while (getline(results_disp, line)) {
 		int node_id = std::stoi(line.substr(0, line.find(delimiter)));
@@ -72,7 +72,7 @@ Eigen::MatrixXd displacements_from_txt(std::string path, int nodeNum) {
 	return displacements;
 }
 
-void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath) {
+void saveOBJ(MatrixXd &V, MatrixXi &F, std::string filepath) {
 	std::ofstream file;
 	file.open(filepath);
 	for (int i = 0; i < V.rows(); i++) {

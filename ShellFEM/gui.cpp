@@ -17,25 +17,6 @@ void Viewer::startView(Eigen::MatrixXd const &V, Eigen::MatrixXi const &F, Vecto
 }
 
 void startProgramGUI() {
-	Eigen::MatrixXd V;
-	Eigen::MatrixXd TC;
-	Eigen::MatrixXd N;
-	Eigen::MatrixXi F;
-	Eigen::MatrixXi FTC;
-	Eigen::MatrixXi FN;
-
-	FEMResults result;
-	JobProperties jobProps;
-	SimulationProperties simProps;
-	std::string saveObjPath = jobProps.outDir + "/" + jobProps.name + ".obj";
-	//FEMData data(simProps.E, simProps.ni, simProps.thickness);
-
-	igl::readOBJ(jobProps.objPath, V, TC, N, F, FTC, FN);
-	//auto nodalForces = nodal_forces_from_txt(simProps.forcesPath);
-	//auto fixedNodes = fixed_nodes_from_txt(simProps.fixedPath);
-
-	//Perform_FEM(Mesh(V, F, fixedNodes), nodalForces, data, result);
-	saveOBJ(result.displacedVertices, F, saveObjPath);
-
+	std::cout << "Not implemented yet" << std::endl;
 	// TODO : add imgui and call startView
 }
