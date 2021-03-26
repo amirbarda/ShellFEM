@@ -34,3 +34,6 @@
 x64/**/*
 ShellFEM/x64/**/*
 ShellFEMUnitTests/x64/**/*
+
+# Log
+*.log
