@@ -7,6 +7,7 @@
 #include <igl\readOBJ.h>
 #include <igl\writeOBJ.h>
 #include <igl\edge_topology.h>
+#include <igl\remove_duplicate_vertices.h>
 #include <iostream>
 #include <fstream>
 
@@ -57,12 +58,12 @@ namespace ShellFEMUnitTests
 			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
 			igl::edge_topology(V, F, EV, FE, EF);
 			auto nodalForces = vector3d_from_txt(nodalForcesPath);
-			auto fixedNodes = vector3d_from_txt(fixedNodesPath);
+			auto freeDOF = vector3d_from_txt(fixedNodesPath);
 			auto isEdgeClamped = clamped_from_txt(clamedEdgesPath, EV.rows());
 
 			FEMResults results;
 			SimulationProperties simProps;
-			Mesh mesh(V, F, EV, FE, fixedNodes, isEdgeClamped);
+			Mesh mesh(V, F, EV, FE, freeDOF, isEdgeClamped);
 			performFEM(mesh, nodalForces, simProps, results);
 			saveOBJ(results.displacedVertices, F, outputObjPath);
 
@@ -85,17 +86,57 @@ namespace ShellFEMUnitTests
 			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
 			igl::edge_topology(V, F, EV, FE, EF);
 			auto nodalForces = vector3d_from_txt(nodalForcesPath);
-			auto fixedNodes = vector3d_from_txt(fixedNodesPath);
+			auto freeDOF = vector3d_from_txt(fixedNodesPath);
 			auto isEdgeClamped = clamped_from_txt(clamedEdgesPath, EV.rows());
 
 			FEMResults results;
 			SimulationProperties simProps(6.825e7, DEFAULT_POSSION_CNST, 0.04);
-			Mesh mesh(V, F, EV, FE, fixedNodes, isEdgeClamped);
+			Mesh mesh(V, F, EV, FE, freeDOF, isEdgeClamped);
 			performFEM(mesh, nodalForces, simProps, results);
 			saveOBJ(results.displacedVertices, F, outputObjPath);
 
 			Viewer viewer;
 			viewer.startView(results.displacedVertices, F, results.vonMisesStress);
+			fclose(file);
+		}
+
+		TEST_METHOD(Perform_FEM_test13) {
+			Eigen::MatrixXd V, TC, N, SV;
+			Eigen::MatrixXi F, FTC, FN, EV, FE, EF, SVI, SVJ, SF;
+			std::string stlPath = "..\\..\\tests\\test13\\remeshed_surface.STL";
+			std::string outputObjPath = "..\\..\\tests\\test13\\surface_out.obj";
+			std::string stdoutPath = "..\\..\\tests\\test13\\test13.log";
+			std::string nodalForcesPath = "..\\..\\tests\\test13\\load_nodes.txt";
+			std::string fixedNodesPath = "..\\..\\tests\\test13\\fixed_nodes.txt";
+			std::string clamedEdgesPath = "..\\..\\tests\\test13\\clamped_edges.txt";
+			FILE *stlFile = fopen(stlPath.c_str(), "rb"); 
+			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+
+			igl::readSTL(stlFile, V, F, N);
+			fclose(stlFile);
+			igl::remove_duplicate_vertices(V, F, 1e-7, SV, SVI, SVJ, SF);
+			igl::edge_topology(SV, SF, EV, FE, EF);
+			saveOBJ(SV, SF, "..\\..\\tests\\test13\\surface.obj");
+			auto nodalForces = vector3d_from_txt(nodalForcesPath);
+			auto freeDOF = vector3d_from_txt(fixedNodesPath);
+			auto isEdgeClamped = clamped_from_txt(clamedEdgesPath, EV.rows());
+
+			for (auto e : nodalForces) {
+				e.first = SVJ(e.first - 1) + 1;
+			}
+			for (auto e : freeDOF) {
+				e.first = SVJ(e.first - 1) + 1;
+			}
+			// TODO : isEdgeClamped
+
+			FEMResults results;
+			SimulationProperties simProps(6.825e7, DEFAULT_POSSION_CNST, 0.04);
+			Mesh mesh(SV, SF, EV, FE, freeDOF, isEdgeClamped);
+			performFEM(mesh, nodalForces, simProps, results);
+			saveOBJ(results.displacedVertices, SF, outputObjPath);
+
+			Viewer viewer;
+			viewer.startView(results.displacedVertices, SF, results.vonMisesStress);
 			fclose(file);
 		}
 
