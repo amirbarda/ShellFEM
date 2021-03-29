@@ -99,14 +99,14 @@ void createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap) {
 	DOFTranslationMap = MatrixXd::Constant(mesh.V.rows(), 3, FIXED_NODE);
 
 	int j = 0, offset = 0;
-	for (int i = 0; i < mesh.fixedDOF.size(); i++) {
-		int vertexIdx = mesh.fixedDOF[i].first - 1;
+	for (int i = 0; i < mesh.freeDOF.size(); i++) {
+		int vertexIdx = mesh.freeDOF[i].first - 1;
 		for (; j < vertexIdx; j++) {
 			DOFTranslationMap.row(j) = Vector3d(offset, offset+1, offset+2);
 			offset += 3;
 		}
 		for (int k = 0; k < 3; k++) {
-			if (!mesh.fixedDOF[i].second(k)) // TODO: should be 1 or 0? what make smore sense? maybe reanme as freeDOF.
+			if (mesh.freeDOF[i].second(k)) 
 				DOFTranslationMap(j, k) = offset++;
 		}
 		j++;
@@ -175,7 +175,7 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 
 	igl::triangle_triangle_adjacency(mesh.F, TT, TTi);
 	
-	results.vonMisesStress = VectorXd::Zero(mesh.F.rows());
+	results.vonMisesStress = MatrixXd::Zero(mesh.F.rows(), 1);
 
 	for (int faceIdx = 0; faceIdx < mesh.F.rows(); faceIdx++) {
 		IntList verticesIndices(6, ABSENT_VERTEX);
@@ -196,7 +196,7 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 		}
 
 		elementBuilder.calculateVonMisesStress(currElement, elementDisplacements);
-		results.vonMisesStress(faceIdx) = currElement.vonMisesStress;
+		results.vonMisesStress(faceIdx, 0) = currElement.vonMisesStress;
 	}
 }
 

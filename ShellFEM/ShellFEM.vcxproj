@@ -123,6 +123,7 @@
     <ClCompile Include="fem.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="gui.cpp" />
+    <ClCompile Include="job.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="options.cpp" />
@@ -133,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="fem.h" />
     <ClInclude Include="gui.h" />
+    <ClInclude Include="job.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="options.h" />
     <ClInclude Include="s3element.h" />

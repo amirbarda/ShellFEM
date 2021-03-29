@@ -5,6 +5,7 @@
 #include <ctime>
 
 #include "options.h"
+#include "job.h"
 
 std::string getDateAndTime() {
 	time_t rawtime;
@@ -56,6 +57,8 @@ void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobP
 
 		TCLAP::SwitchArg viewerSwitch("g", "gui", "start viewer", cmd, false);
 
+		TCLAP::SwitchArg formatSwitch("y", "is_stl", "True if file type is in STL format, else OBJ format", cmd, false);
+
 		// Parse the argv array.
 		cmd.parse(argc, argv);
 
@@ -69,9 +72,14 @@ void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobP
 		std::cout << "possionRatioArg: " << possionRatioArg.getValue() << std::endl;
 		std::cout << "thicknessArg: " << thicknessArg.getValue() << std::endl;
 		std::cout << "viewerSwitch: " << viewerSwitch.getValue() << std::endl;
+		std::cout << "fileTypeArg: " << formatSwitch.getValue() << std::endl;
+
+		FileFormat format = OBJ_T;
+		if (formatSwitch.getValue() == true) format = STL_T;
 
 		// Get the value parsed by each arg. 
-		jobProps = JobProperties(nameArg.getValue(), outputDirArg.getValue(), objPathArg.getValue(), forcesPathArg.getValue(), fixedPathArg.getValue(), clampedPathArg.getValue(), viewerSwitch.getValue());
+		jobProps = JobProperties(nameArg.getValue(), outputDirArg.getValue(), objPathArg.getValue(), forcesPathArg.getValue(), fixedPathArg.getValue(),
+									clampedPathArg.getValue(), viewerSwitch.getValue(), format);
 		simProps = SimulationProperties(youngModulusArg.getValue(), possionRatioArg.getValue(), thicknessArg.getValue());
 		
 	} catch (TCLAP::ArgException &e) { // catch exceptions

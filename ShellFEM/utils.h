@@ -26,19 +26,11 @@ struct Mesh {
 	MatrixXi F;
 	MatrixXi EV; //Ex2 matrix storing the edge description as pair of indices to
 	MatrixXi FE; //Fx3 matrix storing the Triangle - Edge relation
-	vector3dList fixedDOF;
+	vector3dList freeDOF; // todo if 1 so has dof
 	BoolList isEdgeClamped; // list of size |E|, for each edge true iff edge is clamped 
-	Mesh(MatrixXd &V, MatrixXi &F, MatrixXi &EV, MatrixXi &FE, vector3dList &fixedDOF, BoolList &isEdgeClamped) :
-		V(V), F(F), EV(EV), FE(FE), fixedDOF(fixedDOF), isEdgeClamped(isEdgeClamped){};
+	Mesh(MatrixXd &V, MatrixXi &F, MatrixXi &EV, MatrixXi &FE, vector3dList &freeDOF, BoolList &isEdgeClamped) :
+		V(V), F(F), EV(EV), FE(FE), freeDOF(freeDOF), isEdgeClamped(isEdgeClamped){};
 }; 
-
-struct JobProperties {
-	std::string name, outDir, objPath, forcesPath, fixedPath, clampedPath;
-	bool startViewer;
-	JobProperties() {};
-	JobProperties(std::string name, std::string outDir, std::string objPath, std::string forcesPath, std::string fixedPath, std::string clampedPath, bool startViewer) :
-		name(name), outDir(outDir), objPath(objPath), forcesPath(forcesPath), fixedPath(fixedPath), clampedPath(clampedPath), startViewer(startViewer) {};
-};
 
 std::vector<std::string> split_string_by_space(std::string s);
 vector3dList vector3d_from_txt(std::string path);
@@ -46,3 +38,4 @@ BoolList clamped_from_txt(std::string path, int edgeCount);
 MatrixXd displacements_from_txt(std::string path, int nodeNum);
 VectorXd vonmises_from_txt(std::string path, int nodeNum);
 void saveOBJ(MatrixXd &V, MatrixXi &F, std::string filepath);
+void saveMatrix(Eigen::MatrixXd &mat, std::string filepath);

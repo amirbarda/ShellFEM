@@ -3,25 +3,21 @@
 #include <utility>
 #include <Eigen/Core>
 #include <Eigen/Eigenvalues>
-#include <igl\readSTL.h>
-#include <igl\readOBJ.h>
-#include <igl\writeOBJ.h>
-#include <igl\edge_topology.h>
-#include <igl\remove_duplicate_vertices.h>
 #include <iostream>
 #include <fstream>
 
 #include "CppUnitTest.h"
-
+/*
 #include "utils.cpp"
 #include "vector_utils.cpp"
 #define NOMINMAX
 #include "glad.c"
-#include "gui.cpp" 
-#include "fem.cpp"
 #include "s3element.cpp"
+#include "fem.cpp"
 #include "logger.cpp"
-#include "options.cpp"
+#include "gui.cpp"
+#include "job.cpp" 
+*/
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -30,115 +26,73 @@ namespace ShellFEMUnitTests
 	TEST_CLASS(FEM)
 	{
 	public:
-		void saveOBJ(Eigen::MatrixXd &V, Eigen::MatrixXi &F, std::string filepath) {
-			std::ofstream file;
-			file.open(filepath);
-			for (int i = 0; i < V.rows(); i++) {
-				file << std::fixed << "v " << V(i, 0) << " " << V(i, 1) << " " << V(i, 2) << std::endl;
-			}
-			file << std::endl;
-			for (int i = 0; i < F.rows(); i++) {
-				file << "f " << F(i, 0) + 1 << " " << F(i, 1) + 1 << " " << F(i, 2) + 1 << std::endl;
-			}
-			file.close();
-		}
-
+		/*
 		TEST_METHOD(Perform_FEM_test3)
 		{
-			Eigen::MatrixXd V, TC, N;
-			Eigen::MatrixXi F, FTC, FN, EV, FE, EF;
 			std::string objPath = "..\\..\\tests\\test3\\plate.obj";
-			std::string outputObjPath = "..\\..\\tests\\test3\\plate_output.obj";
-			std::string stdoutPath = "..\\..\\tests\\test3\\test3.log";
-			std::string nodalForcesPath = "..\\..\\tests\\test3\\load_nodes.txt";
-			std::string fixedNodesPath = "..\\..\\tests\\test3\\fixed_nodes.txt";
-			std::string clamedEdgesPath = "..\\..\\tests\\test3\\clamped_edges.txt";
-			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
-
-			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
-			igl::edge_topology(V, F, EV, FE, EF);
-			auto nodalForces = vector3d_from_txt(nodalForcesPath);
-			auto freeDOF = vector3d_from_txt(fixedNodesPath);
-			auto isEdgeClamped = clamped_from_txt(clamedEdgesPath, EV.rows());
-
-			FEMResults results;
+			std::string outDir = "..\\..\\tests\\test3\\";
+			std::string forcesPath = "..\\..\\tests\\test3\\load_nodes.txt";
+			std::string fixedPath = "..\\..\\tests\\test3\\fixed_nodes.txt";
+			std::string clampedPath = "..\\..\\tests\\test3\\clamped_edges.txt";
+			std::string fixedPath = "..\\..\\tests\\test3\\fixed_nodes.txt";
+			JobProperties jobProps("test", outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
 			SimulationProperties simProps;
-			Mesh mesh(V, F, EV, FE, freeDOF, isEdgeClamped);
-			performFEM(mesh, nodalForces, simProps, results);
-			saveOBJ(results.displacedVertices, F, outputObjPath);
 
-			Viewer viewer;
-			viewer.startView(results.displacedVertices, F, results.vonMisesStress);
-			fclose(file);
+			runFEMJob(jobProps, simProps, true);
 		}
 
 		TEST_METHOD(Perform_FEM_test12)	{
-			Eigen::MatrixXd V, TC, N;
-			Eigen::MatrixXi F, FTC, FN, EV, FE, EF;
 			std::string objPath = "..\\..\\tests\\test12\\shell.obj";
-			std::string outputObjPath = "..\\..\\tests\\test12\\shell_output.obj";
-			std::string stdoutPath = "..\\..\\tests\\test12\\test12.log";
-			std::string nodalForcesPath = "..\\..\\tests\\test12\\load_nodes.txt";
-			std::string fixedNodesPath = "..\\..\\tests\\test12\\fixed_nodes.txt";
-			std::string clamedEdgesPath = "..\\..\\tests\\test12\\clamped_edges.txt";
-			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
-
-			igl::readOBJ(objPath, V, TC, N, F, FTC, FN);
-			igl::edge_topology(V, F, EV, FE, EF);
-			auto nodalForces = vector3d_from_txt(nodalForcesPath);
-			auto freeDOF = vector3d_from_txt(fixedNodesPath);
-			auto isEdgeClamped = clamped_from_txt(clamedEdgesPath, EV.rows());
-
-			FEMResults results;
+			std::string outDir = "..\\..\\tests\\test12\\";
+			std::string forcesPath = "..\\..\\tests\\test12\\load_nodes.txt";
+			std::string fixedPath = "..\\..\\tests\\test12\\fixed_nodes.txt";
+			std::string clampedPath = "..\\..\\tests\\test12\\clamped_edges.txt";
+			std::string fixedPath = "..\\..\\tests\\test12\\fixed_nodes.txt";
+			JobProperties jobProps("test", outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
 			SimulationProperties simProps(6.825e7, DEFAULT_POSSION_CNST, 0.04);
-			Mesh mesh(V, F, EV, FE, freeDOF, isEdgeClamped);
-			performFEM(mesh, nodalForces, simProps, results);
-			saveOBJ(results.displacedVertices, F, outputObjPath);
 
-			Viewer viewer;
-			viewer.startView(results.displacedVertices, F, results.vonMisesStress);
-			fclose(file);
+			runFEMJob(jobProps, simProps, true);
 		}
 
 		TEST_METHOD(Perform_FEM_test13) {
-			Eigen::MatrixXd V, TC, N, SV;
-			Eigen::MatrixXi F, FTC, FN, EV, FE, EF, SVI, SVJ, SF;
-			std::string stlPath = "..\\..\\tests\\test13\\remeshed_surface.STL";
-			std::string outputObjPath = "..\\..\\tests\\test13\\surface_out.obj";
-			std::string stdoutPath = "..\\..\\tests\\test13\\test13.log";
-			std::string nodalForcesPath = "..\\..\\tests\\test13\\load_nodes.txt";
-			std::string fixedNodesPath = "..\\..\\tests\\test13\\fixed_nodes.txt";
-			std::string clamedEdgesPath = "..\\..\\tests\\test13\\clamped_edges.txt";
-			FILE *stlFile = fopen(stlPath.c_str(), "rb"); 
-			FILE *file = freopen(stdoutPath.c_str(), "w", stdout); // setting stdout
+			std::string objPath = "..\\..\\tests\\test13\\remeshed_surface.STL";
+			std::string outDir = "..\\..\\tests\\test13\\";
+			std::string forcesPath = "..\\..\\tests\\test13\\load_nodes.txt";
+			std::string fixedPath = "..\\..\\tests\\test13\\fixed_nodes.txt";
+			std::string clampedPath = "..\\..\\tests\\test13\\clamped_edges.txt";
+			std::string fixedPath = "..\\..\\tests\\test13\\fixed_nodes.txt";
+			JobProperties jobProps("test", outDir, objPath, forcesPath, fixedPath, clampedPath, true, STL_T);
+			SimulationProperties simProps;
 
-			igl::readSTL(stlFile, V, F, N);
-			fclose(stlFile);
-			igl::remove_duplicate_vertices(V, F, 1e-7, SV, SVI, SVJ, SF);
-			igl::edge_topology(SV, SF, EV, FE, EF);
-			saveOBJ(SV, SF, "..\\..\\tests\\test13\\surface.obj");
-			auto nodalForces = vector3d_from_txt(nodalForcesPath);
-			auto freeDOF = vector3d_from_txt(fixedNodesPath);
-			auto isEdgeClamped = clamped_from_txt(clamedEdgesPath, EV.rows());
-
-			for (auto e : nodalForces) {
-				e.first = SVJ(e.first - 1) + 1;
-			}
-			for (auto e : freeDOF) {
-				e.first = SVJ(e.first - 1) + 1;
-			}
-			// TODO : isEdgeClamped
-
-			FEMResults results;
-			SimulationProperties simProps(6.825e7, DEFAULT_POSSION_CNST, 0.04);
-			Mesh mesh(SV, SF, EV, FE, freeDOF, isEdgeClamped);
-			performFEM(mesh, nodalForces, simProps, results);
-			saveOBJ(results.displacedVertices, SF, outputObjPath);
-
-			Viewer viewer;
-			viewer.startView(results.displacedVertices, SF, results.vonMisesStress);
-			fclose(file);
+			runFEMJob(jobProps, simProps, true);
 		}
+
+		TEST_METHOD(Perform_FEM_test14) {
+			std::string objPath = "..\\..\\tests\\test14\\remeshed_surface.STL";
+			std::string outDir = "..\\..\\tests\\test14\\";
+			std::string forcesPath = "..\\..\\tests\\test14\\load_nodes.txt";
+			std::string fixedPath = "..\\..\\tests\\test14\\fixed_nodes.txt";
+			std::string clampedPath = "..\\..\\tests\\test14\\clamped_edges.txt";
+			std::string fixedPath = "..\\..\\tests\\test14\\fixed_nodes.txt";
+			JobProperties jobProps("test", outDir, objPath, forcesPath, fixedPath, clampedPath, true, STL_T);
+			SimulationProperties simProps;
+
+			runFEMJob(jobProps, simProps, true);
+		}
+		*/
+
+
+
+
+
+
+
+
+
+
+		// old tests:
+
+
 
 		/*
 		TEST_METHOD(Perform_FEM_test1)

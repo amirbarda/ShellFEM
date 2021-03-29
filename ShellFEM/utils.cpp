@@ -17,7 +17,8 @@ vector3dList vector3d_from_txt(std::string path) {
 		indexedVector3d iVec;
 		auto tokens = split_string_by_space(line);
 		iVec.first = std::stod(tokens[0]);
-		iVec.second = Vector3d(std::stod(tokens[1]), std::stod(tokens[2]), std::stod(tokens[3]));
+		if (tokens.size() > 1) iVec.second = Vector3d(std::stod(tokens[1]), std::stod(tokens[2]), std::stod(tokens[3]));
+		else iVec.second = Vector3d(0, 0, 0);
 		iVecList.push_back(iVec);
 	}
 	inFile.close();
@@ -82,5 +83,12 @@ void saveOBJ(MatrixXd &V, MatrixXi &F, std::string filepath) {
 	for (int i = 0; i < F.rows(); i++) {
 		file << "f " << F(i, 0) + 1 << " " << F(i, 1) + 1 << " " << F(i, 2) + 1 << std::endl;
 	}
+	file.close();
+}
+
+void saveMatrix(Eigen::MatrixXd &mat, std::string filepath) {
+	std::ofstream file;
+	file.open(filepath);
+	file << mat;
 	file.close();
 }
