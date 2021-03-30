@@ -1,8 +1,9 @@
+#include <igl\jet.h>
+
 #include "gui.h"
-#include "fem.h"
 #include "utils.h"
 
-void Viewer::startView(Eigen::MatrixXd const &V, Eigen::MatrixXi const &F, MatrixXd &vonMisesStress) {
+void Viewer::startView(Eigen::MatrixXd const &V, Eigen::MatrixXi const &F, VectorXd &vonMisesStress) {
 	MatrixXd C;
 
 	viewer.core().lighting_factor = 0.4;

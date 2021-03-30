@@ -7,7 +7,7 @@
 #include <fstream>
 
 #include "CppUnitTest.h"
-/*
+
 #include "utils.cpp"
 #include "vector_utils.cpp"
 #define NOMINMAX
@@ -17,7 +17,6 @@
 #include "logger.cpp"
 #include "gui.cpp"
 #include "job.cpp" 
-*/
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

@@ -4,7 +4,7 @@
 
 struct FEMResults {
 	MatrixXd displacements;
-	MatrixXd vonMisesStress;
+	VectorXd vonMisesStress;
 	MatrixXd displacedVertices;
 };
 

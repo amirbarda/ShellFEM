@@ -1,6 +1,146 @@
 ﻿  stdafx.cpp
   shellFEMUnitTests.cpp
-LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
-  Generating code
-  Finished generating code
-  ShellFEMUnitTests.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.dll
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\utils.cpp(19): warning C4244: '=': conversion from 'double' to '_Ty1', possible loss of data
+          with
+          [
+              _Ty1=int
+          ]
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(29): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(42): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(48): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(126): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(139): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(191): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(208): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(49): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(49): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(49): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(49): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(51): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(51): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(51): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(57): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(57): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(57): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(57): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(60): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(60): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.h(60): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(58): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(58): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(58): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(58): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(60): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(60): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(60): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(67): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(67): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(67): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(67): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(70): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(70): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.h(70): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1638): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1638): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1638): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1638): error C2244: 'colormap': unable to match function definition to an existing declaration
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1636): note: see declaration of 'colormap'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1638): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1640): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1640): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1640): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1641): error C2143: syntax error: missing ';' before '{'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1641): error C2447: '{': missing function header (old-style formal list?)
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1650): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1650): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1650): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1650): error C2244: 'colormap': unable to match function definition to an existing declaration
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1648): note: see declaration of 'colormap'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1650): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1653): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1653): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1653): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1654): error C2143: syntax error: missing ';' before '{'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\colormap.cpp(1654): error C2447: '{': missing function header (old-style formal list?)
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(25): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(25): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(25): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(25): error C2244: 'jet': unable to match function definition to an existing declaration
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(24): note: see declaration of 'jet'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(25): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(27): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(27): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(27): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(28): error C2143: syntax error: missing ';' before '{'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(28): error C2447: '{': missing function header (old-style formal list?)
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(34): error C2988: unrecognizable template declaration/definition
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(34): error C2143: syntax error: missing ')' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(34): error C2143: syntax error: missing ';' before 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(34): error C2244: 'jet': unable to match function definition to an existing declaration
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(33): note: see declaration of 'jet'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(34): error C2059: syntax error: 'constant'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(37): error C2065: 'DerivedC': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(37): error C2923: 'Eigen::PlainObjectBase': 'DerivedC' is not a valid template type argument for parameter 'Derived'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(37): error C2059: syntax error: ')'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(38): error C2143: syntax error: missing ';' before '{'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\jet.cpp(38): error C2447: '{': missing function header (old-style formal list?)
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\bind_vertex_attrib_array.cpp(3): error C2039: 'bind_vertex_attrib_array': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\bind_vertex_attrib_array.h(9): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\bind_vertex_attrib_array.cpp(21): warning C4244: 'argument': conversion from 'Eigen::EigenBase<Derived>::Index' to 'GLint', possible loss of data
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,1,-1,-1>
+          ]
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.cpp(13): error C2039: 'print_shader_info_log': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.cpp(24): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.cpp(25): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.cpp(26): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.cpp(27): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\load_shader.cpp(13): error C2039: 'load_shader': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\load_shader.cpp(32): error C2039: 'print_shader_info_log': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_shader_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.cpp(13): error C2039: 'print_program_info_log': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.cpp(23): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.cpp(24): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.cpp(25): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.cpp(26): error C2065: 'infoLog': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(15): error C2039: 'create_shader_program': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(43): error C2039: 'load_shader': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(55): error C2039: 'load_shader': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(67): error C2039: 'load_shader': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(97): error C3536: 'detach': cannot be used before it is initialized
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(97): error C2064: term does not evaluate to a function taking 1 arguments
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(98): error C2064: term does not evaluate to a function taking 1 arguments
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(99): error C2064: term does not evaluate to a function taking 1 arguments
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(102): error C2039: 'print_program_info_log': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(107): error C2039: 'create_shader_program': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(117): error C2039: 'create_shader_program': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\create_shader_program.cpp(128): error C2039: 'create_shader_program': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\print_program_info_log.h(15): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\verbose.h(40): error C2039: 'verbose': is not a member of 'igl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\verbose.h(13): note: see declaration of 'igl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(12): error C2039: 'report_gl_error': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.h(20): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(52): error C3536: 'gluErrorString': cannot be used before it is initialized
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(52): error C2064: term does not evaluate to a function taking 1 arguments
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(52): warning C4473: 'fprintf' : not enough arguments passed for format string
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(52): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(52): note: the missing variadic argument 2 is required by format string '%s'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(57): error C2039: 'report_gl_error': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.h(20): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.cpp(59): error C2039: 'report_gl_error': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.h(20): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\destroy_shader_program.cpp(12): error C2039: 'destroy_shader_program': is not a member of 'igl::opengl'
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\report_gl_error.h(20): note: see declaration of 'igl::opengl'
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\destroy_shader_program.cpp(28): error C2065: 'count': undeclared identifier
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\destroy_shader_program.cpp(28): fatal error C1003: error count exceeds 100; stopping compilation

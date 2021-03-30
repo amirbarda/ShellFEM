@@ -38,4 +38,11 @@ BoolList clamped_from_txt(std::string path, int edgeCount);
 MatrixXd displacements_from_txt(std::string path, int nodeNum);
 VectorXd vonmises_from_txt(std::string path, int nodeNum);
 void saveOBJ(MatrixXd &V, MatrixXi &F, std::string filepath);
-void saveMatrix(Eigen::MatrixXd &mat, std::string filepath);
+
+template<typename Derived>
+void saveMatrix(Eigen::MatrixBase<Derived>& x, std::string filepath) {
+	std::ofstream file;
+	file.open(filepath);
+	file << x;
+	file.close();
+}

@@ -85,10 +85,3 @@ void saveOBJ(MatrixXd &V, MatrixXi &F, std::string filepath) {
 	}
 	file.close();
 }
-
-void saveMatrix(Eigen::MatrixXd &mat, std::string filepath) {
-	std::ofstream file;
-	file.open(filepath);
-	file << mat;
-	file.close();
-}

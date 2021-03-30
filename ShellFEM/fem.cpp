@@ -175,7 +175,7 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 
 	igl::triangle_triangle_adjacency(mesh.F, TT, TTi);
 	
-	results.vonMisesStress = MatrixXd::Zero(mesh.F.rows(), 1);
+	results.vonMisesStress = VectorXd::Zero(mesh.F.rows());
 
 	for (int faceIdx = 0; faceIdx < mesh.F.rows(); faceIdx++) {
 		IntList verticesIndices(6, ABSENT_VERTEX);
@@ -196,7 +196,7 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 		}
 
 		elementBuilder.calculateVonMisesStress(currElement, elementDisplacements);
-		results.vonMisesStress(faceIdx, 0) = currElement.vonMisesStress;
+		results.vonMisesStress(faceIdx) = currElement.vonMisesStress;
 	}
 }
 
