@@ -15,8 +15,8 @@
 #include "s3element.cpp"
 #include "fem.cpp"
 #include "logger.cpp"
-#include "gui.cpp"
-#include "job.cpp" 
+//#include "gui.cpp"
+//#include "job.cpp" 
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

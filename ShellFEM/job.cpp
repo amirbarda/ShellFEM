@@ -12,10 +12,10 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 	Eigen::MatrixXi F, FTC, FN, EV, FE, EF, SVI, SVJ, SF;
 	FILE *logFile = NULL;
 
-	std::string saveObjPath = jobProps.outDir + "/" + jobProps.name + ".obj";
-	std::string logPath = jobProps.outDir + "/" + jobProps.name + ".log";
-	std::string saveDisplacementsPath = jobProps.outDir + "/displacements.txt";
-	std::string saveStressesPath = jobProps.outDir + "/stresses.txt";
+	std::string saveObjPath = jobProps.outDir + "\\" + jobProps.name + ".obj";
+	std::string logPath = jobProps.outDir + "\\" + jobProps.name + ".log";
+	std::string saveDisplacementsPath = jobProps.outDir + "\\displacements.txt";
+	std::string saveStressesPath = jobProps.outDir + "\\stresses.txt";
 
 	if (createLogFile) {
 		logFile = freopen(logPath.c_str(), "w", stdout); // setting stdout
@@ -25,6 +25,9 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 		FILE *stlFile = fopen(jobProps.objPath.c_str(), "rb");
 		igl::readSTL(stlFile, V, F, N);
 		fclose(stlFile);
+	}
+	else {
+		igl::readOBJ(jobProps.objPath, V, TC, N, F, FTC, FN);
 	}
 
 	igl::remove_duplicate_vertices(V, F, 1e-7, SV, SVI, SVJ, SF);

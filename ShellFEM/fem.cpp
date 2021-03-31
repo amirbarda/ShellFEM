@@ -38,15 +38,17 @@ void setNbrsEnvelope(Mesh &mesh, Element &currElement, IntList &verticesIndices,
 void addKeToK(Element &currElement, IntList &verticesIndices, MatrixXd &DOFTranslationMap, TriList &K_triplets) {
 	for (int row = 0; row < currElement.Ke.rows(); row++) {
 		int KRowVertexIdx = verticesIndices[(int)(row / 3)];
+		if (KRowVertexIdx == ABSENT_VERTEX) continue;
 		int KRowVertexAxis = row % 3;
 		int KRowDOFIdx = DOFTranslationMap(KRowVertexIdx, KRowVertexAxis);
-		if (KRowVertexIdx == ABSENT_VERTEX || KRowDOFIdx == FIXED_NODE) continue;
+		if (KRowDOFIdx == FIXED_NODE) continue;
 
 		for (int col = 0; col < currElement.Ke.cols(); col++) { 
 			int KColVertexIdx = verticesIndices[(int)(col / 3)];
+			if (KColVertexIdx == ABSENT_VERTEX) continue;
 			int KColVertexAxis = col % 3;
 			int KColDOFIdx = DOFTranslationMap(KColVertexIdx, KColVertexAxis);
-			if (KColVertexIdx == ABSENT_VERTEX || KColDOFIdx == FIXED_NODE) continue;
+			if (KColDOFIdx == FIXED_NODE) continue;
 			K_triplets.push_back(TripletXd(KRowDOFIdx, KColDOFIdx, currElement.Ke(row, col)));
 		}
 	}

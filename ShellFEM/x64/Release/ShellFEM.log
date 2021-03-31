@@ -1,13 +1,13 @@
 ﻿  fem.cpp
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(29): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(42): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(48): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(126): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(139): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(191): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(208): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(43): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(50): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(128): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(141): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(193): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(210): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\triangle_triangle_adjacency.cpp(129): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(80): note: see reference to function template instantiation 'void igl::triangle_triangle_adjacency<Derived,Eigen::Matrix<double,-1,-1,0,-1,-1>,Eigen::Matrix<double,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &)' being compiled
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(82): note: see reference to function template instantiation 'void igl::triangle_triangle_adjacency<Derived,Eigen::Matrix<double,-1,-1,0,-1,-1>,Eigen::Matrix<double,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &)' being compiled
           with
           [
               Derived=Eigen::Matrix<int,-1,-1,0,-1,-1>
@@ -18,7 +18,7 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
           [
               Derived=Eigen::Matrix<int,-1,-1,0,-1,-1>
           ]
-  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(80): note: see reference to function template instantiation 'void igl::triangle_triangle_adjacency<Derived,Eigen::Matrix<double,-1,-1,0,-1,-1>,Eigen::Matrix<double,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &)' being compiled
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(82): note: see reference to function template instantiation 'void igl::triangle_triangle_adjacency<Derived,Eigen::Matrix<double,-1,-1,0,-1,-1>,Eigen::Matrix<double,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1>> &)' being compiled
           with
           [
               Derived=Eigen::Matrix<int,-1,-1,0,-1,-1>
@@ -714,7 +714,7 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\glfw\viewer.cpp(1076): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\glfw\viewer.cpp(1086): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\glfw\viewer.cpp(1088): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\job.cpp(35): warning C4244: 'argument': conversion from 'Eigen::Index' to 'int', possible loss of data
+c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\job.cpp(38): warning C4244: 'argument': conversion from 'Eigen::Index' to 'int', possible loss of data
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\ortho.cpp(21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\opengl\viewercore.cpp(151): note: see reference to function template instantiation 'void igl::ortho<Eigen::Matrix<float,4,4,0,4,4>>(const float,const float,const float,const float,const float,const float,Eigen::PlainObjectBase<Eigen::Matrix<float,4,4,0,4,4>> &)' being compiled
 c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\include\igl\ortho.cpp(22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
@@ -935,7 +935,7 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
           [
               Derived=Eigen::Matrix<double,-1,-1,0,-1,-1>
           ]
-  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\job.cpp(30): note: see reference to function template instantiation 'void igl::remove_duplicate_vertices<Derived,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<double,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,const Eigen::MatrixBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,const double,Eigen::PlainObjectBase<Derived> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &)' being compiled
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\job.cpp(33): note: see reference to function template instantiation 'void igl::remove_duplicate_vertices<Derived,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<double,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,const Eigen::MatrixBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,const double,Eigen::PlainObjectBase<Derived> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &)' being compiled
           with
           [
               Derived=Eigen::Matrix<double,-1,-1,0,-1,-1>
@@ -1181,7 +1181,7 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\includ
           [
               Derived=Eigen::Matrix<int,-1,-1,0,-1,-1>
           ]
-  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\job.cpp(31): note: see reference to function template instantiation 'void igl::edge_topology<Derived,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,const Eigen::MatrixBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &)' being compiled
+  c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\job.cpp(34): note: see reference to function template instantiation 'void igl::edge_topology<Derived,Eigen::Matrix<int,-1,-1,0,-1,-1>,Eigen::Matrix<int,-1,-1,0,-1,-1>>(const Eigen::MatrixBase<Derived> &,const Eigen::MatrixBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &,Eigen::PlainObjectBase<Eigen::Matrix<int,-1,-1,0,-1,-1>> &)' being compiled
           with
           [
               Derived=Eigen::Matrix<double,-1,-1,0,-1,-1>
@@ -1808,6 +1808,6 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellf
   vector_utils.cpp
   glad.c
   Generating code
-  All 21934 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 22168 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ShellFEM.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEM.exe

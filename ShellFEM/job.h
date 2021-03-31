@@ -6,12 +6,13 @@
 
 typedef enum { OBJ_T, STL_T } FileFormat;
 
-struct JobProperties {
+struct JobProperties { // TODO : add print representation..
 	std::string name, outDir, objPath, forcesPath, fixedPath, clampedPath;
 	FileFormat format;
 	bool startViewer;
 	JobProperties() {};
-	JobProperties(std::string name, std::string outDir, std::string objPath, std::string forcesPath, std::string fixedPath, std::string clampedPath, bool startViewer, FileFormat format) :
+	JobProperties(const std::string& name, const std::string& outDir, const std::string& objPath, const std::string& forcesPath, const std::string& fixedPath,
+		const std::string& clampedPath, bool startViewer, FileFormat format) :
 		name(name), outDir(outDir), objPath(objPath), forcesPath(forcesPath), fixedPath(fixedPath), clampedPath(clampedPath), startViewer(startViewer), format(format) {};
 };
 
