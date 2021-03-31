@@ -18,11 +18,11 @@ int main(int argc, char** argv) {
 	else { // FIXME
 		//startProgramGUI();
 		std::string name = "test";
- 		std::string objPath = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\tests\\test3\\plate.obj";
-		std::string outDir = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\tests\\test3";
-		std::string forcesPath = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\tests\\test3\\load_nodes.txt";
-		std::string fixedPath = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\tests\\test3\\fixed_nodes.txt";
-		std::string clampedPath = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\tests\\test3\\clamped_edges.txt";
+ 		std::string objPath = "test\\mesh.obj";
+		std::string outDir = "test";
+		std::string forcesPath = "test\\load_nodes.txt";
+		std::string fixedPath = "test\\fixed_nodes.txt";
+		std::string clampedPath = "test\\clamped_edges.txt";
 		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
 		SimulationProperties simProps;
 

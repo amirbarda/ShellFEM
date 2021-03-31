@@ -21,6 +21,8 @@ typedef Eigen::SparseMatrix<double> SparseMat;
 typedef Eigen::Triplet<double> TripletXd;
 typedef std::vector<TripletXd> TriList;
 
+#define DASH "--------------------------------------------------------------------------"
+
 struct Mesh {
 	MatrixXd V;
 	MatrixXi F;

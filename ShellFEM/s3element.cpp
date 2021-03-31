@@ -1,6 +1,5 @@
 #include "s3element.h"
 #define DEBUG
-#define DASH "--------------------------------------------------------------------------"
 #define X 0
 #define Y 1
 #define Z 2
@@ -293,7 +292,7 @@ void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<dou
 	element.vonMisesStress = stress.transpose() * M * stress;
 #ifdef DEBUG
 	if (displacements.sum() != 0) {
-		std::cout << "MMM" << std::endl;
+		std::cout << "calculateVonMisesStress" << std::endl;
 		std::cout << "elemParam " << std::endl << elemParam << std::endl;
 		std::cout << "Bm " << std::endl << Bm << std::endl;
 		std::cout << "displacements " << std::endl << displacements << std::endl;

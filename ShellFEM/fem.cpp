@@ -102,7 +102,7 @@ void createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap) {
 
 	int j = 0, offset = 0;
 	for (int i = 0; i < mesh.freeDOF.size(); i++) {
-		int vertexIdx = mesh.freeDOF[i].first - 1;
+		int vertexIdx = mesh.freeDOF[i].first;
 		for (; j < vertexIdx; j++) {
 			DOFTranslationMap.row(j) = Vector3d(offset, offset+1, offset+2);
 			offset += 3;
@@ -117,6 +117,10 @@ void createDOFTranslationMap(Mesh &mesh, MatrixXd &DOFTranslationMap) {
 		DOFTranslationMap.row(j) = Vector3d(offset, offset + 1, offset + 2);
 		offset += 3;
 	}
+
+	// FIXME DEBUG
+	std::cout << "DOFTranslationMap" << std::endl;
+	std::cout << DOFTranslationMap << std::endl;
 }
 
 void preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces) {
@@ -138,7 +142,7 @@ void preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixXd &DOFTranslati
 	forces = MatrixXd::Zero(numOfDOF, 1); // TODO why not vector?
 	for (int i = 0; i < nodalForces.size(); i++) {
 		for (int j = 0; j < 3; j++) {
-			int indexOfDOF = DOFTranslationMap(nodalForces[i].first - 1, j);
+			int indexOfDOF = DOFTranslationMap(nodalForces[i].first, j);
 			if (indexOfDOF != FIXED_NODE) {
 				forces(indexOfDOF, 0) = nodalForces[i].second(j);
 			}
@@ -149,15 +153,29 @@ void preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixXd &DOFTranslati
 	std::cout << "Force Vector:" << std::endl << forces << std::endl;
 }
 
-bool solveSparseEquation(MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces, FEMResults &results) {
+void setDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, FEMResults &results, VectorXd &disp) {
+	results.displacements = MatrixXd::Zero(mesh.V.rows(), 3);
+	for (int vertexIdx = 0; vertexIdx < mesh.V.rows(); vertexIdx++) {
+		for (int j = 0; j < 3; j++) {
+			int dof = DOFTranslationMap(vertexIdx, j);
+			if (dof != ABSENT_VERTEX) {
+				results.displacements(vertexIdx, j) = disp(dof, 0);
+			}
+		}
+	}
+	results.displacedVertices = mesh.V + results.displacements;
+}
+
+bool solveSparseEquation(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_triplets, vector3dList const &nodalForces, FEMResults &results) {
 	SparseMat K;								// Global Stiffness Matrix.
 	MatrixXd forces;							// Forces vector for solver
 	Eigen::ConjugateGradient<SparseMat> solver; // solve K*U = F. 
+	VectorXd dispOfDOFs;						// solution is displacments of dof
 	
 	preproccessForSolver(K, forces, DOFTranslationMap, K_triplets, nodalForces);
 
 	solver.compute(K);
-	results.displacements = solver.solve(forces);
+	dispOfDOFs = solver.solve(forces);
 
 	std::cout << "# Iterations: " << solver.iterations() << std::endl;
 	std::cout << "Estimated Error: " << solver.error() << std::endl;
@@ -166,6 +184,7 @@ bool solveSparseEquation(MatrixXd &DOFTranslationMap, TriList &K_triplets, vecto
 		std::cout << "Failed to solve" << std::endl;
 		return true;
 	}
+	setDisplacements(mesh, DOFTranslationMap, results, dispOfDOFs);
 	return false;
 }
 
@@ -188,12 +207,10 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 		
 		elementDisplacements = Eigen::MatrixXd::Zero(18, 1);
 		for (int i = 0; i < 6; i++) {
-			if (verticesIndices[i] == ABSENT_VERTEX) continue;
+			int curVertexIdx = verticesIndices[i];
+			if (curVertexIdx == ABSENT_VERTEX) continue;
 			for (int j = 0; j < 3; j++) {
-				int dof = DOFTranslationMap(verticesIndices[i], j);
-				if (dof != FIXED_NODE) {
-					elementDisplacements(i*3+j, 0) = results.displacements(dof, 0);
-				}
+				elementDisplacements(i*3+j, 0) = results.displacements(curVertexIdx, j);
 			}
 		}
 
@@ -202,26 +219,18 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 	}
 }
 
-void getDisplacedMesh(Mesh &mesh, MatrixXd &DOFTranslationMap, FEMResults &results) {
-	results.displacedVertices = mesh.V;
-
-	for (int vertexIdx = 0; vertexIdx < mesh.V.rows(); vertexIdx++) {
-		for (int j = 0; j < 3; j++) {
-			int dof = DOFTranslationMap(vertexIdx, j);
-			if (dof != ABSENT_VERTEX) {
-				results.displacedVertices(vertexIdx, j) += results.displacements(dof, 0);
-			}
-		}
-	}
-}
-
 void printSummary(Mesh &mesh, FEMResults &results) {
 	//TODO print num of dof
+	std::cout << DASH << std::endl;
 	std::cout << "Num of Vertices: " << mesh.V.rows() << std::endl;
 	std::cout << "Num of Triangles: " << mesh.F.rows() << std::endl;
+	std::cout << DASH << std::endl;
 	std::cout << "Displacements: " << std::endl << results.displacements << std::endl;
+	std::cout << DASH << std::endl;
 	std::cout << "Displaced Vertices:" << std::endl << results.displacedVertices << std::endl;
+	std::cout << DASH << std::endl;
 	std::cout << "Von-Mises Stress:" << std::endl << results.vonMisesStress << std::endl;
+	std::cout << DASH << std::endl;
 }
 
 // TODO : sould run remove_duplicates before?
@@ -235,12 +244,10 @@ bool performFEM(Mesh &mesh, vector3dList const &nodalForces, SimulationPropertie
 	calculateGlobalStiffnessMatrix(mesh, DOFTranslationMap, K_triplets, elementBuilder);
 
 	std::cout << "Beginnig Solve" << std::endl;
-	if (solveSparseEquation(DOFTranslationMap,K_triplets, nodalForces, results)) {
+	if (solveSparseEquation(mesh, DOFTranslationMap,K_triplets, nodalForces, results)) {
 		return true; // fail
 	}
-
 	calcStressFromDisplacements(mesh, DOFTranslationMap, elementBuilder, results);
-	getDisplacedMesh(mesh, DOFTranslationMap, results);
 	printSummary(mesh, results);
 
 	return false;

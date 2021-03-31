@@ -31,6 +31,8 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 	}
 
 	igl::remove_duplicate_vertices(V, F, 1e-7, SV, SVI, SVJ, SF);
+	std::cout << "SVI:" << std::endl << SVI << std::endl;
+	std::cout << "SVJ:" << std::endl << SVJ << std::endl;
 	igl::edge_topology(SV, SF, EV, FE, EF);
 
 	auto nodalForces = vector3d_from_txt(jobProps.forcesPath);
