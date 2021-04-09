@@ -25,16 +25,18 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 		FILE *stlFile = fopen(jobProps.objPath.c_str(), "rb");
 		igl::readSTL(stlFile, V, F, N);
 		fclose(stlFile);
+		igl::remove_duplicate_vertices(V, F, 1e-7, SV, SVI, SVJ, SF);
+		std::cout << "SVI:" << std::endl << SVI << std::endl;
+		std::cout << "SVJ:" << std::endl << SVJ << std::endl;
 	}
 	else {
 		igl::readOBJ(jobProps.objPath, V, TC, N, F, FTC, FN);
+		SV = V;
+		SF = F;
 	}
 
-	igl::remove_duplicate_vertices(V, F, 1e-7, SV, SVI, SVJ, SF);
-	std::cout << "SVI:" << std::endl << SVI << std::endl;
-	std::cout << "SVJ:" << std::endl << SVJ << std::endl;
 	igl::edge_topology(SV, SF, EV, FE, EF);
-
+	std::cout << "EV:" << std::endl << EV << std::endl;
 	auto nodalForces = vector3d_from_txt(jobProps.forcesPath);
 	auto freeDOF = vector3d_from_txt(jobProps.fixedPath);
 	auto isEdgeClamped = clamped_from_txt(jobProps.clampedPath, EV.rows());

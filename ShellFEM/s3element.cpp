@@ -3,6 +3,8 @@
 #define X 0
 #define Y 1
 #define Z 2
+#define SQR(x) (x*x)
+#define CUBE(x) (x*x*x)
 
 //######################################################################### Auxiliary functions ############################################################################
 
@@ -49,12 +51,12 @@ std::ostream& operator<<(std::ostream& os, const ElementParameters& param) {
 void ElementBuilder::calculateElasticPlasticMatrix() {
 	double ni = simProps.ni;
 	double E = simProps.E;
-	double t = simProps.thickness;
+	//double t = simProps.thickness;
 	De << 1, ni, 0,
 		ni, 1, 0,
 		0, 0, (1 - ni) / 2;
 	De *= E / (1 - ni * ni);
-	De *= t * t*t / 12;
+	//De *= t * t * t / 12;
 }
 
 void ElementBuilder::calculateHillPlasticStrainMatrix() {
@@ -261,9 +263,24 @@ void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 	calculateBMatrix(element, elemParam, B);
 	calculateBmMatrix(elemParam, Bm); 
 
-	Kem = simProps.thickness * elemParam.area * Bm.transpose() * De * Bm;
-	element.Ke = simProps.thickness * elemParam.area * B.transpose() * De * B;
-	element.Ke.block(0, 0, 9, 9) += Kem;	
+	double c1 = simProps.thickness;
+	//double c2 = SQR(simProps.thickness) / 4;
+	double c3 = CUBE(simProps.thickness) / 12;
+
+	auto Km = c1 * Bm.transpose() * De * Bm;
+	//auto Kmb = c2 * Bm.transpose() * De * B;
+	//auto Kbm = c2 * B.transpose() * De * Bm;
+	auto Kb = c3 * B.transpose() * De * B;
+
+	element.Ke = Kb;
+	element.Ke.block(0, 0, 9, 9) += Km;
+	//element.Ke.block(0, 0, 9, 18) += Kmb;
+	//element.Ke.block(0, 0, 18, 9) += Kbm;
+	element.Ke *= elemParam.area;
+
+	//Kem = simProps.thickness * elemParam.area * Bm.transpose() * De * Bm;
+	//element.Ke = simProps.thickness * elemParam.area * B.transpose() * De * B;
+	//element.Ke.block(0, 0, 9, 9) += Kem;	
 
 #ifdef DEBUG
 	std::cout << element << std::endl;
