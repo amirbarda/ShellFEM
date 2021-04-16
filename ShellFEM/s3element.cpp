@@ -79,7 +79,6 @@ ElementBuilder::ElementBuilder(SimulationProperties const &_simProps) {
 void ElementBuilder::getUnitVectors(Element const &element, ElementParameters &elemParam) {
 	std::pair<double, Eigen::Vector3d> areaVector;
 	Eigen::Vector3d centroid;
-	Eigen::Vector2d planeVertices[3];
 
 	areaVector = getAreaVector(element.vertices[0], element.vertices[NXT(0)], element.vertices[PRV(0)]);
 	elemParam.area = areaVector.first;
@@ -196,34 +195,25 @@ void ElementBuilder::buildCMatrix(Element const &element, ElementParameters cons
 		buildCMatrixNeighborRow(row[3], elemParam.neighborParam[0], 1, 0, 0, 1, 3);
 	else if (element.isEdgeClamped[0]) {
 		row[3] = row[2];
-		std::cout << "setting row[3] = row[2]" << std::endl;
+		std::cout << "edge is clamped: setting row[3] = row[2]" << std::endl;
 	}
-	else {
-		row[3] = -row[2];
-		std::cout << "setting row[3] = -row[2]" << std::endl;
-	}
+	else row[3] = -row[2];
 
 	if (element.neighborExists[1])
 		buildCMatrixNeighborRow(row[4], elemParam.neighborParam[1], 2, 1, 1, 2, 4);
 	else if (element.isEdgeClamped[1]) {
 		row[4] = row[0];
-		std::cout << "setting row[4] = row[0]" << std::endl;
+		std::cout << "edge is clamped: setting row[4] = row[0]" << std::endl;
 	}
-	else {
-		row[4] = -row[0];
-		std::cout << "setting row[4] = -row[0]" << std::endl;
-	}
+	else row[4] = -row[0];
 
 	if (element.neighborExists[2])
 		buildCMatrixNeighborRow(row[5], elemParam.neighborParam[2], 2, 0, 0, 2, 5);
 	else if (element.isEdgeClamped[2]) {
 		row[5] = row[1];
-		std::cout << "setting row[5] = row[1]" << std::endl;
+		std::cout << "edge is clamped: setting row[5] = row[1]" << std::endl;
 	}
-	else {
-		row[5] = -row[1];
-		std::cout << "setting row[5] = -row[1]" << std::endl;
-	}
+	else row[5] = -row[1];
 
 	for (int i = 0; i < 6; i++) {
 		C.block(i, 0, 1, 18) = row[i];

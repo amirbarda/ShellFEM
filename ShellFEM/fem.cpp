@@ -82,8 +82,9 @@ Element createFaceElement(Mesh &mesh, int faceIdx) {
 	// set clamped edges
 	for (int i = 0; i < 3; i++) {
 		int edge = mesh.FE(faceIdx, i);
-		std::cout << "setting edge idx " << i << " as clamped" << std::endl;
 		element.isEdgeClamped[i] = mesh.isEdgeClamped[edge];
+		if (mesh.isEdgeClamped[edge])
+			std::cout << "setting edge idx " << i << " as clamped" << std::endl;
 	}
 
 	// set neighbor vertices
