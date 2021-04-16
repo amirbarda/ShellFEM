@@ -45,6 +45,9 @@
     <ClCompile Include="job.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="neighborhood.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="job.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="neighborhood.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

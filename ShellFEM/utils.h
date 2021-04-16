@@ -22,16 +22,18 @@ typedef Eigen::Triplet<double> TripletXd;
 typedef std::vector<TripletXd> TriList;
 
 #define DASH "--------------------------------------------------------------------------"
+#define ABSENT_VERTEX -1
+#define FIXED_NODE	  -1
 
 struct Mesh {
 	MatrixXd V;
-	MatrixXi F;
-	MatrixXi EV; //Ex2 matrix storing the edge description as pair of indices to
-	MatrixXi FE; //Fx3 matrix storing the Triangle - Edge relation
+	MatrixXi FNB; // matrix of [#face X 6], which includes indices of vertices of face, and indices of neighbors.
+	MatrixXi EV;  // Ex2 matrix storing the edge description as pair of indices to
+	MatrixXi FE;  // Fx3 matrix storing the Triangle - Edge relation
 	vector3dList freeDOF; // todo if 1 so has dof
 	BoolList isEdgeClamped; // list of size |E|, for each edge true iff edge is clamped 
-	Mesh(MatrixXd &V, MatrixXi &F, MatrixXi &EV, MatrixXi &FE, vector3dList &freeDOF, BoolList &isEdgeClamped) :
-		V(V), F(F), EV(EV), FE(FE), freeDOF(freeDOF), isEdgeClamped(isEdgeClamped){};
+	Mesh(MatrixXd &V, MatrixXi &FNB, MatrixXi &EV, MatrixXi &FE, vector3dList &freeDOF, BoolList &isEdgeClamped) :
+		V(V), FNB(FNB), EV(EV), FE(FE), freeDOF(freeDOF), isEdgeClamped(isEdgeClamped){};
 }; 
 
 std::vector<std::string> split_string_by_space(std::string s);

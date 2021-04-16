@@ -126,6 +126,7 @@
     <ClCompile Include="job.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="neighborhood.cpp" />
     <ClCompile Include="options.cpp" />
     <ClCompile Include="s3element.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="gui.h" />
     <ClInclude Include="job.h" />
     <ClInclude Include="logger.h" />
+    <ClInclude Include="neighborhood.h" />
     <ClInclude Include="options.h" />
     <ClInclude Include="s3element.h" />
     <ClInclude Include="utils.h" />

@@ -6,10 +6,11 @@
 #include "job.h"
 #include "gui.h"
 #include "utils.h"
+#include "neighborhood.h"
 
 void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool createLogFile = false) {
 	Eigen::MatrixXd V, TC, N, SV;
-	Eigen::MatrixXi F, FTC, FN, EV, FE, EF, SVI, SVJ, SF;
+	Eigen::MatrixXi F, FTC, FN, EV, FE, EF, SVI, SVJ, SF, FNB;
 	FILE *logFile = NULL;
 
 	std::string saveObjPath = jobProps.outDir + "\\" + jobProps.name + ".obj";
@@ -35,8 +36,11 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 		SF = F;
 	}
 
+	calculateFaceNeighborhoodMatrix(SF, FNB);
+
 	igl::edge_topology(SV, SF, EV, FE, EF);
 	std::cout << "EV:" << std::endl << EV << std::endl;
+	std::cout << DASH << std::endl;
 	auto nodalForces = vector3d_from_txt(jobProps.forcesPath);
 	auto freeDOF = vector3d_from_txt(jobProps.fixedPath);
 	auto isEdgeClamped = clamped_from_txt(jobProps.clampedPath, EV.rows());
@@ -49,7 +53,7 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 	});
 
 	FEMResults results;
-	Mesh mesh(SV, SF, EV, FE, freeDOF, isEdgeClamped);
+	Mesh mesh(SV, FNB, EV, FE, freeDOF, isEdgeClamped);
 	performFEM(mesh, nodalForces, simProps, results);
 	saveOBJ(results.displacedVertices, SF, saveObjPath);
 	saveMatrix(results.displacements, saveDisplacementsPath);

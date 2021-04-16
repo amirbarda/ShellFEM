@@ -1,5 +1,4 @@
 #include "s3element.h"
-#define DEBUG
 #define X 0
 #define Y 1
 #define Z 2
@@ -32,7 +31,7 @@ std::ostream& operator<<(std::ostream& os, const NeighborParameters& param) {
 std::ostream& operator<<(std::ostream& os, const ElementParameters& param) {
 	std::stringstream repr;
 
-	repr << DASH << std::endl << "Element: " << std::endl;
+	repr << "Element: " << std::endl;
 	for (int i = 0; i < 3; i++) repr << "heights["<<i<<"]: " << param.heights[i] << std::endl;
 	for (int i = 0; i < 3; i++) repr << "cosine["<<i<<"]: " << param.cosine[i]<< std::endl;
 	for (int i = 0; i < 3; i++) repr << "c["<<i<<"]: " << param.c[i] << std::endl;
@@ -70,6 +69,9 @@ ElementBuilder::ElementBuilder(SimulationProperties const &_simProps) {
 	simProps = _simProps;
 	calculateElasticPlasticMatrix();
 	calculateHillPlasticStrainMatrix();
+
+	std::cout << "De: " << std::endl << De << std::endl;
+	std::cout << DASH << std::endl;
 }; 
 
 //################################################################# Element parameters Calculation ############################################################################
@@ -190,24 +192,38 @@ void ElementBuilder::buildCMatrix(Element const &element, ElementParameters cons
 	buildCMatrixElementRow(row[1], elemParam, 2, 0, 1, 0, 2, 1);
 	buildCMatrixElementRow(row[2], elemParam, 1, 0, 2, 0, 1, 2);
 
-	std::cout << "clamped 0: " << element.isEdgeClamped[0] << std::endl;
-	std::cout << "clamped 1: " << element.isEdgeClamped[1] << std::endl;
-	std::cout << "clamped 2: " << element.isEdgeClamped[2] << std::endl;
-
 	if (element.neighborExists[0])
 		buildCMatrixNeighborRow(row[3], elemParam.neighborParam[0], 1, 0, 0, 1, 3);
-	else if (element.isEdgeClamped[0]) row[3] = row[2];
-	else row[3] = -row[2];
+	else if (element.isEdgeClamped[0]) {
+		row[3] = row[2];
+		std::cout << "setting row[3] = row[2]" << std::endl;
+	}
+	else {
+		row[3] = -row[2];
+		std::cout << "setting row[3] = -row[2]" << std::endl;
+	}
 
 	if (element.neighborExists[1])
 		buildCMatrixNeighborRow(row[4], elemParam.neighborParam[1], 2, 1, 1, 2, 4);
-	else if (element.isEdgeClamped[1]) row[4] = row[0];
-	else row[4] = -row[0];
+	else if (element.isEdgeClamped[1]) {
+		row[4] = row[0];
+		std::cout << "setting row[4] = row[0]" << std::endl;
+	}
+	else {
+		row[4] = -row[0];
+		std::cout << "setting row[4] = -row[0]" << std::endl;
+	}
 
 	if (element.neighborExists[2])
 		buildCMatrixNeighborRow(row[5], elemParam.neighborParam[2], 2, 0, 0, 2, 5);
-	else if (element.isEdgeClamped[2]) row[5] = row[1];
-	else row[5] = -row[1];
+	else if (element.isEdgeClamped[2]) {
+		row[5] = row[1];
+		std::cout << "setting row[5] = row[1]" << std::endl;
+	}
+	else {
+		row[5] = -row[1];
+		std::cout << "setting row[5] = -row[1]" << std::endl;
+	}
 
 	for (int i = 0; i < 6; i++) {
 		C.block(i, 0, 1, 18) = row[i];
@@ -241,14 +257,13 @@ void ElementBuilder::calculateBMatrix(Element &element, ElementParameters const 
 	buildCMatrix(element, elemParam, C);
 
 	B = R * H * C;					// Bending Effect
-#ifdef DEBUG
+
 	std::cout << "R: " << std::endl << R << std::endl;
 	std::cout << "H: " << std::endl << H << std::endl;
 	std::cout << "C: " << std::endl << C << std::endl;
 	std::cout << "HC: " << std::endl << H * C << std::endl;
 	std::cout << "B: " << std::endl << B << std::endl;
 	std::cout << DASH << std::endl;
-#endif
 }
 
 //################################################################# Element Main Methods ############################################################################
@@ -256,7 +271,6 @@ void ElementBuilder::calculateBMatrix(Element &element, ElementParameters const 
 void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 	Eigen::Matrix<double, 3, 18> B;			// Bending effect matrix
 	Eigen::Matrix<double, 3, 9>  Bm;		// Membrane Effect Matrix
-	Eigen::Matrix<double, 9, 9>  Kem;
 	ElementParameters elemParam;
 
 	calculateParameters(element, elemParam);
@@ -282,15 +296,13 @@ void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 	//element.Ke = simProps.thickness * elemParam.area * B.transpose() * De * B;
 	//element.Ke.block(0, 0, 9, 9) += Kem;	
 
-#ifdef DEBUG
 	std::cout << element << std::endl;
 	std::cout << elemParam << std::endl;
-	std::cout << "De: " << std::endl << De << std::endl;
 	std::cout << "Bm: " << std::endl << Bm << std::endl;
-	std::cout << "Kem: " << std::endl << Kem << std::endl;
+	std::cout << "Km: " << std::endl << Km << std::endl;
+	std::cout << "Kb: " << std::endl << Kb << std::endl;
 	std::cout << "Ke: " << std::endl << element.Ke << std::endl;
 	std::cout << DASH << std::endl;
-#endif
 }
 
 void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<double, 18, 1> const displacements) {
@@ -307,7 +319,7 @@ void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<dou
 	strain = B * displacements + Bm * displacements.block(0,0,9,1);
 	stress = De * strain;
 	element.vonMisesStress = stress.transpose() * M * stress;
-#ifdef DEBUG
+
 	if (displacements.sum() != 0) {
 		std::cout << "calculateVonMisesStress" << std::endl;
 		std::cout << "elemParam " << std::endl << elemParam << std::endl;
@@ -318,6 +330,6 @@ void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<dou
 		std::wcout << "vonMisesStress: " << element.vonMisesStress << std::endl;
 		std::cout << DASH << std::endl;
 	}	
-#endif
+
 }
 
