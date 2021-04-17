@@ -65,6 +65,7 @@ void addKeToK(Element &currElement, VectorXi &verticesIndices, MatrixXd &DOFTran
 			if (colDOF == FIXED_NODE) continue;
 
 			K_triplets.push_back(TripletXd(rowDOF, colDOF, currElement.Ke(row, col)));
+			std::cout << "pushing to K_triplets. row: " << rowDOF << " col: " << colDOF << " value: " << currElement.Ke(row, col) << std::endl;
 		}
 	}
 }
@@ -114,6 +115,8 @@ void calculateGlobalStiffnessMatrix(Mesh &mesh, MatrixXd &DOFTranslationMap, Tri
 
 void preproccessForSolver(SparseMat &K, MatrixXd &forces, MatrixXd &DOFTranslationMap, TriList &K_triplets, int numOfDOF, vector3dList const &nodalForces) {
 	std::cout << "In preproccessForSolver" << std::endl;
+
+	for (auto tp : K_triplets) std::cout << "row: " << tp.row() << " col: " << tp.col() << " value: " << tp.value() << std::endl;
 
 	// prepare K sparse matrix
 	K = SparseMat(numOfDOF, numOfDOF);
