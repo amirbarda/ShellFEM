@@ -36,6 +36,7 @@ struct Element {
 			vertices[i] = _vertices[i];
 			neighborExists[i] = false;
 			isEdgeClamped[i] = false;
+			neighborVertices[i] << 0, 0, 0;
 		}
 	}
 
@@ -50,10 +51,10 @@ struct Element {
 	Data Structures For Holding Temporary Results Used to Calculate the Stiffness Matrix
 */
 	struct NeighborParameters {
-		double height;							// Height down from vertex
-		Vector3d normal;						// Normal to triangle face
-		double heightArr[3];					// Index is according to adjacent element vertex index
-		double cosineArr[3];					// Index is according to adjacent element vertex index
+		double height;						// Height down from vertex
+		Vector3d normal;			// Normal to triangle face
+		double heightArr[3];			// Index is according to adjacent element vertex index
+		double cosineArr[3];			// Index is according to adjacent element vertex index
 	};
 
 	struct ElementParameters {

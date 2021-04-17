@@ -94,6 +94,15 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 	Eigen::Vector3d centroid;
 	Eigen::Vector2d planeVertices[3]; //needs to be 3d?
 	
+	for (int i = 0; i < 3; i++) {
+		//elemParam.neighborParam[i] = {0};
+		elemParam.neighborParam[i].height = 0;
+		elemParam.neighborParam[i].normal << 0, 0, 0;
+		for (int j = 0; j < 3; j++) {
+			elemParam.neighborParam[i].heightArr[j] = 0;
+			elemParam.neighborParam[i].cosineArr[j] = 0;
+		}
+	}
 	getUnitVectors(element, elemParam);
 	
 	for (int i = 0; i < 3; i++) {
