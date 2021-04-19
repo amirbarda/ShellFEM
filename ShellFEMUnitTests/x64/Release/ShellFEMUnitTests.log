@@ -1,15 +1,6 @@
 ﻿  stdafx.cpp
   shellFEMUnitTests.cpp
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\utils.cpp(19): warning C4244: '=': conversion from 'double' to '_Ty1', possible loss of data
-          with
-          [
-              _Ty1=int
-          ]
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(55): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(129): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellfem\fem.cpp(147): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
   Generating code
-  All 190 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ShellFEMUnitTests.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.dll

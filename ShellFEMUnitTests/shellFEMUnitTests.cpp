@@ -8,13 +8,13 @@
 
 #include "CppUnitTest.h"
 
-#include "utils.cpp"
-#include "vector_utils.cpp"
-#define NOMINMAX
-#include "glad.c"
-#include "s3element.cpp"
-#include "fem.cpp"
-#include "logger.cpp"
+//#include "utils.cpp"
+//#include "vector_utils.cpp"
+//#define NOMINMAX
+//#include "glad.c"
+//#include "s3element.cpp"
+//#include "fem.cpp"
+//#include "logger.cpp"
 //#include "gui.cpp"
 //#include "job.cpp" 
 

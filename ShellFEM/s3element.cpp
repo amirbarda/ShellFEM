@@ -1,4 +1,6 @@
 #include "s3element.h"
+#include "vector_utils.h"
+
 #define X 0
 #define Y 1
 #define Z 2
@@ -92,7 +94,7 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 	
 	std::pair<double, Eigen::Vector3d> areaVector;
 	Eigen::Vector3d centroid;
-	Eigen::Vector2d planeVertices[3]; //needs to be 3d?
+	Eigen::Vector3d localVertices[3];
 	
 	for (int i = 0; i < 3; i++) {
 		//elemParam.neighborParam[i] = {0};
@@ -104,16 +106,16 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 		}
 	}
 	getUnitVectors(element, elemParam);
-	
-	for (int i = 0; i < 3; i++) {
-		planeVertices[i] << Eigen::Vector2d(elemParam.axes[X].dot(element.vertices[i]), elemParam.axes[Y].dot(element.vertices[i]));
-	}
+
+	Eigen::Matrix3d newBase;
+	newBase << elemParam.axes[X], elemParam.axes[Y], elemParam.axes[Z];
+	calcRotatedVertices(newBase, element.vertices, localVertices);
 	
 	for (int i=0; i<3; i++) {
 		// Element Fields
 		double length = (element.vertices[NXT(i)] - element.vertices[PRV(i)]).norm();
-		elemParam.c[i] = + (planeVertices[PRV(i)][Y] - planeVertices[NXT(i)][Y]) / length;
-		elemParam.s[i] = - (planeVertices[PRV(i)][X] - planeVertices[NXT(i)][X]) / length;
+		elemParam.c[i] = + (localVertices[PRV(i)][Y] - localVertices[NXT(i)][Y]) / length;
+		elemParam.s[i] = - (localVertices[PRV(i)][X] - localVertices[NXT(i)][X]) / length;
 		elemParam.cosine[i] = getCosOfAngle(element.vertices[i], element.vertices[NXT(i)], element.vertices[PRV(i)]);
 		elemParam.heights[i] = 2 * elemParam.area / length;
 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "utils.h"
-#include "vector_utils.h"
 #include <utility>
 
 #define NXT(i) ((i + 1) % 3)	// next index in counter-clockwise direction with relation to normal
