@@ -85,31 +85,36 @@ void ElementBuilder::getUnitVectors(Element const &element, ElementParameters &e
 	areaVector = getAreaVector(element.vertices[0], element.vertices[NXT(0)], element.vertices[PRV(0)]);
 	elemParam.area = areaVector.first;
 	elemParam.axes[Z] = areaVector.second; 
+
+	/*
 	centroid = (element.vertices[0] + element.vertices[1] + element.vertices[2]) / 3;
 	elemParam.axes[Y] = (element.vertices[0] - centroid).normalized();
 	elemParam.axes[X] = elemParam.axes[Y].cross(elemParam.axes[Z]);
+	*/
 }
 
 void ElementBuilder::calculateParameters(Element const &element, ElementParameters &elemParam) {	
 	
 	std::pair<double, Eigen::Vector3d> areaVector;
-	Eigen::Vector3d centroid;
 	Eigen::Vector3d localVertices[3];
 	
-	for (int i = 0; i < 3; i++) {
-		//elemParam.neighborParam[i] = {0};
-		elemParam.neighborParam[i].height = 0;
-		elemParam.neighborParam[i].normal << 0, 0, 0;
-		for (int j = 0; j < 3; j++) {
-			elemParam.neighborParam[i].heightArr[j] = 0;
-			elemParam.neighborParam[i].cosineArr[j] = 0;
-		}
-	}
 	getUnitVectors(element, elemParam);
 
-	Eigen::Matrix3d newBase;
-	newBase << elemParam.axes[X], elemParam.axes[Y], elemParam.axes[Z];
-	calcRotatedVertices(newBase, element.vertices, localVertices);
+	//Eigen::Matrix3d newBase;
+	//newBase << elemParam.axes[X], elemParam.axes[Y], elemParam.axes[Z]; // (as coloumns)
+	//calcRotatedVertices(newBase, element.vertices, localVertices);
+
+	Eigen::Matrix3d rotationMat; // FIXME
+	Eigen::Vector3d uz;
+	uz << 0, 0, 1;
+	rotationMat = getRotationMatrix(uz, elemParam.axes[Z], Z);
+	elemParam.axes[X] = rotationMat.col(X).eval();
+	elemParam.axes[Y] = rotationMat.col(Y).eval();
+	std::cout << "rotation matrix: " << std::endl << rotationMat << std::endl;
+	for (int i = 0; i < 3; i++) {
+		localVertices[i] = rotationMat * element.vertices[i];
+		std::cout << "rotated: " << localVertices[i] << std::endl;
+	}
 	
 	for (int i=0; i<3; i++) {
 		// Element Fields
@@ -131,6 +136,9 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 			elemParam.neighborParam[i].heightArr[NXT(i)] = 2 * neighborArea / (element.vertices[i] - element.neighborVertices[i]).norm();
 		}
 	}
+
+	std::cout << element << std::endl;
+	std::cout << elemParam << std::endl;
 }
 
 //################################################################# Element Matrices Calculation ############################################################################
@@ -297,8 +305,6 @@ void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 	//element.Ke = simProps.thickness * elemParam.area * B.transpose() * De * B;
 	//element.Ke.block(0, 0, 9, 9) += Kem;	
 
-	std::cout << element << std::endl;
-	std::cout << elemParam << std::endl;
 	std::cout << "Bm: " << std::endl << Bm << std::endl;
 	std::cout << "Km: " << std::endl << Km << std::endl;
 	std::cout << "Kb: " << std::endl << Kb << std::endl;
@@ -323,7 +329,6 @@ void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<dou
 
 	if (displacements.sum() != 0) {
 		std::cout << "calculateVonMisesStress" << std::endl;
-		std::cout << "elemParam " << std::endl << elemParam << std::endl;
 		std::cout << "Bm " << std::endl << Bm << std::endl;
 		std::cout << "displacements " << std::endl << displacements << std::endl;
 		std::cout << "Strain: " << std::endl << strain << std::endl;

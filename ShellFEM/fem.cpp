@@ -186,7 +186,9 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 	for (int faceIdx = 0; faceIdx < mesh.FNB.rows(); faceIdx++) {
 		Eigen::Matrix<double, 18, 1> elementDisplacements = MatrixXd::Zero(18, 1);
 		VectorXi verticesIndices = mesh.FNB.row(faceIdx);
-		std::cout << "faceIdx: " << faceIdx << "verticesIndices" << verticesIndices << std::endl;
+		std::cout << "faceIdx: " << faceIdx << std::endl;
+		std::cout << "verticesIndices" << verticesIndices << std::endl;
+		std::cout << DASH << std::endl;
 
 		Element element = createFaceElement(mesh, faceIdx);
 		for (int i = 0; i < 6; i++) {

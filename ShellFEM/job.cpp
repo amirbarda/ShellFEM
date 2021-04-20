@@ -39,7 +39,8 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 	calculateFaceNeighborhoodMatrix(SF, FNB);
 
 	igl::edge_topology(SV, SF, EV, FE, EF);
-	std::cout << "EV:" << std::endl << EV << std::endl;
+	std::cout << "EV:" << std::endl;
+	for (int i=0; i<EV.rows();i++) std::cout << i << ": " << EV.row(i) << std::endl;
 	std::cout << DASH << std::endl;
 	auto nodalForces = vector3d_from_txt(jobProps.forcesPath);
 	auto freeDOF = vector3d_from_txt(jobProps.fixedPath);

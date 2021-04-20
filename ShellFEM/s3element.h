@@ -50,10 +50,10 @@ struct Element {
 	Data Structures For Holding Temporary Results Used to Calculate the Stiffness Matrix
 */
 	struct NeighborParameters {
-		double height;						// Height down from vertex
-		Vector3d normal;			// Normal to triangle face
-		double heightArr[3];			// Index is according to adjacent element vertex index
-		double cosineArr[3];			// Index is according to adjacent element vertex index
+		double height = 0;					// Height down from vertex
+		Vector3d normal = Vector3d(0,0,0);	// Normal to triangle face
+		double heightArr[3] = {0};			// Index is according to adjacent element vertex index
+		double cosineArr[3] = {0};			// Index is according to adjacent element vertex index
 	};
 
 	struct ElementParameters {
