@@ -1,0 +1,153 @@
+
+ShellFEM.exe -n A11 -f examples/A11/mesh.obj -q examples/A11/load_nodes.txt -x examples/A11/fixed_nodes.txt -c examples/A11/clamped_edges.txt -g -o res/A11 -e 200e9 -t 1e-3 -p 0.3
+
+ShellFEM.exe -n A22 -f examples/A22/mesh.obj -q examples/A22/load_nodes.txt -x examples/A22/fixed_nodes.txt -c examples/A22/clamped_edges.txt -g -o res/A22 -e 200e9 -t 1e-3 -p 0.3
+
+ShellFEM.exe -n A44 -f examples/A44/mesh.obj -q examples/A44/load_nodes.txt -x examples/A44/fixed_nodes.txt -c examples/A44/clamped_edges.txt -g -o res/A44 -e 200e9 -t 1e-3 -p 0.3
+
+ShellFEM.exe -n B11 -f examples/B11/mesh.obj -q examples/B11/load_nodes.txt -x examples/B11/fixed_nodes.txt -c examples/B11/clamped_edges.txt -g -o res/B11 -e 200e9 -t 1e-3 -p 0.3
+
+ShellFEM.exe -n B22 -f examples/B22/mesh.obj -q examples/B22/load_nodes.txt -x examples/B22/fixed_nodes.txt -c examples/B22/clamped_edges.txt -g -o res/B22 -e 200e9 -t 1e-3 -p 0.3
+
+ShellFEM.exe -n B44 -f examples/B44/mesh.obj -q examples/B44/load_nodes.txt -x examples/B44/fixed_nodes.txt -c examples/B44/clamped_edges.txt -g -o res/B44 -e 200e9 -t 1e-3 -p 0.3
+
+ShellFEM.exe -n Irreg22 -f examples/Irreg22/mesh.obj -q examples/Irreg22/load_nodes.txt -x examples/Irreg22/fixed_nodes.txt -c examples/Irreg22/clamped_edges.txt -g -o res/Irreg22 -e 200e9 -t 1e-3 -p 0.3
+
+
+
+ShellFEM.exe -n Sphere18 -f examples/Sphere18/mesh.obj -q examples/Sphere18/load_nodes.txt -x examples/Sphere18/fixed_nodes.txt -c examples/Sphere18/clamped_edges.txt -g -o res/Sphere18 -e 6.825e7 -t 0.04e-3 -p 0.3
+
+ShellFEM.exe -n Sphere19 -f examples/Sphere19/mesh.obj -q examples/Sphere19/load_nodes.txt -x examples/Sphere19/fixed_nodes.txt -c examples/Sphere19/clamped_edges.txt -g -o res/Sphere19 -e 6.825e7 -t 0.04e-3 -p 0.3
+
+
+
+ShellFEM.exe -n TB_2 -f examples/TB_2/mesh.obj -q examples/TB_2/load_nodes.txt -x examples/TB_2/fixed_nodes.txt -c examples/TB_2/clamped_edges.txt -g -o res/TB_2 -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_2_Side -f examples/TB_2_Side/mesh.obj -q examples/TB_2_Side/load_nodes.txt -x examples/TB_2_Side/fixed_nodes.txt -c examples/TB_2_Side/clamped_edges.txt -g -o res/TB_2_Side -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_3 -f examples/TB_3/mesh.obj -q examples/TB_3/load_nodes.txt -x examples/TB_3/fixed_nodes.txt -c examples/TB_3/clamped_edges.txt -g -o res/TB_3 -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_3_Side -f examples/TB_3_Side/mesh.obj -q examples/TB_3_Side/load_nodes.txt -x examples/TB_3_Side/fixed_nodes.txt -c examples/TB_3_Side/clamped_edges.txt -g -o res/TB_3_Side -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_5 -f examples/TB_5/mesh.obj -q examples/TB_5/load_nodes.txt -x examples/TB_5/fixed_nodes.txt -c examples/TB_5/clamped_edges.txt -g -o res/TB_5 -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_5_Side -f examples/TB_5_Side/mesh.obj -q examples/TB_5_Side/load_nodes.txt -x examples/TB_5_Side/fixed_nodes.txt -c examples/TB_5_Side/clamped_edges.txt -g -o res/TB_5_Side -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_michael -f examples/TB_michael/mesh.obj -q examples/TB_michael/load_nodes.txt -x examples/TB_michael/fixed_nodes.txt -c examples/TB_michael/clamped_edges.txt -g -o res/TB_michael -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_X_side -f examples/TB_X_side/mesh.obj -q examples/TB_X_side/load_nodes.txt -x examples/TB_X_side/fixed_nodes.txt -c examples/TB_X_side/clamped_edges.txt -g -o res/TB_X_side -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_X_straight -f examples/TB_X_straight/mesh.obj -q examples/TB_X_straight/load_nodes.txt -x examples/TB_X_straight/fixed_nodes.txt -c examples/TB_X_straight/clamped_edges.txt -g -o res/TB_X_straight -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_X_twisted -f examples/TB_X_twisted/mesh.obj -q examples/TB_X_twisted/load_nodes.txt -x examples/TB_X_twisted/fixed_nodes.txt -c examples/TB_X_twisted/clamped_edges.txt -g -o res/TB_X_twisted -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_Z_straight -f examples/TB_Z_straight/mesh.obj -q examples/TB_Z_straight/load_nodes.txt -x examples/TB_Z_straight/fixed_nodes.txt -c examples/TB_Z_straight/clamped_edges.txt -g -o res/TB_Z_straight -e 2.9e7 -t 0.32e-3 -p 0.22
+
+ShellFEM.exe -n TB_Z_twisted -f examples/TB_Z_twisted/mesh.obj -q examples/TB_Z_twisted/load_nodes.txt -x examples/TB_Z_twisted/fixed_nodes.txt -c examples/TB_Z_twisted/clamped_edges.txt -g -o res/TB_Z_twisted -e 2.9e7 -t 0.32e-3 -p 0.22
+
+
+
+ShellFEM.exe -n ElemTrans -f examples/ElemTrans/mesh.obj -q examples/ElemTrans/load_nodes.txt -x examples/ElemTrans/fixed_nodes.txt -c examples/ElemTrans/clamped_edges.txt -g -o res/ElemTrans -e 200e9 -t 1e-3 -p 0.3
+
+
+
+
+
+
+int main(int argc, char** argv) {
+	if (argc > 1) {
+		runInBatchMode(argc, argv);
+	}
+	else { // FIXME
+		//startProgramGUI();
+
+	/*	{
+		std::string name = "A11";
+		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A11\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\A11";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A11\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A11\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A11\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(200e9, 0.3, 1e-3);
+		runFEMJob(jobProps, simProps, true);
+		}
+		{
+		std::string name = "A22";
+ 		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A22\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\A22";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A22\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A22\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A22\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(200e9, 0.3, 1e-3);
+		runFEMJob(jobProps, simProps, true);
+		}
+		{
+		std::string name = "A44";
+		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A44\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\A44";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A44\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A44\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\A44\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(200e9, 0.3, 1e-3);
+		runFEMJob(jobProps, simProps, true);
+		}
+		{
+		std::string name = "B11";
+		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B11\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\B11";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B11\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B11\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B11\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(200e9, 0.3, 1e-3);
+		runFEMJob(jobProps, simProps, true);
+		}
+		{
+		std::string name = "B22";
+		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B22\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\B22";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B22\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B22\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B22\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(200e9, 0.3, 1e-3);
+		runFEMJob(jobProps, simProps, true);
+		}
+		{
+		std::string name = "B44";
+		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B44\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\B44";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B44\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B44\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\B44\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(200e9, 0.3, 1e-3);
+		runFEMJob(jobProps, simProps, true);
+		}
+		{
+		std::string name = "Irreg22";
+		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\Irreg22\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\Irreg22";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\Irreg22\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\Irreg22\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\Irreg22\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(200e9, 0.3, 1e-3);
+		runFEMJob(jobProps, simProps, true);
+		}*/
+		{
+		std::string name = "TwistedBeam";
+		std::string objPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\TwistedBeam\\mesh.obj";
+		std::string outDir = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\res\\TwistedBeam";
+		std::string forcesPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\TwistedBeam\\load_nodes.txt";
+		std::string fixedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\TwistedBeam\\fixed_nodes.txt";
+		std::string clampedPath = "D:\\05 - Workplaces\\05 - C++\\ShellFEM\\x64\\Release\\examples\\TwistedBeam\\clamped_edges.txt";
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		SimulationProperties simProps(2.9e7, 0.22, 0.32);
+		runFEMJob(jobProps, simProps, true);
+		}	
+	}
+}
