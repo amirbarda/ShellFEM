@@ -13,7 +13,6 @@ std::ostream& operator<<(std::ostream& os, const Element& elem) {
 	std::stringstream repr;
 
 	for (int i = 0; i < 3; i++) repr << "vertices[" << i << "]: " << elem.vertices[i] << std::endl;
-	repr << "centroid: " << (elem.vertices[0] + elem.vertices[1] + elem.vertices[2]) / 3 << std::endl;
 	for (int i = 0; i < 3; i++) repr << "neighborExists[" << i << "]: " << elem.neighborExists[i] << std::endl;
 	for (int i = 0; i < 3; i++) repr << "neighborVertices[" << i << "]: " << elem.neighborVertices[i] << std::endl;
 	return os << repr.str();
@@ -80,17 +79,24 @@ ElementBuilder::ElementBuilder(SimulationProperties const &_simProps) {
 
 void ElementBuilder::getUnitVectors(Element const &element, ElementParameters &elemParam) {
 	std::pair<double, Eigen::Vector3d> areaVector;
-	Eigen::Vector3d centroid;
 
 	areaVector = getAreaVector(element.vertices[0], element.vertices[NXT(0)], element.vertices[PRV(0)]);
 	elemParam.area = areaVector.first;
 	elemParam.axes[Z] = areaVector.second; 
+	elemParam.axes[X] = (element.vertices[1] - element.vertices[0]).normalized();
+	elemParam.axes[Y] = elemParam.axes[Z].cross(elemParam.axes[X]);
+}
 
-	/*
-	centroid = (element.vertices[0] + element.vertices[1] + element.vertices[2]) / 3;
-	elemParam.axes[Y] = (element.vertices[0] - centroid).normalized();
-	elemParam.axes[X] = elemParam.axes[Y].cross(elemParam.axes[Z]);
-	*/
+void calcRotatedVertices(Eigen::Vector3d newAxes[3], Eigen::Vector3d const vertices[], Eigen::Vector3d localVertices[]) {
+	Eigen::Matrix3d rotationMat;
+
+	rotationMat << newAxes[X], newAxes[Y], newAxes[Z]; // (as columns)
+	std::cout << "rotation matrix: " << std::endl << rotationMat << std::endl;
+	for (int i = 0; i < 3; i++) {
+		localVertices[i] = rotationMat * vertices[i];
+		std::cout << "rotated: " << localVertices[i] << std::endl;
+	}
+	std::cout << DASH << std::endl;
 }
 
 void ElementBuilder::calculateParameters(Element const &element, ElementParameters &elemParam) {	
@@ -99,22 +105,7 @@ void ElementBuilder::calculateParameters(Element const &element, ElementParamete
 	Eigen::Vector3d localVertices[3];
 	
 	getUnitVectors(element, elemParam);
-
-	//Eigen::Matrix3d newBase;
-	//newBase << elemParam.axes[X], elemParam.axes[Y], elemParam.axes[Z]; // (as coloumns)
-	//calcRotatedVertices(newBase, element.vertices, localVertices);
-
-	Eigen::Matrix3d rotationMat; // FIXME
-	Eigen::Vector3d uz;
-	uz << 0, 0, 1;
-	rotationMat = getRotationMatrix(uz, elemParam.axes[Z], Z);
-	elemParam.axes[X] = rotationMat.col(X).eval();
-	elemParam.axes[Y] = rotationMat.col(Y).eval();
-	std::cout << "rotation matrix: " << std::endl << rotationMat << std::endl;
-	for (int i = 0; i < 3; i++) {
-		localVertices[i] = rotationMat * element.vertices[i];
-		std::cout << "rotated: " << localVertices[i] << std::endl;
-	}
+	calcRotatedVertices(elemParam.axes, element.vertices, localVertices);
 	
 	for (int i=0; i<3; i++) {
 		// Element Fields
