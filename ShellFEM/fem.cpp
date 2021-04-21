@@ -157,20 +157,29 @@ bool solveSparseEquation(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_tri
 	SparseMat K;								// Global Stiffness Matrix.
 	MatrixXd forces;							// Forces vector for solver
 	Eigen::ConjugateGradient<SparseMat> solver; // solve K*U = F. 
+	//Eigen::SparseLU<SparseMat> solver;
 	VectorXd displacementOfDOFs;				// solution is displacments of dof
 
 	std::cout << "In solveSparseEquation" << std::endl;
 	
 	preproccessForSolver(K, forces, DOFTranslationMap, K_triplets, numOfDOF, nodalForces);
 
-	solver.compute(K);
-	displacementOfDOFs = solver.solve(forces);
+	//Eigen::SparseQR <SparseMat, Eigen::COLAMDOrdering<int> > sqr;
+	//sqr.compute(K);
+	//std::cout << "K Rank: " << sqr.rank() << std::endl;
 
-	std::cout << "# Iterations: " << solver.iterations() << std::endl;
-	std::cout << "Estimated Error: " << solver.error() << std::endl;
+	solver.compute(K);
+	displacementOfDOFs = solver.solve(forces); // Fixme need to set tolerance (epsilon)
+
+	//std::cout << "# Iterations: " << solver.iterations() << std::endl;
+	//std::cout << "Estimated Error: " << solver.error() << std::endl;
 
 	if (solver.info() != Eigen::Success) {
 		std::cout << "Failed to solve" << std::endl;
+		if (solver.info() == Eigen::NumericalIssue) std::cout << "The provided data did not satisfy the prerequisites." << std::endl;
+		if (solver.info() == Eigen::NoConvergence) std::cout << "Iterative procedure did not converge.." << std::endl;
+		if (solver.info() == Eigen::InvalidInput) std::cout << "The inputs are invalid, or the algorithm has been improperly called. \
+												When assertions are enabled, such errors trigger an assert.." << std::endl;
 		return true;
 	}
 	setDisplacements(mesh, DOFTranslationMap, results, displacementOfDOFs);

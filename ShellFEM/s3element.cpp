@@ -88,13 +88,13 @@ void ElementBuilder::getUnitVectors(Element const &element, ElementParameters &e
 }
 
 void calcRotatedVertices(Eigen::Vector3d newAxes[3], Eigen::Vector3d const vertices[], Eigen::Vector3d localVertices[]) {
-	Eigen::Matrix3d rotationMat;
+	Eigen::Matrix3d transformMat;
 
-	rotationMat << newAxes[X], newAxes[Y], newAxes[Z]; // (as columns)
-	std::cout << "rotation matrix: " << std::endl << rotationMat << std::endl;
+	transformMat << newAxes[X], newAxes[Y], newAxes[Z]; // (as columns)
+	transformMat.transposeInPlace();
 	for (int i = 0; i < 3; i++) {
-		localVertices[i] = rotationMat * vertices[i];
-		std::cout << "rotated: " << localVertices[i] << std::endl;
+		localVertices[i] = transformMat * vertices[i];
+		std::cout << "local vertex: " << localVertices[i] << std::endl;
 	}
 	std::cout << DASH << std::endl;
 }
@@ -278,23 +278,14 @@ void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 	calculateBmMatrix(elemParam, Bm); 
 
 	double c1 = simProps.thickness;
-	//double c2 = SQR(simProps.thickness) / 4;
 	double c3 = CUBE(simProps.thickness) / 12;
 
 	auto Km = c1 * Bm.transpose() * De * Bm;
-	//auto Kmb = c2 * Bm.transpose() * De * B;
-	//auto Kbm = c2 * B.transpose() * De * Bm;
 	auto Kb = c3 * B.transpose() * De * B;
 
 	element.Ke = Kb;
 	element.Ke.block(0, 0, 9, 9) += Km;
-	//element.Ke.block(0, 0, 9, 18) += Kmb;
-	//element.Ke.block(0, 0, 18, 9) += Kbm;
 	element.Ke *= elemParam.area;
-
-	//Kem = simProps.thickness * elemParam.area * Bm.transpose() * De * Bm;
-	//element.Ke = simProps.thickness * elemParam.area * B.transpose() * De * B;
-	//element.Ke.block(0, 0, 9, 9) += Kem;	
 
 	std::cout << "Bm: " << std::endl << Bm << std::endl;
 	std::cout << "Km: " << std::endl << Km << std::endl;

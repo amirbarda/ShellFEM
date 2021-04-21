@@ -31,9 +31,6 @@
 *.out
 *.app
 /.vs/ShellFEM/v15
-x64/**/*
-ShellFEM/x64/**/*
-ShellFEMUnitTests/x64/**/*
 
 # Log
 *.log

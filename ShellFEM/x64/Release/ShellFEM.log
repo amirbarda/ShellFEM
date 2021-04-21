@@ -1806,6 +1806,6 @@ c:\users\michael\documents\googledrive\googledrive\visualstudioc\shellfem\shellf
   vector_utils.cpp
   glad.c
   Generating code
-  All 22243 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 22636 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   ShellFEM.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEM.exe
