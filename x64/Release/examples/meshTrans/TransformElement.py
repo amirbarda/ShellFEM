@@ -63,6 +63,6 @@ def copies_gen(N, A, path):
 
 
 #copies_gen(20, 0.5, "mesh.obj") #twisted beams
-#copies_gen(20, 80, "mesh.obj") #spheres
+copies_gen(20, 120, "mesh.obj") #spheres
 #copies_gen(20, 0.5, "mesh.obj") #A44
 

@@ -161,13 +161,13 @@ bool solveSparseEquation(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_tri
 	VectorXd displacementOfDOFs;				// solution is displacments of dof
 
 	std::cout << "In solveSparseEquation" << std::endl;
-	
 	preproccessForSolver(K, forces, DOFTranslationMap, K_triplets, numOfDOF, nodalForces);
 
 	//Eigen::SparseQR <SparseMat, Eigen::COLAMDOrdering<int> > sqr;
 	//sqr.compute(K);
 	//std::cout << "K Rank: " << sqr.rank() << std::endl;
 
+	//solver.setTolerance(1);
 	solver.compute(K);
 	displacementOfDOFs = solver.solve(forces); // Fixme need to set tolerance (epsilon)
 

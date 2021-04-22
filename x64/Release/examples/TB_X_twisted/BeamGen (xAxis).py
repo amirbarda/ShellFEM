@@ -2,11 +2,11 @@ import numpy as np
 
 pi = np.pi
 
-h = 1.1e-3		#width [diameter]
+h = 1.1e-2		#width [diameter]
 r = h/2
-L = 12e-3		#length of beam [on x axis]
+L = 12e-2		#length of beam [on x axis]
 N = 12			#amount of plates for beam
-ang = pi
+ang = pi/2
 
 for m in range(N + 1):
 	x = (m/N) * L

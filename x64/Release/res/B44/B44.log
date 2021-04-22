@@ -102,81 +102,35 @@ verticesIndices
 -1
  6
 -1
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.1
+local vertex: -0.1
 -0.1
    0
-localVertices[1]: 
--0.075
+local vertex: -0.075
   -0.1
      0
-localVertices[2]: 
-  -0.1
+local vertex:   -0.1
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.1
+vertices[0]: 0.1
 0.1
   0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
   0.1
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
 0.075
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -416,81 +370,35 @@ verticesIndices
  2
 10
  0
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
- -0.1
+local vertex:  -0.1
 0.075
     0
-localVertices[1]: 
--0.075
+local vertex: -0.075
  0.075
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
    0.1
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
   0.1
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.075
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.075
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
+neighborVertices[0]: 0.05
  0.1
    0
-neighborVertices[1]: 
- 0.1
+neighborVertices[1]:  0.1
 0.05
    0
-neighborVertices[2]: 
-0.1
+neighborVertices[2]: 0.1
 0.1
   0
 
@@ -874,81 +782,35 @@ verticesIndices
 -1
  7
  5
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
   -0.1
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
  -0.1
     0
-localVertices[2]: 
--0.075
+local vertex: -0.075
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
   0.1
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
  0.1
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
- 0.05
+neighborVertices[1]:  0.05
 0.075
     0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.075
     0
 
@@ -1332,81 +1194,35 @@ verticesIndices
  3
 11
  1
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.1
+local vertex: -0.1
 0.05
    0
-localVertices[1]: 
--0.075
+local vertex: -0.075
   0.05
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
  0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
  0.1
    0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.075
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.075
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
   0.1
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
  0.05
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
   0.1
     0
 
@@ -1889,81 +1705,35 @@ verticesIndices
 -1
  8
  6
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
  -0.1
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
   -0.1
      0
-localVertices[2]: 
- -0.05
+local vertex:  -0.05
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
  0.1
    0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
   0.1
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
 0.075
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.075
     0
 
@@ -2347,81 +2117,35 @@ verticesIndices
  4
 12
  2
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
- -0.1
+local vertex:  -0.1
 0.025
     0
-localVertices[1]: 
--0.075
+local vertex: -0.075
  0.025
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
   0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
   0.1
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.075
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.075
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-  0
+neighborVertices[0]:   0
 0.1
   0
-neighborVertices[1]: 
-0.05
+neighborVertices[1]: 0.05
 0.05
    0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
  0.1
    0
 
@@ -2805,81 +2529,35 @@ verticesIndices
 -1
  9
  7
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
   -0.1
      0
-localVertices[1]: 
-   0
+local vertex:    0
 -0.1
    0
-localVertices[2]: 
--0.025
+local vertex: -0.025
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
   0.1
     0
-vertices[1]: 
-  0
+vertices[1]:   0
 0.1
   0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-    0
+neighborVertices[1]:     0
 0.075
     0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.075
     0
 
@@ -3182,81 +2860,35 @@ verticesIndices
 -1
 13
  3
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.1
+local vertex: -0.1
    0
    0
-localVertices[1]: 
--0.075
+local vertex: -0.075
      0
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
  0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-  0
+vertices[0]:   0
 0.1
   0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.075
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
  0.05
     0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
   0.1
     0
 
@@ -3559,81 +3191,35 @@ verticesIndices
  1
 11
 -1
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
-  -0.1
+local vertex:   -0.1
 -0.075
      0
-localVertices[1]: 
--0.075
+local vertex: -0.075
 -0.075
      0
-localVertices[2]: 
- -0.1
+local vertex:  -0.1
 -0.05
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-  0.1
+vertices[0]:   0.1
 0.075
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.075
     0
-vertices[2]: 
- 0.1
+vertices[2]:  0.1
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
-0.075
+neighborVertices[0]: 0.075
   0.1
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
  0.05
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -4017,81 +3603,35 @@ verticesIndices
  7
 15
  5
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
  0.075
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
 0.075
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
   0.1
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.075
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
  0.05
     0
-vertices[2]: 
- 0.1
+vertices[2]:  0.1
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
- 0.05
+neighborVertices[0]:  0.05
 0.075
     0
-neighborVertices[1]: 
-  0.1
+neighborVertices[1]:   0.1
 0.025
     0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.075
     0
 
@@ -4574,81 +4114,35 @@ verticesIndices
  2
 12
 10
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
 -0.075
      0
-localVertices[1]: 
- -0.05
+local vertex:  -0.05
 -0.075
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
  -0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.075
     0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.075
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
  0.05
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
+neighborVertices[0]: 0.05
  0.1
    0
-neighborVertices[1]: 
-0.05
+neighborVertices[1]: 0.05
 0.05
    0
-neighborVertices[2]: 
- 0.1
+neighborVertices[2]:  0.1
 0.05
    0
 
@@ -5131,81 +4625,35 @@ verticesIndices
  8
 16
  6
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
   0.05
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
  0.05
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
 0.075
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.075
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
 0.05
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
  0.05
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
 0.075
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
 0.025
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.075
     0
 
@@ -5688,81 +5136,35 @@ verticesIndices
  3
 13
 11
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
- -0.05
+local vertex:  -0.05
 -0.075
      0
-localVertices[1]: 
--0.025
+local vertex: -0.025
 -0.075
      0
-localVertices[2]: 
--0.05
+local vertex: -0.05
 -0.05
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.075
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.075
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
   0.1
     0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
  0.05
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
  0.05
     0
 
@@ -6245,81 +5647,35 @@ verticesIndices
  9
 17
  7
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
  0.025
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
 0.025
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
  0.05
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.075
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
  0.05
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-    0
+neighborVertices[0]:     0
 0.075
     0
-neighborVertices[1]: 
- 0.05
+neighborVertices[1]:  0.05
 0.025
     0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.075
     0
 
@@ -6802,81 +6158,35 @@ verticesIndices
  4
 14
 12
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
 -0.075
      0
-localVertices[1]: 
-     0
+local vertex:      0
 -0.075
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
  -0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.075
     0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.075
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
  0.05
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-  0
+neighborVertices[0]:   0
 0.1
   0
-neighborVertices[1]: 
-   0
+neighborVertices[1]:    0
 0.05
    0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
 0.05
    0
 
@@ -7260,81 +6570,35 @@ verticesIndices
 -1
 18
  8
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
      0
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
     0
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
 0.025
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-    0
+vertices[0]:     0
 0.075
     0
-vertices[1]: 
-   0
+vertices[1]:    0
 0.05
    0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
  0.05
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
 0.025
     0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
 0.075
     0
 
@@ -7718,81 +6982,35 @@ verticesIndices
  6
 16
 -1
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
- -0.1
+local vertex:  -0.1
 -0.05
     0
-localVertices[1]: 
--0.075
+local vertex: -0.075
  -0.05
      0
-localVertices[2]: 
-  -0.1
+local vertex:   -0.1
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.1
+vertices[0]:  0.1
 0.05
    0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
  0.05
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
-0.075
+neighborVertices[0]: 0.075
 0.075
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
 0.025
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -8176,81 +7394,35 @@ verticesIndices
 12
 20
 10
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
 0.075
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
  0.075
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
    0.1
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
  0.05
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.025
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
+neighborVertices[0]: 0.05
 0.05
    0
-neighborVertices[1]: 
-0.1
+neighborVertices[1]: 0.1
   0
   0
-neighborVertices[2]: 
- 0.1
+neighborVertices[2]:  0.1
 0.05
    0
 
@@ -8634,81 +7806,35 @@ verticesIndices
  7
 17
 15
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
  -0.05
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
 -0.05
     0
-localVertices[2]: 
--0.075
+local vertex: -0.075
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
  0.05
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
 0.05
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
- 0.05
+neighborVertices[0]:  0.05
 0.075
     0
-neighborVertices[1]: 
- 0.05
+neighborVertices[1]:  0.05
 0.025
     0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.025
     0
 
@@ -9191,81 +8317,35 @@ verticesIndices
 13
 21
 11
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
  0.05
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
   0.05
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
  0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
 0.05
    0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.025
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
  0.05
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
     0
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
  0.05
     0
 
@@ -9748,81 +8828,35 @@ verticesIndices
  8
 18
 16
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
 -0.05
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
  -0.05
      0
-localVertices[2]: 
- -0.05
+local vertex:  -0.05
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
 0.05
    0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
  0.05
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
 0.075
     0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
 0.025
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.025
     0
 
@@ -10305,81 +9339,35 @@ verticesIndices
 14
 22
 12
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
 0.025
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
  0.025
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
   0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
  0.05
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.025
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-   0
+neighborVertices[0]:    0
 0.05
    0
-neighborVertices[1]: 
-0.05
+neighborVertices[1]: 0.05
    0
    0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
 0.05
    0
 
@@ -10862,81 +9850,35 @@ verticesIndices
  9
 19
 17
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
  -0.05
      0
-localVertices[1]: 
-    0
+local vertex:     0
 -0.05
     0
-localVertices[2]: 
--0.025
+local vertex: -0.025
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
  0.05
     0
-vertices[1]: 
-   0
+vertices[1]:    0
 0.05
    0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-    0
+neighborVertices[0]:     0
 0.075
     0
-neighborVertices[1]: 
-    0
+neighborVertices[1]:     0
 0.025
     0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.025
     0
 
@@ -11419,81 +10361,35 @@ verticesIndices
 -1
 23
 13
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
     0
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
      0
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
  0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-   0
+vertices[0]:    0
 0.05
    0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.025
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.025
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
     0
     0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
  0.05
     0
 
@@ -11877,81 +10773,35 @@ verticesIndices
 11
 21
 -1
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
-  -0.1
+local vertex:   -0.1
 -0.025
      0
-localVertices[1]: 
--0.075
+local vertex: -0.075
 -0.025
      0
-localVertices[2]: 
--0.1
+local vertex: -0.1
    0
    0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-  0.1
+vertices[0]:   0.1
 0.025
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.025
     0
-vertices[2]: 
-0.1
+vertices[2]: 0.1
   0
   0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
-0.075
+neighborVertices[0]: 0.075
  0.05
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
     0
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -12254,81 +11104,35 @@ verticesIndices
 17
 -1
 15
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
  0.075
      0
-localVertices[1]: 
-    0
+local vertex:     0
 0.075
     0
-localVertices[2]: 
-  0
+local vertex:   0
 0.1
   0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.025
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
     0
     0
-vertices[2]: 
-0.1
+vertices[2]: 0.1
   0
   0
 neighborExists[0]: 1
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
- 0.05
+neighborVertices[0]:  0.05
 0.025
     0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.025
     0
 
@@ -12631,81 +11435,35 @@ verticesIndices
 12
 22
 20
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
 -0.025
      0
-localVertices[1]: 
- -0.05
+local vertex:  -0.05
 -0.025
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
      0
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.025
     0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.025
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
     0
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
-0.05
-   0
-neighborVertices[1]: 
+neighborVertices[0]: 0.05
 0.05
    0
+neighborVertices[1]: 0.05
    0
-neighborVertices[2]: 
-0.1
+   0
+neighborVertices[2]: 0.1
   0
   0
 
@@ -13089,81 +11847,35 @@ verticesIndices
 18
 -1
 16
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
   0.05
      0
-localVertices[1]: 
-   0
+local vertex:    0
 0.05
    0
-localVertices[2]: 
-    0
+local vertex:     0
 0.075
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.025
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
    0
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
     0
     0
 neighborExists[0]: 1
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
 0.025
     0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.025
     0
 
@@ -13547,81 +12259,35 @@ verticesIndices
 13
 23
 21
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
- -0.05
+local vertex:  -0.05
 -0.025
      0
-localVertices[1]: 
--0.025
+local vertex: -0.025
 -0.025
      0
-localVertices[2]: 
--0.05
+local vertex: -0.05
     0
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.025
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.025
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
    0
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
  0.05
     0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
     0
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
     0
     0
 
@@ -14104,81 +12770,35 @@ verticesIndices
 19
 -1
 17
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
  0.025
      0
-localVertices[1]: 
-    0
+local vertex:     0
 0.025
     0
-localVertices[2]: 
-   0
+local vertex:    0
 0.05
    0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.025
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
     0
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
    0
    0
 neighborExists[0]: 1
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
-    0
+neighborVertices[0]:     0
 0.025
     0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.025
     0
 
@@ -14562,81 +13182,35 @@ verticesIndices
 14
 24
 22
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
 -0.025
      0
-localVertices[1]: 
-     0
+local vertex:      0
 -0.025
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
      0
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.025
     0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.025
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
     0
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-   0
+neighborVertices[0]:    0
 0.05
    0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
    0
    0
 
@@ -15119,81 +13693,35 @@ verticesIndices
 -1
 -1
 18
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
      0
      0
-localVertices[1]: 
+local vertex: 0
 0
 0
-0
-localVertices[2]: 
-    0
+local vertex:     0
 0.025
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-    0
+vertices[0]:     0
 0.025
     0
-vertices[1]: 
+vertices[1]: 0
 0
 0
-0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
     0
     0
 neighborExists[0]: 0
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0
+neighborVertices[1]: 0
 0
 0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
 0.025
     0
 
@@ -23571,8 +22099,6 @@ Force Vector:
  0
 -1
 --------------------------------------------------------------------------
-# Iterations: 28
-Estimated Error: 1.35624e-16
 In setDisplacements
 In calcStressFromDisplacements
 faceIdx: 0
@@ -23583,81 +22109,35 @@ verticesIndices 0
  6
 -1
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.1
+local vertex: -0.1
 -0.1
    0
-localVertices[1]: 
--0.075
+local vertex: -0.075
   -0.1
      0
-localVertices[2]: 
-  -0.1
+local vertex:   -0.1
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.1
+vertices[0]: 0.1
 0.1
   0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
   0.1
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
 0.075
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -23796,81 +22276,35 @@ verticesIndices 1
 10
  0
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
- -0.1
+local vertex:  -0.1
 0.075
     0
-localVertices[1]: 
--0.075
+local vertex: -0.075
  0.075
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
    0.1
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
   0.1
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.075
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.075
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
+neighborVertices[0]: 0.05
  0.1
    0
-neighborVertices[1]: 
- 0.1
+neighborVertices[1]:  0.1
 0.05
    0
-neighborVertices[2]: 
-0.1
+neighborVertices[2]: 0.1
 0.1
   0
 
@@ -24009,81 +22443,35 @@ verticesIndices 1
  7
  5
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
   -0.1
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
  -0.1
     0
-localVertices[2]: 
--0.075
+local vertex: -0.075
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
   0.1
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
  0.1
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
- 0.05
+neighborVertices[1]:  0.05
 0.075
     0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.075
     0
 
@@ -24222,81 +22610,35 @@ verticesIndices 2
 11
  1
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.1
+local vertex: -0.1
 0.05
    0
-localVertices[1]: 
--0.075
+local vertex: -0.075
   0.05
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
  0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
  0.1
    0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.075
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.075
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
   0.1
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
  0.05
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
   0.1
     0
 
@@ -24435,81 +22777,35 @@ verticesIndices 2
  8
  6
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
  -0.1
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
   -0.1
      0
-localVertices[2]: 
- -0.05
+local vertex:  -0.05
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
  0.1
    0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
   0.1
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
 0.075
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.075
     0
 
@@ -24638,7 +22934,7 @@ Stress:
 1.56193e+09
 6.44549e+09
 4.59762e+09
-vonMisesStress: 9.7331e+19
+vonMisesStress: 9.73309e+19
 --------------------------------------------------------------------------
 faceIdx: 5
 verticesIndices 3
@@ -24648,81 +22944,35 @@ verticesIndices 3
 12
  2
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
- -0.1
+local vertex:  -0.1
 0.025
     0
-localVertices[1]: 
--0.075
+local vertex: -0.075
  0.025
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
   0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
   0.1
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.075
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.075
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-  0
+neighborVertices[0]:   0
 0.1
   0
-neighborVertices[1]: 
-0.05
+neighborVertices[1]: 0.05
 0.05
    0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
  0.1
    0
 
@@ -24861,81 +23111,35 @@ verticesIndices 3
  9
  7
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
   -0.1
      0
-localVertices[1]: 
-   0
+local vertex:    0
 -0.1
    0
-localVertices[2]: 
--0.025
+local vertex: -0.025
 -0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.075
-y_nxt for c[0]: -0.1
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.1
-y_nxt for c[1]: -0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.1
-y_nxt for c[2]: -0.1
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
   0.1
     0
-vertices[1]: 
-  0
+vertices[1]:   0
 0.1
   0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-    0
+neighborVertices[1]:     0
 0.075
     0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.075
     0
 
@@ -25057,7 +23261,7 @@ displacements
            0
 -3.99369e-05
 Strain: 
-4.63272e-05
+4.63273e-05
   0.0247121
   0.0494241
 Stress: 
@@ -25074,81 +23278,35 @@ verticesIndices 4
 13
  3
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.1
+local vertex: -0.1
    0
    0
-localVertices[1]: 
--0.075
+local vertex: -0.075
      0
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
  0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-  0
+vertices[0]:   0
 0.1
   0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.075
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.075
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
  0.05
     0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
   0.1
     0
 
@@ -25270,7 +23428,7 @@ displacements
            0
  4.08818e-07
 Strain: 
-4.63272e-05
+4.63273e-05
   0.0247121
  -0.0494241
 Stress: 
@@ -25287,81 +23445,35 @@ verticesIndices 5
 11
 -1
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
-  -0.1
+local vertex:   -0.1
 -0.075
      0
-localVertices[1]: 
--0.075
+local vertex: -0.075
 -0.075
      0
-localVertices[2]: 
- -0.1
+local vertex:  -0.1
 -0.05
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-  0.1
+vertices[0]:   0.1
 0.075
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.075
     0
-vertices[2]: 
- 0.1
+vertices[2]:  0.1
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
-0.075
+neighborVertices[0]: 0.075
   0.1
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
  0.05
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -25500,81 +23612,35 @@ verticesIndices 6
 15
  5
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
  0.075
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
 0.075
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
   0.1
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.075
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
  0.05
     0
-vertices[2]: 
- 0.1
+vertices[2]:  0.1
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
- 0.05
+neighborVertices[0]:  0.05
 0.075
     0
-neighborVertices[1]: 
-  0.1
+neighborVertices[1]:   0.1
 0.025
     0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.075
     0
 
@@ -25713,81 +23779,35 @@ verticesIndices 6
 12
 10
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
 -0.075
      0
-localVertices[1]: 
- -0.05
+local vertex:  -0.05
 -0.075
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
  -0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.075
     0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.075
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
  0.05
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
+neighborVertices[0]: 0.05
  0.1
    0
-neighborVertices[1]: 
-0.05
+neighborVertices[1]: 0.05
 0.05
    0
-neighborVertices[2]: 
- 0.1
+neighborVertices[2]:  0.1
 0.05
    0
 
@@ -25926,81 +23946,35 @@ verticesIndices 7
 16
  6
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
   0.05
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
  0.05
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
 0.075
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.075
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
 0.05
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
  0.05
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
 0.075
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
 0.025
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.075
     0
 
@@ -26139,81 +24113,35 @@ verticesIndices 7
 13
 11
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
- -0.05
+local vertex:  -0.05
 -0.075
      0
-localVertices[1]: 
--0.025
+local vertex: -0.025
 -0.075
      0
-localVertices[2]: 
--0.05
+local vertex: -0.05
 -0.05
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.075
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.075
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
   0.1
     0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
  0.05
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
  0.05
     0
 
@@ -26336,7 +24264,7 @@ displacements
 -3.99369e-05
 Strain: 
 -0.00143135
-4.63272e-05
+4.63273e-05
   0.0631682
 Stress: 
 -3.11527e+08
@@ -26352,81 +24280,35 @@ verticesIndices 8
 17
  7
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
  0.025
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
 0.025
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
  0.05
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.075
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
  0.05
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
 0.05
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-    0
+neighborVertices[0]:     0
 0.075
     0
-neighborVertices[1]: 
- 0.05
+neighborVertices[1]:  0.05
 0.025
     0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.075
     0
 
@@ -26549,7 +24431,7 @@ displacements
 -3.99369e-05
 Strain: 
 -0.00143135
-4.63272e-05
+4.63273e-05
  -0.0631682
 Stress: 
 -3.11527e+08
@@ -26565,81 +24447,35 @@ verticesIndices 8
 14
 12
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
 -0.075
      0
-localVertices[1]: 
-     0
+local vertex:      0
 -0.075
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
  -0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.05
-y_nxt for c[0]: -0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.075
-y_nxt for c[1]: -0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.075
-y_nxt for c[2]: -0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.075
     0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.075
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
  0.05
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-  0
+neighborVertices[0]:   0
 0.1
   0
-neighborVertices[1]: 
-   0
+neighborVertices[1]:    0
 0.05
    0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
 0.05
    0
 
@@ -26778,81 +24614,35 @@ verticesIndices 9
 18
  8
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
      0
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
     0
     0
-localVertices[2]: 
--0.05
+local vertex: -0.05
 0.025
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-    0
+vertices[0]:     0
 0.075
     0
-vertices[1]: 
-   0
+vertices[1]:    0
 0.05
    0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
  0.05
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
 0.025
     0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
 0.075
     0
 
@@ -26981,7 +24771,7 @@ Stress:
  1.56193e+09
  6.44549e+09
 -4.59762e+09
-vonMisesStress: 9.7331e+19
+vonMisesStress: 9.73309e+19
 --------------------------------------------------------------------------
 faceIdx: 16
 verticesIndices10
@@ -26991,81 +24781,35 @@ verticesIndices10
 16
 -1
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
- -0.1
+local vertex:  -0.1
 -0.05
     0
-localVertices[1]: 
--0.075
+local vertex: -0.075
  -0.05
      0
-localVertices[2]: 
-  -0.1
+local vertex:   -0.1
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.1
+vertices[0]:  0.1
 0.05
    0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
  0.05
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
-0.075
+neighborVertices[0]: 0.075
 0.075
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
 0.025
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -27194,7 +24938,7 @@ Stress:
 6.44549e+09
 1.56193e+09
 4.59762e+09
-vonMisesStress: 9.7331e+19
+vonMisesStress: 9.73309e+19
 --------------------------------------------------------------------------
 faceIdx: 17
 verticesIndices11
@@ -27204,81 +24948,35 @@ verticesIndices11
 20
 10
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
 0.075
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
  0.075
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
    0.1
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
  0.05
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.025
     0
-vertices[2]: 
-  0.1
+vertices[2]:   0.1
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
+neighborVertices[0]: 0.05
 0.05
    0
-neighborVertices[1]: 
-0.1
+neighborVertices[1]: 0.1
   0
   0
-neighborVertices[2]: 
- 0.1
+neighborVertices[2]:  0.1
 0.05
    0
 
@@ -27417,81 +25115,35 @@ verticesIndices11
 17
 15
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
  -0.05
      0
-localVertices[1]: 
--0.05
+local vertex: -0.05
 -0.05
     0
-localVertices[2]: 
--0.075
+local vertex: -0.075
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
  0.05
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
 0.05
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
- 0.05
+neighborVertices[0]:  0.05
 0.075
     0
-neighborVertices[1]: 
- 0.05
+neighborVertices[1]:  0.05
 0.025
     0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.025
     0
 
@@ -27613,7 +25265,7 @@ displacements
            0
  4.08818e-07
 Strain: 
-4.63272e-05
+4.63273e-05
 -0.00143135
   0.0631682
 Stress: 
@@ -27630,81 +25282,35 @@ verticesIndices12
 21
 11
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
  0.05
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
   0.05
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
  0.075
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
 0.05
    0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.025
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
  0.05
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
     0
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
  0.05
     0
 
@@ -27826,7 +25432,7 @@ displacements
            0
 -3.99369e-05
 Strain: 
-4.63272e-05
+4.63273e-05
 -0.00143135
  -0.0631682
 Stress: 
@@ -27843,81 +25449,35 @@ verticesIndices12
 18
 16
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
 -0.05
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
  -0.05
      0
-localVertices[2]: 
- -0.05
+local vertex:  -0.05
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.05
+vertices[0]: 0.05
 0.05
    0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
  0.05
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
 0.075
     0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
 0.025
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.025
     0
 
@@ -28056,81 +25616,35 @@ verticesIndices13
 22
 12
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
 0.025
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
  0.025
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
   0.05
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
  0.05
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.025
     0
-vertices[2]: 
- 0.05
+vertices[2]:  0.05
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-   0
+neighborVertices[0]:    0
 0.05
    0
-neighborVertices[1]: 
-0.05
+neighborVertices[1]: 0.05
    0
    0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
 0.05
    0
 
@@ -28269,81 +25783,35 @@ verticesIndices13
 19
 17
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
  -0.05
      0
-localVertices[1]: 
-    0
+local vertex:     0
 -0.05
     0
-localVertices[2]: 
--0.025
+local vertex: -0.025
 -0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: -0.025
-y_nxt for c[0]: -0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.05
-y_nxt for c[1]: -0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.05
-y_nxt for c[2]: -0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
  0.05
     0
-vertices[1]: 
-   0
+vertices[1]:    0
 0.05
    0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.025
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-    0
+neighborVertices[0]:     0
 0.075
     0
-neighborVertices[1]: 
-    0
+neighborVertices[1]:     0
 0.025
     0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.025
     0
 
@@ -28482,81 +25950,35 @@ verticesIndices14
 23
 13
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.05
+local vertex: -0.05
     0
     0
-localVertices[1]: 
--0.025
+local vertex: -0.025
      0
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
  0.025
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-   0
+vertices[0]:    0
 0.05
    0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.025
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
 0.025
     0
 neighborExists[0]: 0
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
     0
     0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
  0.05
     0
 
@@ -28695,81 +26117,35 @@ verticesIndices15
 21
 -1
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
-  -0.1
+local vertex:   -0.1
 -0.025
      0
-localVertices[1]: 
--0.075
+local vertex: -0.075
 -0.025
      0
-localVertices[2]: 
--0.1
+local vertex: -0.1
    0
    0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-  0.1
+vertices[0]:   0.1
 0.025
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
 0.025
     0
-vertices[2]: 
-0.1
+vertices[2]: 0.1
   0
   0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 0
-neighborVertices[0]: 
-0.075
+neighborVertices[0]: 0.075
  0.05
     0
-neighborVertices[1]: 
-0.075
+neighborVertices[1]: 0.075
     0
     0
-neighborVertices[2]: 
-0
+neighborVertices[2]: 0
 0
 0
 
@@ -28892,7 +26268,7 @@ displacements
            0
 Strain: 
   0.0247121
-4.63272e-05
+4.63273e-05
   0.0494241
 Stress: 
 5.43428e+09
@@ -28908,81 +26284,35 @@ verticesIndices16
 -1
 15
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
  0.075
      0
-localVertices[1]: 
-    0
+local vertex:     0
 0.075
     0
-localVertices[2]: 
-  0
+local vertex:   0
 0.1
   0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.1
-y_nxt for c[0]: 0.075
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.075
-y_nxt for c[1]: 0.1
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.075
-y_nxt for c[2]: 0.075
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.025
     0
-vertices[1]: 
-0.075
+vertices[1]: 0.075
     0
     0
-vertices[2]: 
-0.1
+vertices[2]: 0.1
   0
   0
 neighborExists[0]: 1
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
- 0.05
+neighborVertices[0]:  0.05
 0.025
     0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
-  0.1
+neighborVertices[2]:   0.1
 0.025
     0
 
@@ -29105,7 +26435,7 @@ displacements
  4.08818e-07
 Strain: 
   0.0247121
-4.63272e-05
+4.63273e-05
  -0.0494241
 Stress: 
  5.43428e+09
@@ -29121,81 +26451,35 @@ verticesIndices16
 22
 20
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.075
+local vertex: -0.075
 -0.025
      0
-localVertices[1]: 
- -0.05
+local vertex:  -0.05
 -0.025
      0
-localVertices[2]: 
--0.075
+local vertex: -0.075
      0
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.075
+vertices[0]: 0.075
 0.025
     0
-vertices[1]: 
- 0.05
+vertices[1]:  0.05
 0.025
     0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
     0
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.05
-0.05
-   0
-neighborVertices[1]: 
+neighborVertices[0]: 0.05
 0.05
    0
+neighborVertices[1]: 0.05
    0
-neighborVertices[2]: 
-0.1
+   0
+neighborVertices[2]: 0.1
   0
   0
 
@@ -29334,81 +26618,35 @@ verticesIndices17
 -1
 16
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
   0.05
      0
-localVertices[1]: 
-   0
+local vertex:    0
 0.05
    0
-localVertices[2]: 
-    0
+local vertex:     0
 0.075
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.075
-y_nxt for c[0]: 0.05
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.05
-y_nxt for c[1]: 0.075
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.05
-y_nxt for c[2]: 0.05
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.025
     0
-vertices[1]: 
-0.05
+vertices[1]: 0.05
    0
    0
-vertices[2]: 
-0.075
+vertices[2]: 0.075
     0
     0
 neighborExists[0]: 1
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
 0.025
     0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
 0.025
     0
 
@@ -29537,7 +26775,7 @@ Stress:
  6.44549e+09
  1.56193e+09
 -4.59762e+09
-vonMisesStress: 9.7331e+19
+vonMisesStress: 9.73309e+19
 --------------------------------------------------------------------------
 faceIdx: 28
 verticesIndices17
@@ -29547,81 +26785,35 @@ verticesIndices17
 23
 21
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
- -0.05
+local vertex:  -0.05
 -0.025
      0
-localVertices[1]: 
--0.025
+local vertex: -0.025
 -0.025
      0
-localVertices[2]: 
--0.05
+local vertex: -0.05
     0
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
- 0.05
+vertices[0]:  0.05
 0.025
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
 0.025
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
    0
    0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-0.025
+neighborVertices[0]: 0.025
  0.05
     0
-neighborVertices[1]: 
-0.025
+neighborVertices[1]: 0.025
     0
     0
-neighborVertices[2]: 
-0.075
+neighborVertices[2]: 0.075
     0
     0
 
@@ -29760,81 +26952,35 @@ verticesIndices18
 -1
 17
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
  0.025
      0
-localVertices[1]: 
-    0
+local vertex:     0
 0.025
     0
-localVertices[2]: 
-   0
+local vertex:    0
 0.05
    0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.05
-y_nxt for c[0]: 0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0.025
-y_nxt for c[1]: 0.05
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0.025
-y_nxt for c[2]: 0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.025
     0
-vertices[1]: 
-0.025
+vertices[1]: 0.025
     0
     0
-vertices[2]: 
-0.05
+vertices[2]: 0.05
    0
    0
 neighborExists[0]: 1
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
-    0
+neighborVertices[0]:     0
 0.025
     0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
- 0.05
+neighborVertices[2]:  0.05
 0.025
     0
 
@@ -29973,81 +27119,35 @@ verticesIndices18
 24
 22
 --------------------------------------------------------------------------
-rotation matrix: 
--1  0  0
- 0 -1  0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
 -0.025
      0
-localVertices[1]: 
-     0
+local vertex:      0
 -0.025
      0
-localVertices[2]: 
--0.025
+local vertex: -0.025
      0
      0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.0353553
-y_prv for c[0]: 0
-y_nxt for c[0]: -0.025
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 0.707107
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.025
-y_prv for c[1]: -0.025
-y_nxt for c[1]: 0
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -1
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: -0.025
-y_nxt for c[2]: -0.025
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-0.025
+vertices[0]: 0.025
 0.025
     0
-vertices[1]: 
-    0
+vertices[1]:     0
 0.025
     0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
     0
     0
 neighborExists[0]: 1
 neighborExists[1]: 1
 neighborExists[2]: 1
-neighborVertices[0]: 
-   0
+neighborVertices[0]:    0
 0.05
    0
-neighborVertices[1]: 
+neighborVertices[1]: 0
 0
 0
-0
-neighborVertices[2]: 
-0.05
+neighborVertices[2]: 0.05
    0
    0
 
@@ -30186,81 +27286,35 @@ verticesIndices19
 -1
 18
 --------------------------------------------------------------------------
-rotation matrix: 
- 0 -1  0
- 1  0 -0
- 0  0  1
-localVertices[0]: 
--0.025
+local vertex: -0.025
      0
      0
-localVertices[1]: 
+local vertex: 0
 0
 0
-0
-localVertices[2]: 
-    0
+local vertex:     0
 0.025
     0
 --------------------------------------------------------------------------
-i_prv for c[0]: 2
-i for c[0]: 0
-i_nxt for c[0]: 1
-Y for c[0]: 1
-
-length[i] for c[0]: 0.025
-y_prv for c[0]: 0.025
-y_nxt for c[0]: 0
-(y_prv - y_nxt) for c[0]: 0.025
-c[0]: 1
-
-i_prv for c[1]: 0
-i for c[1]: 1
-i_nxt for c[1]: 2
-Y for c[1]: 1
-
-length[i] for c[1]: 0.0353553
-y_prv for c[1]: 0
-y_nxt for c[1]: 0.025
-(y_prv - y_nxt) for c[1]: -0.025
-c[1]: -0.707107
-
-i_prv for c[2]: 1
-i for c[2]: 2
-i_nxt for c[2]: 0
-Y for c[2]: 1
-
-length[i] for c[2]: 0.025
-y_prv for c[2]: 0
-y_nxt for c[2]: 0
-(y_prv - y_nxt) for c[2]: 0
-c[2]: 0
-
-vertices[0]: 
-    0
+vertices[0]:     0
 0.025
     0
-vertices[1]: 
+vertices[1]: 0
 0
 0
-0
-vertices[2]: 
-0.025
+vertices[2]: 0.025
     0
     0
 neighborExists[0]: 0
 neighborExists[1]: 0
 neighborExists[2]: 1
-neighborVertices[0]: 
+neighborVertices[0]: 0
 0
 0
-0
-neighborVertices[1]: 
-0
+neighborVertices[1]: 0
 0
 0
-neighborVertices[2]: 
-0.025
+neighborVertices[2]: 0.025
 0.025
     0
 
@@ -30450,7 +27504,7 @@ Von-Mises Stress:
 4.78676e+19
 9.47206e+19
 6.23362e+19
- 9.7331e+19
+9.73309e+19
 6.45122e+19
  6.6672e+19
  6.6672e+19
@@ -30461,8 +27515,8 @@ Von-Mises Stress:
 7.09102e+19
 7.09102e+19
 6.45122e+19
- 9.7331e+19
- 9.7331e+19
+9.73309e+19
+9.73309e+19
 6.45122e+19
 7.09102e+19
 7.09102e+19
@@ -30473,7 +27527,7 @@ Von-Mises Stress:
  6.6672e+19
  6.6672e+19
 6.45122e+19
- 9.7331e+19
+9.73309e+19
 6.23362e+19
 9.47206e+19
 4.78676e+19

@@ -19,6 +19,8 @@ ShellFEM.exe -n Sphere18 -f examples/Sphere18/mesh.obj -q examples/Sphere18/load
 
 ShellFEM.exe -n Sphere19 -f examples/Sphere19/mesh.obj -q examples/Sphere19/load_nodes.txt -x examples/Sphere19/fixed_nodes.txt -c examples/Sphere19/clamped_edges.txt -g -o res/Sphere19 -e 6.825e7 -t 0.04e-3 -p 0.3
 
+ShellFEM.exe -n TriTrans -f examples/TriTrans/mesh.obj -q examples/TriTrans/load_nodes.txt -x examples/TriTrans/fixed_nodes.txt -c examples/TriTrans/clamped_edges.txt -g -o res/TriTrans -e 200e9 -t 1e-3 -p 0.3
+
 
 
 ShellFEM.exe -n TB_2 -f examples/TB_2/mesh.obj -q examples/TB_2/load_nodes.txt -x examples/TB_2/fixed_nodes.txt -c examples/TB_2/clamped_edges.txt -g -o res/TB_2 -e 2.9e7 -t 0.32e-3 -p 0.22
@@ -33,10 +35,6 @@ ShellFEM.exe -n TB_5 -f examples/TB_5/mesh.obj -q examples/TB_5/load_nodes.txt -
 
 ShellFEM.exe -n TB_5_Side -f examples/TB_5_Side/mesh.obj -q examples/TB_5_Side/load_nodes.txt -x examples/TB_5_Side/fixed_nodes.txt -c examples/TB_5_Side/clamped_edges.txt -g -o res/TB_5_Side -e 2.9e7 -t 0.32e-3 -p 0.22
 
-ShellFEM.exe -n TB_michael -f examples/TB_michael/mesh.obj -q examples/TB_michael/load_nodes.txt -x examples/TB_michael/fixed_nodes.txt -c examples/TB_michael/clamped_edges.txt -g -o res/TB_michael -e 2.9e7 -t 0.32e-3 -p 0.22
-
-ShellFEM.exe -n TB_X_side -f examples/TB_X_side/mesh.obj -q examples/TB_X_side/load_nodes.txt -x examples/TB_X_side/fixed_nodes.txt -c examples/TB_X_side/clamped_edges.txt -g -o res/TB_X_side -e 2.9e7 -t 0.32e-3 -p 0.22
-
 ShellFEM.exe -n TB_X_straight -f examples/TB_X_straight/mesh.obj -q examples/TB_X_straight/load_nodes.txt -x examples/TB_X_straight/fixed_nodes.txt -c examples/TB_X_straight/clamped_edges.txt -g -o res/TB_X_straight -e 2.9e7 -t 0.32e-3 -p 0.22
 
 ShellFEM.exe -n TB_X_twisted -f examples/TB_X_twisted/mesh.obj -q examples/TB_X_twisted/load_nodes.txt -x examples/TB_X_twisted/fixed_nodes.txt -c examples/TB_X_twisted/clamped_edges.txt -g -o res/TB_X_twisted -e 2.9e7 -t 0.32e-3 -p 0.22
@@ -47,7 +45,7 @@ ShellFEM.exe -n TB_Z_twisted -f examples/TB_Z_twisted/mesh.obj -q examples/TB_Z_
 
 
 
-ShellFEM.exe -n TriTrans -f examples/TriTrans/mesh.obj -q examples/TriTrans/load_nodes.txt -x examples/TriTrans/fixed_nodes.txt -c examples/TriTrans/clamped_edges.txt -g -o res/TriTrans -e 200e9 -t 1e-3 -p 0.3
+ShellFEM.exe -n Amir_Shelve -f examples/Amir_Shelve/mesh.obj -q examples/Amir_Shelve/load_nodes.txt -x examples/Amir_Shelve/fixed_nodes.txt -c examples/Amir_Shelve/clamped_edges.txt -g -o res/Amir_Shelve -e 200e9 -t 1e-3 -p 0.3
 
 
 

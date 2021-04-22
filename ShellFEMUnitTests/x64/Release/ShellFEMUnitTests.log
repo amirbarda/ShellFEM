@@ -1,6 +1,1 @@
-﻿  stdafx.cpp
-  shellFEMUnitTests.cpp
-LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
-  Generating code
-  Finished generating code
-  ShellFEMUnitTests.vcxproj -> C:\Users\Michael\Documents\GoogleDrive\GoogleDrive\VisualStudioC\ShellFEM\x64\Release\ShellFEMUnitTests.dll
+﻿  ShellFEMUnitTests.vcxproj -> D:\05 - Workplaces\05 - C++\ShellFEM\x64\Release\ShellFEMUnitTests.dll
