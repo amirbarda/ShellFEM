@@ -3,6 +3,7 @@ import random
 from math import pi, cos, sin, sqrt
 
 N = 20 #how many copies
+A = 20 #magnitude for radial translation
 
 def get_x_roatation(theta):
 	return np.matrix([[1, 0, 0],
@@ -31,18 +32,31 @@ def get_random_rotation():
 	rotation = mat_x.dot(mat_y.dot(mat_z))
 	return rotation
 
+f = open("mesh.obj", "r")
+tmp = f.readlines()
+v_lst = []
+f_lst = []
 
-v_lst = [np.array([7.878, 0.0, 8.09]), np.array([5.866, 0.369, 8.09]), np.array([5.832, 0.737, 8.09])]
+for i in range(len(tmp)):
+	if tmp[i].startswith("v "):
+		tmp[i] = tmp[i][len("v "):]
+		v_lst.append(np.fromstring(tmp[i], dtype=float, sep=' '))
+	if tmp[i].startswith("f "):
+		tmp[i] = tmp[i][len("f "):]
+		f_lst.append(np.fromstring(tmp[i], dtype=int, sep=' '))
 
 for i in range(N):
 	rotation = get_random_rotation()
 	transformation = np.random.rand(3,1)
-	print(transformation)
 	for v in v_lst:
 		tmp = rotation.dot(v.transpose())
-		tmp += transformation.transpose()
+		tmp += A * transformation.transpose()
 		print(f"v {tmp.item(0):.9f} {tmp.item(1):.9f} {tmp.item(2):.9f}")
 
 print()
-for i in range(1, N + 1):
-    print(f"f {i*3 -2} {i*3 -1} {i*3 -0}")
+
+for i in range(N):
+	k = i * len(v_lst)
+	for f in f_lst:
+		print(f"f {k + f.item(0)} {k + f.item(1)} {k + f.item(2)}")
+

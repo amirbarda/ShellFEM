@@ -47,7 +47,7 @@ ShellFEM.exe -n TB_Z_twisted -f examples/TB_Z_twisted/mesh.obj -q examples/TB_Z_
 
 
 
-ShellFEM.exe -n ElemTrans -f examples/ElemTrans/mesh.obj -q examples/ElemTrans/load_nodes.txt -x examples/ElemTrans/fixed_nodes.txt -c examples/ElemTrans/clamped_edges.txt -g -o res/ElemTrans -e 200e9 -t 1e-3 -p 0.3
+ShellFEM.exe -n TriTrans -f examples/TriTrans/mesh.obj -q examples/TriTrans/load_nodes.txt -x examples/TriTrans/fixed_nodes.txt -c examples/TriTrans/clamped_edges.txt -g -o res/TriTrans -e 200e9 -t 1e-3 -p 0.3
 
 
 

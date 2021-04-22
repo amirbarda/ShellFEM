@@ -4,9 +4,9 @@ pi = np.pi
 
 h = 1.1e-3		#width [diameter]
 r = h/2
-L = 12e-3		#length of beam [on x axis]
-N = 12			#amount of plates for beam
-ang = pi
+L = 8e-3		#length of beam [on x axis]
+N = 5			#amount of plates for beam
+ang = 0
 
 for m in range(N + 1):
 	x = (m/N) * L
