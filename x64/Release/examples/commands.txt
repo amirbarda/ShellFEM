@@ -14,14 +14,36 @@ ShellFEM.exe -n B44 -f examples/B44/mesh.obj -q examples/B44/load_nodes.txt -x e
 ShellFEM.exe -n Irreg22 -f examples/Irreg22/mesh.obj -q examples/Irreg22/load_nodes.txt -x examples/Irreg22/fixed_nodes.txt -c examples/Irreg22/clamped_edges.txt -g -o res/Irreg22 -e 200e9 -t 1e-3 -p 0.3
 
 
+ShellFEM.exe -n A11_tag -f examples/A11_tag/mesh.obj -q examples/A11_tag/load_nodes.txt -x examples/A11_tag/fixed_nodes.txt -c examples/A11_tag/clamped_edges.txt -g -o res/A11_tag -e 200e9 -t 1e-3 -p 0.3
 
-ShellFEM.exe -n Sphere18 -f examples/Sphere18/mesh.obj -q examples/Sphere18/load_nodes.txt -x examples/Sphere18/fixed_nodes.txt -c examples/Sphere18/clamped_edges.txt -g -o res/Sphere18 -e 6.825e7 -t 0.04e-3 -p 0.3
 
-ShellFEM.exe -n Sphere19 -f examples/Sphere19/mesh.obj -q examples/Sphere19/load_nodes.txt -x examples/Sphere19/fixed_nodes.txt -c examples/Sphere19/clamped_edges.txt -g -o res/Sphere19 -e 6.825e7 -t 0.04e-3 -p 0.3
+
+ShellFEM.exe -n Sphere18 -f examples/Sphere18/mesh.obj -q examples/Sphere18/load_nodes.txt -x examples/Sphere18/fixed_nodes.txt -c examples/Sphere18/clamped_edges.txt -g -o res/Sphere18 -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n Sphere19 -f examples/Sphere19/mesh.obj -q examples/Sphere19/load_nodes.txt -x examples/Sphere19/fixed_nodes.txt -c examples/Sphere19/clamped_edges.txt -g -o res/Sphere19 -e 6.825e7 -t 0.04 -p 0.3
 
 ShellFEM.exe -n TriTrans -f examples/TriTrans/mesh.obj -q examples/TriTrans/load_nodes.txt -x examples/TriTrans/fixed_nodes.txt -c examples/TriTrans/clamped_edges.txt -g -o res/TriTrans -e 200e9 -t 1e-3 -p 0.3
 
+ShellFEM.exe -n RLSphere -f examples/RLSphere/mesh.obj -q examples/RLSphere/load_nodes.txt -x examples/RLSphere/fixed_nodes.txt -c examples/RLSphere/clamped_edges.txt -g -o res/RLSphere -e 6.825e7 -t 0.04 -p 0.3
 
+
+ShellFEM.exe -n RLSphereFull -f examples/RLSphereFull/mesh.obj -q examples/RLSphereFull/load_nodes.txt -x examples/RLSphereFull/fixed_nodes.txt -c examples/RLSphereFull/clamped_edges.txt -g -o res/RLSphereFull -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n Sphere44Full -f examples/Sphere44Full/mesh.obj -q examples/Sphere44Full/load_nodes.txt -x examples/Sphere44Full/fixed_nodes.txt -c examples/Sphere44Full/clamped_edges.txt -g -o res/Sphere44Full -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n Sphere22Full -f examples/Sphere22Full/mesh.obj -q examples/Sphere22Full/load_nodes.txt -x examples/Sphere22Full/fixed_nodes.txt -c examples/Sphere22Full/clamped_edges.txt -g -o res/Sphere22Full -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n Sphere22_1 -f examples/Sphere22_1/mesh.obj -q examples/Sphere22_1/load_nodes.txt -x examples/Sphere22_1/fixed_nodes.txt -c examples/Sphere22_1/clamped_edges.txt -g -o res/Sphere22_1 -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n Sphere22_2 -f examples/Sphere22_2/mesh.obj -q examples/Sphere22_2/load_nodes.txt -x examples/Sphere22_2/fixed_nodes.txt -c examples/Sphere22_2/clamped_edges.txt -g -o res/Sphere22_2 -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n Sphere22_3 -f examples/Sphere22_3/mesh.obj -q examples/Sphere22_3/load_nodes.txt -x examples/Sphere22_3/fixed_nodes.txt -c examples/Sphere22_3/clamped_edges.txt -g -o res/Sphere22_3 -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n Sphere22_4 -f examples/Sphere22_4/mesh.obj -q examples/Sphere22_4/load_nodes.txt -x examples/Sphere22_4/fixed_nodes.txt -c examples/Sphere22_4/clamped_edges.txt -g -o res/Sphere22_4 -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n triangle_debug1 -f examples/triangle_debug1/mesh.obj -q examples/triangle_debug1/load_nodes.txt -x examples/triangle_debug1/fixed_nodes.txt -c examples/triangle_debug1/clamped_edges.txt -g -o res/triangle_debug1 -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n triangle_debug2 -f examples/triangle_debug2/mesh.obj -q examples/triangle_debug2/load_nodes.txt -x examples/triangle_debug2/fixed_nodes.txt -c examples/triangle_debug2/clamped_edges.txt -g -o res/triangle_debug2 -e 6.825e7 -t 0.04 -p 0.3
 
 ShellFEM.exe -n TB_2 -f examples/TB_2/mesh.obj -q examples/TB_2/load_nodes.txt -x examples/TB_2/fixed_nodes.txt -c examples/TB_2/clamped_edges.txt -g -o res/TB_2 -e 2.9e7 -t 0.32e-3 -p 0.22
 
@@ -48,7 +70,17 @@ ShellFEM.exe -n TB_Z_twisted -f examples/TB_Z_twisted/mesh.obj -q examples/TB_Z_
 ShellFEM.exe -n Amir_Shelve -f examples/Amir_Shelve/mesh.obj -q examples/Amir_Shelve/load_nodes.txt -x examples/Amir_Shelve/fixed_nodes.txt -c examples/Amir_Shelve/clamped_edges.txt -g -o res/Amir_Shelve -e 200e9 -t 1e-3 -p 0.3
 
 
+ShellFEM.exe -n HalfPlane -f examples/HalfPlane/mesh.obj -q examples/HalfPlane/load_nodes.txt -x examples/HalfPlane/fixed_nodes.txt -c examples/HalfPlane/clamped_edges.txt -g -o res/HalfPlane -e 200e9 -t 1e-3 -p 0.3
 
+ShellFEM.exe -n HalfRod -f examples/HalfRod/mesh.obj -q examples/HalfRod/load_nodes.txt -x examples/HalfRod/fixed_nodes.txt -c examples/HalfRod/clamped_edges.txt -g -o res/HalfRod -e 200e9 -t 1e-3 -p 0.3
+ShellFEM.exe -n HalfRod2 -f examples/HalfRod2/mesh.obj -q examples/HalfRod2/load_nodes.txt -x examples/HalfRod2/fixed_nodes.txt -c examples/HalfRod2/clamped_edges.txt -g -o res/HalfRod2 -e 200e9 -t 1e-3 -p 0.3
+
+ShellFEM.exe -n Neil88 -f examples/Neil88/mesh.obj -q examples/Neil88/load_nodes.txt -x examples/Neil88/fixed_nodes.txt -c examples/Neil88/clamped_edges.txt -g -o res/Neil88 -e 6.825e7 -t 0.04 -p 0.3
+
+ShellFEM.exe -n RLSphereH -f examples/RLSphereH/mesh.obj -q examples/RLSphereH/load_nodes.txt -x examples/RLSphereH/fixed_nodes.txt -c examples/RLSphereH/clamped_edges.txt -g -o res/RLSphereH -e 6.825e7 -t 0.04 -p 0.3
+
+
+ShellFEM.exe -n Sphere22_H -f examples/Sphere22_H/mesh.obj -q examples/Sphere22_H/load_nodes.txt -x examples/Sphere22_H/fixed_nodes.txt -c examples/Sphere22_H/clamped_edges.txt -g -o res/Sphere22_H -e 6.825e7 -t 0.04 -p 0.3
 
 
 

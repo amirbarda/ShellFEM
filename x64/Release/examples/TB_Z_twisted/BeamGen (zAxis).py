@@ -2,29 +2,30 @@ import numpy as np
 
 pi = np.pi
 
-h = 1.1e-3		#width [diameter]
+h = 1.1		#width [diameter]
 r = h/2
-L = 12e-3		#length of beam [on z axis]
+L = 12		#length of beam [on z axis]
 N = 12			#amount of plates for beam
-ang = pi
+Nr = 1
+ang = pi/2
 
 for m in range(N + 1):
 	z = (m/N) * L
-	print("v", 0, 0, f"{z:.9f}")
+	print("v", 0, 0, f"{z/Nr:.9f}")
 
 for m in range(N + 1):
 	z = (m/N) * L
 	phi = ang * (z / L)
 	x = r * np.cos(phi)
 	y = r * np.sin(phi)
-	print("v", f"{x:.9f}", f"{y:.9f}", f"{z:.9f}")
+	print("v", f"{x/Nr:.9f}", f"{y/Nr:.9f}", f"{z/Nr:.9f}")
 
 for m in range(N + 1):
 	z = (m/N) * L
 	phi = pi + ang * (z / L)
 	x = r * np.cos(phi)
 	y = r * np.sin(phi)
-	print("v", f"{x:.9f}", f"{y:.9f}", f"{z:.9f}")
+	print("v", f"{x/Nr:.9f}", f"{y/Nr:.9f}", f"{z/Nr:.9f}")
 
 print()
 for m in range(1, N + 1):

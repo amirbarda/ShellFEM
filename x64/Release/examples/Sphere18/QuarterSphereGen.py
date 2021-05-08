@@ -12,7 +12,7 @@ for m in range(M + 1):
 		y = r * np.sin(pi * m/M) * np.sin(2 * pi * n/N)
 		z = r * np.cos(pi * m/M)
 		if ((0 <= z < r) and (0 <= x <= r) and (0 <= y <= r)):		#here we restrict for a quarter sphere. [we also 'puncture' a 18° hole on top].
-			print("v", round(x, 3), round(y, 3), round(z ,3))
+			print("v", f"{x:.4f}", f"{y:.4f}", f"{z:.4f}")
 
 print()
 

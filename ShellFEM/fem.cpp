@@ -56,7 +56,7 @@ int getDOFIdx(int idx, VectorXi &verticesIndices, MatrixXd &DOFTranslationMap) {
 }
 
 void addKeToK(Element &currElement, VectorXi &verticesIndices, MatrixXd &DOFTranslationMap, TriList &K_triplets) {
-	for (int row = 0; row < currElement.Ke.rows(); row++) {
+	for (int row = 0; row < currElement.Ke.rows(); row++) { 
 		int rowDOF = getDOFIdx(row, verticesIndices, DOFTranslationMap);
 		if (rowDOF == FIXED_NODE) continue;
 
@@ -163,16 +163,17 @@ bool solveSparseEquation(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_tri
 	std::cout << "In solveSparseEquation" << std::endl;
 	preproccessForSolver(K, forces, DOFTranslationMap, K_triplets, numOfDOF, nodalForces);
 
-	//Eigen::SparseQR <SparseMat, Eigen::COLAMDOrdering<int> > sqr;
-	//sqr.compute(K);
-	//std::cout << "K Rank: " << sqr.rank() << std::endl;
+	Eigen::SparseQR <SparseMat, Eigen::COLAMDOrdering<int> > sqr;
+	sqr.compute(K);
+	std::cout << "K Rank: " << sqr.rank() << std::endl;
 
-	//solver.setTolerance(1);
+	solver.setTolerance(1e-10);
+	solver.setMaxIterations(1e6);
 	solver.compute(K);
 	displacementOfDOFs = solver.solve(forces); // Fixme need to set tolerance (epsilon)
 
-	//std::cout << "# Iterations: " << solver.iterations() << std::endl;
-	//std::cout << "Estimated Error: " << solver.error() << std::endl;
+	std::cout << "# Iterations: " << solver.iterations() << std::endl;
+	std::cout << "Estimated Error: " << solver.error() << std::endl;
 
 	if (solver.info() != Eigen::Success) {
 		std::cout << "Failed to solve" << std::endl;
@@ -182,6 +183,9 @@ bool solveSparseEquation(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_tri
 												When assertions are enabled, such errors trigger an assert.." << std::endl;
 		return true;
 	}
+
+	std::cout << "result check: K*displacementOfDOFs" << std::endl << K*displacementOfDOFs << std::endl;
+	
 	setDisplacements(mesh, DOFTranslationMap, results, displacementOfDOFs);
 	return false;
 }
