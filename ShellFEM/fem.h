@@ -4,7 +4,8 @@
 
 struct FEMResults {
 	MatrixXd displacements;
-	VectorXd vonMisesStress;
+	VectorXd faceStress;		// vonMises yield criterion
+	VectorXd vertexStress;		// vonMises yield criterion
 	MatrixXd displacedVertices;
 };
 

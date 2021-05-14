@@ -194,7 +194,10 @@ bool solveSparseEquation(Mesh &mesh, MatrixXd &DOFTranslationMap, TriList &K_tri
 
 void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, ElementBuilder &elementBuilder, FEMResults &results) { 
 	std::cout << "In calcStressFromDisplacements" << std::endl;
-	results.vonMisesStress = VectorXd::Zero(mesh.FNB.rows());
+
+	results.faceStress = VectorXd::Zero(mesh.FNB.rows());
+	results.vertexStress = VectorXd::Zero(mesh.V.rows());
+	VectorXd count = VectorXd::Zero(mesh.V.rows());
 
 	for (int faceIdx = 0; faceIdx < mesh.FNB.rows(); faceIdx++) {
 		Eigen::Matrix<double, 18, 1> elementDisplacements = MatrixXd::Zero(18, 1);
@@ -213,8 +216,17 @@ void calcStressFromDisplacements(Mesh &mesh, MatrixXd &DOFTranslationMap, Elemen
 		}
 
 		elementBuilder.calculateVonMisesStress(element, elementDisplacements);
-		results.vonMisesStress(faceIdx) = element.vonMisesStress;
+		results.faceStress(faceIdx) = element.vonMisesStress;
+
+		// sum vertex stress
+		for (int i = 0; i < 3; i++) {
+			int vertexIdx = verticesIndices[i];
+			results.vertexStress(vertexIdx) += element.vonMisesStress;
+			count(vertexIdx)++;
+		}
 	}
+	// calculate average elementwise
+	results.vertexStress = results.vertexStress.cwiseProduct(count.cwiseInverse()); 
 }
 
 //#################################################################### Main ############################################################################
@@ -224,7 +236,9 @@ void printSummary(Mesh &mesh, FEMResults &results) {
 	std::cout << DASH << std::endl;
 	std::cout << "Displaced Vertices:" << std::endl << results.displacedVertices << std::endl;
 	std::cout << DASH << std::endl;
-	std::cout << "Von-Mises Stress:" << std::endl << results.vonMisesStress << std::endl;
+	std::cout << "Face Von-Mises Stress:" << std::endl << results.faceStress << std::endl;
+	std::cout << DASH << std::endl;
+	std::cout << "Vertex Von-Mises Stress:" << std::endl << results.vertexStress << std::endl;
 	std::cout << DASH << std::endl;
 }
 

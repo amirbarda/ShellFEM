@@ -36,6 +36,9 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 		SF = F;
 	}
 
+	std::cout << "SV: " << std::endl << SV << std::endl;
+	std::cout << "SF: " << std::endl << SF << std::endl;
+
 	calculateFaceNeighborhoodMatrix(SF, FNB);
 
 	igl::edge_topology(SV, SF, EV, FE, EF);
@@ -58,11 +61,11 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 	performFEM(mesh, nodalForces, simProps, results);
 	saveOBJ(results.displacedVertices, SF, saveObjPath);
 	saveMatrix(results.displacements, saveDisplacementsPath);
-	saveMatrix(results.vonMisesStress, saveStressesPath);
+	saveMatrix(results.vertexStress, saveStressesPath);
 
 	if (jobProps.startViewer) {
 		Viewer viewer;
-		viewer.startView(results.displacedVertices, SF, results.vonMisesStress);
+		viewer.startView(results.displacedVertices, SF, results.faceStress);
 	}
 	if (createLogFile) {
 		fclose(logFile);
