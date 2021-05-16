@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
 		std::string forcesPath = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\x64\\Release\\test\\load_nodes.txt";
 		std::string fixedPath = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\x64\\Release\\test\\fixed_nodes.txt";
 		std::string clampedPath = "C:\\Users\\Michael\\Documents\\GoogleDrive\\GoogleDrive\\VisualStudioC\\ShellFEM\\x64\\Release\\test\\clamped_edges.txt";
-		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T);
+		JobProperties jobProps(name, outDir, objPath, forcesPath, fixedPath, clampedPath, true, OBJ_T, 1);
 		SimulationProperties simProps;
 
 		runFEMJob(jobProps, simProps, true);

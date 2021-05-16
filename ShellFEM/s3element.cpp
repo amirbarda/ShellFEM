@@ -51,12 +51,10 @@ std::ostream& operator<<(std::ostream& os, const ElementParameters& param) {
 void ElementBuilder::calculateElasticPlasticMatrix() {
 	double ni = simProps.ni;
 	double E = simProps.E;
-	//double t = simProps.thickness;
 	De << 1, ni, 0,
 		ni, 1, 0,
 		0, 0, (1 - ni) / 2;
 	De *= E / (1 - ni * ni);
-	//De *= t * t * t / 12;
 }
 
 void ElementBuilder::calculateHillPlasticStrainMatrix() {
@@ -305,9 +303,13 @@ void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<dou
 	calculateBMatrix(element, elemParam, B);
 	calculateBmMatrix(elemParam, Bm);
 
-	strain = B * displacements + Bm * displacements.block(0,0,9,1);
+	double c1 = simProps.thickness;
+	double c3 = CUBE(simProps.thickness) / 12;
+
+	strain = c3 * B * displacements + c1 * Bm * displacements.block(0,0,9,1);
 	stress = De * strain;
-	element.vonMisesStress = stress.transpose() * M * stress;
+	element.vonMisesStress = stress.transpose() * M * stress; // s1**2 - s1*s2 + s2**2 - 3s3**2
+	element.vonMisesStress = sqrt(element.vonMisesStress);
 
 	if (displacements.sum() != 0) {
 		std::cout << "calculateVonMisesStress" << std::endl;

@@ -59,6 +59,9 @@ void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobP
 
 		TCLAP::SwitchArg formatSwitch("y", "is_stl", "True if file type is in STL format, else OBJ format", cmd, false);
 
+		TCLAP::ValueArg<double> scaleArg("s", "scale", "Scale vertices by multiplying with value", false, 1, "double");
+		cmd.add(scaleArg);
+
 		// Parse the argv array.
 		cmd.parse(argc, argv);
 
@@ -73,13 +76,14 @@ void parse_arguments(int argc, char** argv, SimulationProperties &simProps, JobP
 		std::cout << "thicknessArg: " << thicknessArg.getValue() << std::endl;
 		std::cout << "viewerSwitch: " << viewerSwitch.getValue() << std::endl;
 		std::cout << "fileTypeArg: " << formatSwitch.getValue() << std::endl;
+		std::cout << "scaleArg: " << scaleArg.getValue() << std::endl;
 
 		FileFormat format = OBJ_T;
 		if (formatSwitch.getValue() == true) format = STL_T;
 
 		// Get the value parsed by each arg. 
 		jobProps = JobProperties(nameArg.getValue(), outputDirArg.getValue(), objPathArg.getValue(), forcesPathArg.getValue(), fixedPathArg.getValue(),
-									clampedPathArg.getValue(), viewerSwitch.getValue(), format);
+									clampedPathArg.getValue(), viewerSwitch.getValue(), format, scaleArg.getValue());
 		simProps = SimulationProperties(youngModulusArg.getValue(), possionRatioArg.getValue(), thicknessArg.getValue());
 		
 	} catch (TCLAP::ArgException &e) { // catch exceptions

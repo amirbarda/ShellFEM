@@ -36,6 +36,7 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 		SF = F;
 	}
 
+	SV *= jobProps.scale;
 	std::cout << "SV: " << std::endl << SV << std::endl;
 	std::cout << "SF: " << std::endl << SF << std::endl;
 
@@ -45,6 +46,7 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 	std::cout << "EV:" << std::endl;
 	for (int i=0; i<EV.rows();i++) std::cout << i << ": " << EV.row(i) << std::endl;
 	std::cout << DASH << std::endl;
+
 	auto nodalForces = vector3d_from_txt(jobProps.forcesPath);
 	auto freeDOF = vector3d_from_txt(jobProps.fixedPath);
 	auto isEdgeClamped = clamped_from_txt(jobProps.clampedPath, EV.rows());
