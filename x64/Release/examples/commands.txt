@@ -57,7 +57,7 @@ ShellFEM.exe -n TB_5 -f examples/TB_5/mesh.obj -q examples/TB_5/load_nodes.txt -
 
 ShellFEM.exe -n TB_5_Side -f examples/TB_5_Side/mesh.obj -q examples/TB_5_Side/load_nodes.txt -x examples/TB_5_Side/fixed_nodes.txt -c examples/TB_5_Side/clamped_edges.txt -g -o res/TB_5_Side -e 2.9e7 -t 0.32e-3 -p 0.22
 
-ShellFEM.exe -n TB_X_straight -f examples/TB_X_straight/mesh.obj -q examples/TB_X_straight/load_nodes.txt -x examples/TB_X_straight/fixed_nodes.txt -c examples/TB_X_straight/clamped_edges.txt -g -o res/TB_X_straight -e 2.9e7 -t 0.32e-3 -p 0.22
+ShellFEM.exe -n TB_X_straight -f examples/TB_X_straight/mesh.obj -q examples/TB_X_straight/load_nodes.txt -x examples/TB_X_straight/fixed_nodes.txt -c examples/TB_X_straight/clamped_edges.txt -g -o res/TB_X_straight -e 2.9e7 -t 0.32 -p 0.22
 
 ShellFEM.exe -n TB_X_twisted -f examples/TB_X_twisted/mesh.obj -q examples/TB_X_twisted/load_nodes.txt -x examples/TB_X_twisted/fixed_nodes.txt -c examples/TB_X_twisted/clamped_edges.txt -g -o res/TB_X_twisted -e 2.9e7 -t 0.32e-3 -p 0.22
 

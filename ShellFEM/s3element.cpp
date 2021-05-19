@@ -295,27 +295,33 @@ void ElementBuilder::calculateStiffnessMatrix(Element &element) {
 void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<double, 18, 1> const displacements) {
 	Eigen::Matrix<double, 3, 18> B;			// Bending effect matrix
 	Eigen::Matrix<double, 3, 9> Bm;		    // Membrane Effect Matrix	
-	Eigen::Matrix<double, 3, 1> strain;
-	Eigen::Matrix<double, 3, 1> stress;
 	ElementParameters elemParam;
 	
 	calculateParameters(element, elemParam);	
 	calculateBMatrix(element, elemParam, B);
 	calculateBmMatrix(elemParam, Bm);
 
+	auto strainB = B * displacements;
+	auto strainM = Bm * displacements.block(0, 0, 9, 1);
+
 	double c1 = simProps.thickness;
 	double c3 = CUBE(simProps.thickness) / 12;
 
-	strain = c3 * B * displacements + c1 * Bm * displacements.block(0,0,9,1);
-	stress = De * strain;
+	auto stress = De * (c3 * strainB + c1 * strainM);
+
 	element.vonMisesStress = stress.transpose() * M * stress; // s1**2 - s1*s2 + s2**2 - 3s3**2
 	element.vonMisesStress = sqrt(element.vonMisesStress);
 
 	if (displacements.sum() != 0) {
 		std::cout << "calculateVonMisesStress" << std::endl;
+		std::cout << "c1 " << std::endl << c1 << std::endl;
+		std::cout << "c3 " << std::endl << c3 << std::endl;
+		std::cout << "De " << std::endl << De << std::endl;
+		std::cout << "B " << std::endl << B << std::endl;
 		std::cout << "Bm " << std::endl << Bm << std::endl;
 		std::cout << "displacements " << std::endl << displacements << std::endl;
-		std::cout << "Strain: " << std::endl << strain << std::endl;
+		std::cout << "StrainB: " << std::endl << strainB << std::endl;
+		std::cout << "StrainM: " << std::endl << strainM << std::endl;
 		std::cout << "Stress: " << std::endl << stress << std::endl;
 		std::wcout << "vonMisesStress: " << element.vonMisesStress << std::endl;
 		std::cout << DASH << std::endl;
