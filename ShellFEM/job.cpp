@@ -49,7 +49,7 @@ void runFEMJob(JobProperties &jobProps, SimulationProperties &simProps, bool cre
 
 	auto nodalForces = vector3d_from_txt(jobProps.forcesPath);
 	auto freeDOF = vector3d_from_txt(jobProps.fixedPath);
-	auto isEdgeClamped = clamped_from_txt(jobProps.clampedPath, EV.rows());
+	auto isEdgeClamped = clamped_from_txt(jobProps.clampedPath, EV);
 
 	std::sort(nodalForces.begin(), nodalForces.end(), [](auto &left, auto &right) {
 		return left.first < right.first;

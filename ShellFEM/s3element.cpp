@@ -304,18 +304,14 @@ void ElementBuilder::calculateVonMisesStress(Element &element, Eigen::Matrix<dou
 	auto strainB = B * displacements;
 	auto strainM = Bm * displacements.block(0, 0, 9, 1);
 
-	double c1 = simProps.thickness;
-	double c3 = CUBE(simProps.thickness) / 12;
-
-	auto stress = De * (c3 * strainB + c1 * strainM);
+	double c = 0.5*simProps.thickness;
+	auto stress = De * (c * strainB + strainM);
 
 	element.vonMisesStress = stress.transpose() * M * stress; // s1**2 - s1*s2 + s2**2 - 3s3**2
 	element.vonMisesStress = sqrt(element.vonMisesStress);
 
 	if (displacements.sum() != 0) {
 		std::cout << "calculateVonMisesStress" << std::endl;
-		std::cout << "c1 " << std::endl << c1 << std::endl;
-		std::cout << "c3 " << std::endl << c3 << std::endl;
 		std::cout << "De " << std::endl << De << std::endl;
 		std::cout << "B " << std::endl << B << std::endl;
 		std::cout << "Bm " << std::endl << Bm << std::endl;

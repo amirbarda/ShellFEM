@@ -82,6 +82,7 @@ ShellFEM.exe -n RLSphereH -f examples/RLSphereH/mesh.obj -q examples/RLSphereH/l
 
 ShellFEM.exe -n Sphere22_H -f examples/Sphere22_H/mesh.obj -q examples/Sphere22_H/load_nodes.txt -x examples/Sphere22_H/fixed_nodes.txt -c examples/Sphere22_H/clamped_edges.txt -g -o res/Sphere22_H -e 6.825e7 -t 0.04 -p 0.3
 
+ShellFEM.exe -n TB_X_Stress -f examples/TB_X_Stress/mesh.obj -q examples/TB_X_Stress/load_nodes.txt -x examples/TB_X_Stress/fixed_nodes.txt -c examples/TB_X_Stress/clamped_edges.txt -g -o res/TB_X_Stress -t 0.32
 
 
 int main(int argc, char** argv) {

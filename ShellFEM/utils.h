@@ -38,7 +38,7 @@ struct Mesh {
 
 std::vector<std::string> split_string_by_space(std::string s);
 vector3dList vector3d_from_txt(std::string path);
-BoolList clamped_from_txt(std::string path, int edgeCount);
+BoolList clamped_from_txt(std::string path, Eigen::MatrixXi &EV);
 MatrixXd displacements_from_txt(std::string path, int nodeNum);
 VectorXd vonmises_from_txt(std::string path, int nodeNum);
 void saveOBJ(MatrixXd &V, MatrixXi &F, std::string filepath);

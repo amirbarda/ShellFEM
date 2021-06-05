@@ -25,13 +25,28 @@ vector3dList vector3d_from_txt(std::string path) {
 	return iVecList;
 }
 
-BoolList clamped_from_txt(std::string path, int edgeCount) {
-	BoolList isEdgeClamped(edgeCount, false);
+void initMap(Eigen::MatrixXi &EV, std::vector<std::vector<int>> &mapEV) {
+	for (int i = 0; i < EV.rows(); i++) {
+		mapEV[EV(i, 0)][EV(i, 1)] = i;
+		mapEV[EV(i, 1)][EV(i, 0)] = i;
+	}
+}
+
+BoolList clamped_from_txt(std::string path, Eigen::MatrixXi &EV) {
+	std::vector<std::vector<int>> mapEV(EV.rows(), std::vector<int>(EV.rows(), -1));
+	BoolList isEdgeClamped(EV.rows(), false);
 	std::ifstream inFile(path);
 	std::string line;
+	int edgeIdx;
+	
+	initMap(EV, mapEV);
 	while (std::getline(inFile, line)) {
 		auto tokens = split_string_by_space(line);
-		isEdgeClamped[std::stoi(tokens[0])] = true;
+		if (tokens.size() > 1) {
+			edgeIdx = mapEV[std::stoi(tokens[0])][std::stoi(tokens[1])];
+		}
+		else edgeIdx = std::stoi(tokens[0]);
+		isEdgeClamped[edgeIdx] = true;
 	}
 	inFile.close();
 	return isEdgeClamped;
